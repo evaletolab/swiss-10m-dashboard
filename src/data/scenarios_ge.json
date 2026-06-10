@@ -1,0 +1,1434 @@
+[
+  {
+    "year": "1981",
+    "scenario": "observed",
+    "population": "349562",
+    "annual_growth": "",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1982",
+    "scenario": "observed",
+    "population": "352461",
+    "annual_growth": "2899",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1983",
+    "scenario": "observed",
+    "population": "355806",
+    "annual_growth": "3345",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1984",
+    "scenario": "observed",
+    "population": "357752",
+    "annual_growth": "1946",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1985",
+    "scenario": "observed",
+    "population": "360462",
+    "annual_growth": "2710",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1986",
+    "scenario": "observed",
+    "population": "362157",
+    "annual_growth": "1695",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1987",
+    "scenario": "observed",
+    "population": "363550",
+    "annual_growth": "1393",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1988",
+    "scenario": "observed",
+    "population": "365525",
+    "annual_growth": "1975",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1989",
+    "scenario": "observed",
+    "population": "371356",
+    "annual_growth": "5831",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1990",
+    "scenario": "observed",
+    "population": "373019",
+    "annual_growth": "1663",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1991",
+    "scenario": "observed",
+    "population": "378655",
+    "annual_growth": "5636",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1992",
+    "scenario": "observed",
+    "population": "381404",
+    "annual_growth": "2749",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1993",
+    "scenario": "observed",
+    "population": "383911",
+    "annual_growth": "2507",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1994",
+    "scenario": "observed",
+    "population": "387606",
+    "annual_growth": "3695",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1995",
+    "scenario": "observed",
+    "population": "391699",
+    "annual_growth": "4093",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1996",
+    "scenario": "observed",
+    "population": "395466",
+    "annual_growth": "3767",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1997",
+    "scenario": "observed",
+    "population": "394588",
+    "annual_growth": "-878",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1998",
+    "scenario": "observed",
+    "population": "396659",
+    "annual_growth": "2071",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "1999",
+    "scenario": "observed",
+    "population": "398910",
+    "annual_growth": "2251",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2000",
+    "scenario": "observed",
+    "population": "403067",
+    "annual_growth": "4157",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2001",
+    "scenario": "observed",
+    "population": "408146",
+    "annual_growth": "5079",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2002",
+    "scenario": "observed",
+    "population": "413618",
+    "annual_growth": "5472",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2003",
+    "scenario": "observed",
+    "population": "418747",
+    "annual_growth": "5129",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2004",
+    "scenario": "observed",
+    "population": "423993",
+    "annual_growth": "5246",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2005",
+    "scenario": "observed",
+    "population": "427396",
+    "annual_growth": "3403",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2006",
+    "scenario": "observed",
+    "population": "430638",
+    "annual_growth": "3242",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2007",
+    "scenario": "observed",
+    "population": "433235",
+    "annual_growth": "2597",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2008",
+    "scenario": "observed",
+    "population": "438177",
+    "annual_growth": "4942",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2009",
+    "scenario": "observed",
+    "population": "446106",
+    "annual_growth": "7929",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2010",
+    "scenario": "observed",
+    "population": "453292",
+    "annual_growth": "7186",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2011",
+    "scenario": "observed",
+    "population": "457715",
+    "annual_growth": "4423",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2012",
+    "scenario": "observed",
+    "population": "460534",
+    "annual_growth": "2819",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2013",
+    "scenario": "observed",
+    "population": "463101",
+    "annual_growth": "2567",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2014",
+    "scenario": "observed",
+    "population": "469433",
+    "annual_growth": "6332",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2015",
+    "scenario": "observed",
+    "population": "477385",
+    "annual_growth": "7952",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2016",
+    "scenario": "observed",
+    "population": "484736",
+    "annual_growth": "7351",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2017",
+    "scenario": "observed",
+    "population": "489524",
+    "annual_growth": "4788",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2018",
+    "scenario": "observed",
+    "population": "495249",
+    "annual_growth": "5725",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2019",
+    "scenario": "observed",
+    "population": "499480",
+    "annual_growth": "4231",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2020",
+    "scenario": "observed",
+    "population": "504128",
+    "annual_growth": "4648",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2021",
+    "scenario": "observed",
+    "population": "506343",
+    "annual_growth": "2215",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2022",
+    "scenario": "observed",
+    "population": "509448",
+    "annual_growth": "3105",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2023",
+    "scenario": "observed",
+    "population": "514114",
+    "annual_growth": "4666",
+    "total_growth_since_base_year": "",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2024",
+    "scenario": "observed",
+    "population": "524410",
+    "annual_growth": "10296",
+    "total_growth_since_base_year": "0",
+    "notes": "OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+  },
+  {
+    "year": "2024",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "524410",
+    "annual_growth": "",
+    "total_growth_since_base_year": "0",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2025",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "529466",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "5056",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2026",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "534522",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "10112",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2027",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "539578",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "15168",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2028",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "544634",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "20224",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2029",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "549690",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "25280",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2030",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "554746",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "30336",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2031",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "559802",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "35392",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2032",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "564858",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "40448",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2033",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "569914",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "45504",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2034",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "574970",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "50560",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2035",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "580026",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "55616",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2036",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "585082",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "60672",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2037",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "590137",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "65727",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2038",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "595193",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "70783",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2039",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "600249",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "75839",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2040",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "605305",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "80895",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2041",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "610361",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "85951",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2042",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "615417",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "91007",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2043",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "620473",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "96063",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2044",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "625529",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "101119",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2045",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "630585",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "106175",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2046",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "635641",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "111231",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2047",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "640697",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "116287",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2048",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "645753",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "121343",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2049",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "650809",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "126399",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2050",
+    "scenario": "linear_trend_2000_base_year",
+    "population": "655865",
+    "annual_growth": "5056",
+    "total_growth_since_base_year": "131455",
+    "notes": "Extrapolation linéaire de la tendance 2000-2024"
+  },
+  {
+    "year": "2024",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "524410",
+    "annual_growth": "",
+    "total_growth_since_base_year": "0",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2025",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "530192",
+    "annual_growth": "5782",
+    "total_growth_since_base_year": "5782",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2026",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "536038",
+    "annual_growth": "5846",
+    "total_growth_since_base_year": "11628",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2027",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "541948",
+    "annual_growth": "5910",
+    "total_growth_since_base_year": "17538",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2028",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "547923",
+    "annual_growth": "5975",
+    "total_growth_since_base_year": "23513",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2029",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "553965",
+    "annual_growth": "6041",
+    "total_growth_since_base_year": "29555",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2030",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "560073",
+    "annual_growth": "6108",
+    "total_growth_since_base_year": "35663",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2031",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "566248",
+    "annual_growth": "6175",
+    "total_growth_since_base_year": "41838",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2032",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "572491",
+    "annual_growth": "6243",
+    "total_growth_since_base_year": "48081",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2033",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "578803",
+    "annual_growth": "6312",
+    "total_growth_since_base_year": "54393",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2034",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "585185",
+    "annual_growth": "6382",
+    "total_growth_since_base_year": "60775",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2035",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "591637",
+    "annual_growth": "6452",
+    "total_growth_since_base_year": "67227",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2036",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "598161",
+    "annual_growth": "6523",
+    "total_growth_since_base_year": "73751",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2037",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "604756",
+    "annual_growth": "6595",
+    "total_growth_since_base_year": "80346",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2038",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "611424",
+    "annual_growth": "6668",
+    "total_growth_since_base_year": "87014",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2039",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "618165",
+    "annual_growth": "6741",
+    "total_growth_since_base_year": "93755",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2040",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "624981",
+    "annual_growth": "6816",
+    "total_growth_since_base_year": "100571",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2041",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "631872",
+    "annual_growth": "6891",
+    "total_growth_since_base_year": "107462",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2042",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "638839",
+    "annual_growth": "6967",
+    "total_growth_since_base_year": "114429",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2043",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "645882",
+    "annual_growth": "7044",
+    "total_growth_since_base_year": "121472",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2044",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "653004",
+    "annual_growth": "7121",
+    "total_growth_since_base_year": "128594",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2045",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "660204",
+    "annual_growth": "7200",
+    "total_growth_since_base_year": "135794",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2046",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "667483",
+    "annual_growth": "7279",
+    "total_growth_since_base_year": "143073",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2047",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "674843",
+    "annual_growth": "7360",
+    "total_growth_since_base_year": "150433",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2048",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "682283",
+    "annual_growth": "7441",
+    "total_growth_since_base_year": "157873",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2049",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "689806",
+    "annual_growth": "7523",
+    "total_growth_since_base_year": "165396",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2050",
+    "scenario": "cagr_trend_2000_base_year",
+    "population": "697412",
+    "annual_growth": "7606",
+    "total_growth_since_base_year": "173002",
+    "notes": "Extrapolation CAGR 2000-2024"
+  },
+  {
+    "year": "2024",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "524410",
+    "annual_growth": "",
+    "total_growth_since_base_year": "0",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2025",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "529635",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "5225",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2026",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "534860",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "10450",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2027",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "540085",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "15675",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2028",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "545310",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "20900",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2029",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "550535",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "26125",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2030",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "555760",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "31350",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2031",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "560985",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "36575",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2032",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "566210",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "41800",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2033",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "571435",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "47025",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2034",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "576660",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "52250",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2035",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "581885",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "57475",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2036",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "587110",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "62700",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2037",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "592335",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "67925",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2038",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "597560",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "73150",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2039",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "602785",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "78375",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2040",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "608010",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "83600",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2041",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "613235",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "88825",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2042",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "618460",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "94050",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2043",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "623685",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "99275",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2044",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "628910",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "104500",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2045",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "634135",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "109725",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2046",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "639360",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "114950",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2047",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "644585",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "120175",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2048",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "649810",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "125400",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2049",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "655035",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "130625",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2050",
+    "scenario": "recent_trend_2015_base_year",
+    "population": "660260",
+    "annual_growth": "5225",
+    "total_growth_since_base_year": "135850",
+    "notes": "Extrapolation linéaire récente 2015-2024"
+  },
+  {
+    "year": "2024",
+    "scenario": "initiative_linear",
+    "population": "524410",
+    "annual_growth": "",
+    "total_growth_since_base_year": "0",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2025",
+    "scenario": "initiative_linear",
+    "population": "526641",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "2231",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2026",
+    "scenario": "initiative_linear",
+    "population": "528872",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "4462",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2027",
+    "scenario": "initiative_linear",
+    "population": "531102",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "6692",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2028",
+    "scenario": "initiative_linear",
+    "population": "533333",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "8923",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2029",
+    "scenario": "initiative_linear",
+    "population": "535564",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "11154",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2030",
+    "scenario": "initiative_linear",
+    "population": "537795",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "13385",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2031",
+    "scenario": "initiative_linear",
+    "population": "540025",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "15615",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2032",
+    "scenario": "initiative_linear",
+    "population": "542256",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "17846",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2033",
+    "scenario": "initiative_linear",
+    "population": "544487",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "20077",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2034",
+    "scenario": "initiative_linear",
+    "population": "546718",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "22308",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2035",
+    "scenario": "initiative_linear",
+    "population": "548948",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "24538",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2036",
+    "scenario": "initiative_linear",
+    "population": "551179",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "26769",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2037",
+    "scenario": "initiative_linear",
+    "population": "553410",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "29000",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2038",
+    "scenario": "initiative_linear",
+    "population": "555641",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "31231",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2039",
+    "scenario": "initiative_linear",
+    "population": "557872",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "33462",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2040",
+    "scenario": "initiative_linear",
+    "population": "560102",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "35692",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2041",
+    "scenario": "initiative_linear",
+    "population": "562333",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "37923",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2042",
+    "scenario": "initiative_linear",
+    "population": "564564",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "40154",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2043",
+    "scenario": "initiative_linear",
+    "population": "566795",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "42385",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2044",
+    "scenario": "initiative_linear",
+    "population": "569025",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "44615",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2045",
+    "scenario": "initiative_linear",
+    "population": "571256",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "46846",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2046",
+    "scenario": "initiative_linear",
+    "population": "573487",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "49077",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2047",
+    "scenario": "initiative_linear",
+    "population": "575718",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "51308",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2048",
+    "scenario": "initiative_linear",
+    "population": "577948",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "53538",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2049",
+    "scenario": "initiative_linear",
+    "population": "580179",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "55769",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2050",
+    "scenario": "initiative_linear",
+    "population": "582410",
+    "annual_growth": "2231",
+    "total_growth_since_base_year": "58000",
+    "notes": "Trajectoire linéaire compatible avec le scénario initiative"
+  },
+  {
+    "year": "2024",
+    "scenario": "initiative_cagr",
+    "population": "524410",
+    "annual_growth": "",
+    "total_growth_since_base_year": "0",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2025",
+    "scenario": "initiative_cagr",
+    "population": "526530",
+    "annual_growth": "2120",
+    "total_growth_since_base_year": "2120",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2026",
+    "scenario": "initiative_cagr",
+    "population": "528659",
+    "annual_growth": "2129",
+    "total_growth_since_base_year": "4249",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2027",
+    "scenario": "initiative_cagr",
+    "population": "530796",
+    "annual_growth": "2137",
+    "total_growth_since_base_year": "6386",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2028",
+    "scenario": "initiative_cagr",
+    "population": "532942",
+    "annual_growth": "2146",
+    "total_growth_since_base_year": "8532",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2029",
+    "scenario": "initiative_cagr",
+    "population": "535096",
+    "annual_growth": "2155",
+    "total_growth_since_base_year": "10686",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2030",
+    "scenario": "initiative_cagr",
+    "population": "537260",
+    "annual_growth": "2163",
+    "total_growth_since_base_year": "12850",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2031",
+    "scenario": "initiative_cagr",
+    "population": "539432",
+    "annual_growth": "2172",
+    "total_growth_since_base_year": "15022",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2032",
+    "scenario": "initiative_cagr",
+    "population": "541613",
+    "annual_growth": "2181",
+    "total_growth_since_base_year": "17203",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2033",
+    "scenario": "initiative_cagr",
+    "population": "543802",
+    "annual_growth": "2190",
+    "total_growth_since_base_year": "19392",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2034",
+    "scenario": "initiative_cagr",
+    "population": "546001",
+    "annual_growth": "2198",
+    "total_growth_since_base_year": "21591",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2035",
+    "scenario": "initiative_cagr",
+    "population": "548208",
+    "annual_growth": "2207",
+    "total_growth_since_base_year": "23798",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2036",
+    "scenario": "initiative_cagr",
+    "population": "550424",
+    "annual_growth": "2216",
+    "total_growth_since_base_year": "26014",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2037",
+    "scenario": "initiative_cagr",
+    "population": "552650",
+    "annual_growth": "2225",
+    "total_growth_since_base_year": "28240",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2038",
+    "scenario": "initiative_cagr",
+    "population": "554884",
+    "annual_growth": "2234",
+    "total_growth_since_base_year": "30474",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2039",
+    "scenario": "initiative_cagr",
+    "population": "557127",
+    "annual_growth": "2243",
+    "total_growth_since_base_year": "32717",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2040",
+    "scenario": "initiative_cagr",
+    "population": "559380",
+    "annual_growth": "2252",
+    "total_growth_since_base_year": "34970",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2041",
+    "scenario": "initiative_cagr",
+    "population": "561641",
+    "annual_growth": "2261",
+    "total_growth_since_base_year": "37231",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2042",
+    "scenario": "initiative_cagr",
+    "population": "563912",
+    "annual_growth": "2271",
+    "total_growth_since_base_year": "39502",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2043",
+    "scenario": "initiative_cagr",
+    "population": "566191",
+    "annual_growth": "2280",
+    "total_growth_since_base_year": "41781",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2044",
+    "scenario": "initiative_cagr",
+    "population": "568480",
+    "annual_growth": "2289",
+    "total_growth_since_base_year": "44070",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2045",
+    "scenario": "initiative_cagr",
+    "population": "570779",
+    "annual_growth": "2298",
+    "total_growth_since_base_year": "46369",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2046",
+    "scenario": "initiative_cagr",
+    "population": "573086",
+    "annual_growth": "2308",
+    "total_growth_since_base_year": "48676",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2047",
+    "scenario": "initiative_cagr",
+    "population": "575403",
+    "annual_growth": "2317",
+    "total_growth_since_base_year": "50993",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2048",
+    "scenario": "initiative_cagr",
+    "population": "577729",
+    "annual_growth": "2326",
+    "total_growth_since_base_year": "53319",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2049",
+    "scenario": "initiative_cagr",
+    "population": "580065",
+    "annual_growth": "2336",
+    "total_growth_since_base_year": "55655",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  },
+  {
+    "year": "2050",
+    "scenario": "initiative_cagr",
+    "population": "582410",
+    "annual_growth": "2345",
+    "total_growth_since_base_year": "58000",
+    "notes": "Trajectoire CAGR compatible avec le scénario initiative"
+  }
+]

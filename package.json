@@ -1,0 +1,51 @@
+{
+  "name": "swiss-10m-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm data && vite build",
+    "preview": "vite preview",
+    "data": "pnpm download && pnpm normalize && pnpm simulate && pnpm export:web",
+    "download": "tsx scripts/download/download_all.ts",
+    "normalize": "tsx scripts/normalize/normalize_all.ts",
+    "simulate": "tsx scripts/simulate/simulate_all.ts",
+    "validate": "tsx scripts/validate/validate_data.ts",
+    "export:web": "tsx scripts/export_to_web.ts",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "csv-parse": "^6.2.1",
+    "fflate": "^0.8.3",
+    "papaparse": "^5.5.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "recharts": "^3.8.1",
+    "xlsx": "^0.18.5",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/node": "^24.13.1",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "tailwindcss": "^4.3.0",
+    "tsx": "^4.22.4",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^6.4.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

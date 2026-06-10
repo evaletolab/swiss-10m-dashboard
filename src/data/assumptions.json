@@ -1,0 +1,82 @@
+[
+  {
+    "key": "avg_household_size",
+    "value": "2.1",
+    "unit": "persons_per_household",
+    "source": "OCSTAT/OFS",
+    "confidence": "medium",
+    "comment": "A remplacer par valeur Genève exacte"
+  },
+  {
+    "key": "students_share_population",
+    "value": "0.12",
+    "unit": "ratio",
+    "source": "OCSTAT/OFS",
+    "confidence": "low",
+    "comment": "Part approximative à remplacer par population par âge"
+  },
+  {
+    "key": "students_per_class",
+    "value": "21",
+    "unit": "students_per_class",
+    "source": "policy_assumption",
+    "confidence": "medium",
+    "comment": "Hypothèse pédagogique"
+  },
+  {
+    "key": "doctors_per_1000_target",
+    "value": "4.5",
+    "unit": "doctors_per_1000",
+    "source": "policy_assumption",
+    "confidence": "low",
+    "comment": "A calibrer avec données Genève"
+  },
+  {
+    "key": "hospital_beds_per_1000_target",
+    "value": "3",
+    "unit": "beds_per_1000",
+    "source": "policy_assumption",
+    "confidence": "low",
+    "comment": "A calibrer"
+  },
+  {
+    "key": "daily_trips_per_person",
+    "value": "3",
+    "unit": "trips_per_day",
+    "source": "transport_assumption",
+    "confidence": "low",
+    "comment": "A calibrer avec enquête mobilité"
+  },
+  {
+    "key": "water_liters_per_person_day",
+    "value": "150",
+    "unit": "liter_per_day",
+    "source": "environment_assumption",
+    "confidence": "low",
+    "comment": "A sourcer"
+  },
+  {
+    "key": "waste_kg_per_person_year",
+    "value": "350",
+    "unit": "kg_per_year",
+    "source": "environment_assumption",
+    "confidence": "low",
+    "comment": "A sourcer"
+  },
+  {
+    "key": "electricity_kwh_per_person_year",
+    "value": "6500",
+    "unit": "kwh_per_year",
+    "source": "energy_assumption",
+    "confidence": "low",
+    "comment": "A sourcer"
+  },
+  {
+    "key": "geneva_growth_share",
+    "value": "0.058",
+    "unit": "ratio",
+    "source": "model_assumption",
+    "confidence": "medium",
+    "comment": "Part de Genève dans la population suisse utilisée pour traduire le scénario national"
+  }
+]

@@ -1,0 +1,27 @@
+year,cpi_total,cpi_rent,cpi_food,cpi_health,cpi_transport,cpi_total_yoy,cpi_rent_yoy,cpi_food_yoy,cpi_health_yoy,cpi_transport_yoy,data_type,source_id,source_note
+2000,324.4,,,,,,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2001,327.6,,,,,0.0099,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2002,330.3,,,,,0.0082,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2003,333.2,,,,,0.0088,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2004,337.3,,,,,0.0123,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2005,341.9,,,,,0.0136,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2006,345.6,,,,,0.0108,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2007,347,,,,,0.0041,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2008,355.9,,,,,0.0256,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2009,354.1,,,,,-0.0051,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2010,357.2,,,,,0.0088,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2011,358.1,,,,,0.0025,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2012,356.5,,,,,-0.0045,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2013,356.8,,,,,0.0008,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2014,357,,,,,0.0006,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2015,353.7,,,,,-0.0092,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2016,353.1,,,,,-0.0017,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2017,355.4,,,,,0.0065,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2018,359.3,,,,,0.011,,,,,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2019,360.8,,,,,0.0042,0.007,-0.007,-0.006,-0.008,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2020,357.94056475166667,,,,,-0.0079,0.012,-0.004,-0.008,-0.025,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2021,359.2,,,,,0.0035,0.007,-0.014,-0.005,0.082,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2022,368.3,,,,,0.0253,0.016,0.041,-0.004,0.056,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2023,375.3,,,,,0.019,0.015,0.032,-0.004,-0.002,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2024,377.891635699476,,,,,0.0069,0.024,-0.011,-0.01,-0.015,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.
+2025,378.6,,,,,0.0019,0.017,-0.009,-0.008,-0.013,official,ocstat_geneva_prices,OCSTAT indice genevois des prix à la consommation: moyennes annuelles et variations annuelles par groupes de dépenses.

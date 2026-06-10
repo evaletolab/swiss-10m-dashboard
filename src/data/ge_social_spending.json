@@ -1,0 +1,263 @@
+[
+  {
+    "year": "1996",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "1997",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "1998",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "1999",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "2000",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "2001",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "2002",
+    "social_assistance_million_chf": "",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official",
+    "source_id": "ofsp_health_premium_subsidies",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale."
+  },
+  {
+    "year": "2003",
+    "social_assistance_million_chf": "1224.409701",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2004",
+    "social_assistance_million_chf": "1499.322279",
+    "health_premium_subsidy_cantonal_million_chf": "",
+    "health_premium_subsidy_total_million_chf": "",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2005",
+    "social_assistance_million_chf": "1697.375018",
+    "health_premium_subsidy_cantonal_million_chf": "138.75",
+    "health_premium_subsidy_total_million_chf": "241.12",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2006",
+    "social_assistance_million_chf": "1868.293566",
+    "health_premium_subsidy_cantonal_million_chf": "132.76",
+    "health_premium_subsidy_total_million_chf": "242.9",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2007",
+    "social_assistance_million_chf": "1852.320495",
+    "health_premium_subsidy_cantonal_million_chf": "139.34",
+    "health_premium_subsidy_total_million_chf": "255.68",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2008",
+    "social_assistance_million_chf": "1763.443364",
+    "health_premium_subsidy_cantonal_million_chf": "144.77",
+    "health_premium_subsidy_total_million_chf": "248.87",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2009",
+    "social_assistance_million_chf": "1757.098758",
+    "health_premium_subsidy_cantonal_million_chf": "141",
+    "health_premium_subsidy_total_million_chf": "246.84",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2010",
+    "social_assistance_million_chf": "1931.95292",
+    "health_premium_subsidy_cantonal_million_chf": "158.2",
+    "health_premium_subsidy_total_million_chf": "273.5",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2011",
+    "social_assistance_million_chf": "2047.986737",
+    "health_premium_subsidy_cantonal_million_chf": "124.8",
+    "health_premium_subsidy_total_million_chf": "248.7",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2012",
+    "social_assistance_million_chf": "2356.694667",
+    "health_premium_subsidy_cantonal_million_chf": "137.3",
+    "health_premium_subsidy_total_million_chf": "263",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2013",
+    "social_assistance_million_chf": "2430.195857",
+    "health_premium_subsidy_cantonal_million_chf": "143.8",
+    "health_premium_subsidy_total_million_chf": "271.1",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2014",
+    "social_assistance_million_chf": "2569.401279",
+    "health_premium_subsidy_cantonal_million_chf": "146.4",
+    "health_premium_subsidy_total_million_chf": "276.9",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2015",
+    "social_assistance_million_chf": "2624.340145",
+    "health_premium_subsidy_cantonal_million_chf": "161.4",
+    "health_premium_subsidy_total_million_chf": "298.6",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2016",
+    "social_assistance_million_chf": "2726.784845",
+    "health_premium_subsidy_cantonal_million_chf": "168.1",
+    "health_premium_subsidy_total_million_chf": "313.47",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2017",
+    "social_assistance_million_chf": "2821.228191",
+    "health_premium_subsidy_cantonal_million_chf": "171",
+    "health_premium_subsidy_total_million_chf": "326.52",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2018",
+    "social_assistance_million_chf": "2830.6936",
+    "health_premium_subsidy_cantonal_million_chf": "174.85",
+    "health_premium_subsidy_total_million_chf": "339.54",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2019",
+    "social_assistance_million_chf": "2815.391739",
+    "health_premium_subsidy_cantonal_million_chf": "177.35",
+    "health_premium_subsidy_total_million_chf": "348.35",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2020",
+    "social_assistance_million_chf": "2796.095422",
+    "health_premium_subsidy_cantonal_million_chf": "348.01",
+    "health_premium_subsidy_total_million_chf": "521.9",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2021",
+    "social_assistance_million_chf": "2762.338786",
+    "health_premium_subsidy_cantonal_million_chf": "385.34",
+    "health_premium_subsidy_total_million_chf": "562.72",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2022",
+    "social_assistance_million_chf": "2509.315927",
+    "health_premium_subsidy_cantonal_million_chf": "378.95",
+    "health_premium_subsidy_total_million_chf": "556.2",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2023",
+    "social_assistance_million_chf": "2523.721083",
+    "health_premium_subsidy_cantonal_million_chf": "424.73",
+    "health_premium_subsidy_total_million_chf": "613.82",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  },
+  {
+    "year": "2024",
+    "social_assistance_million_chf": "2585.633862",
+    "health_premium_subsidy_cantonal_million_chf": "447.77",
+    "health_premium_subsidy_total_million_chf": "656.23",
+    "data_type": "official_proxy",
+    "source_id": "ofsp_health_premium_subsidies;bfs_fibs_social_assistance_ch",
+    "source_note": "OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale. OFS FIBS tableau T 13.05.02.02, dépenses nettes d’aide sociale économique pour la Suisse, en millions CHF à prix courants; proxy de croissance en attente de l’export cantonal Genève."
+  }
+]

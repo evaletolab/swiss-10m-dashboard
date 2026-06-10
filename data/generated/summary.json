@@ -1,0 +1,30 @@
+{
+  "lastUpdated": "2026-06-10",
+  "baseYear": 2024,
+  "targetYear": 2050,
+  "switzerland": {
+    "baseYear": 2024,
+    "populationBase": 8962258,
+    "populationInitiativeTarget": 10000000,
+    "linearTrend2050": 10909890,
+    "cagrTrend2050": 11422346,
+    "initiativeAnnualGrowthLinear": 39913,
+    "initiativeAnnualGrowthRate": null
+  },
+  "geneva": {
+    "baseYear": 2024,
+    "populationBase": 524410,
+    "linearTrend2050": 655865,
+    "initiativeTranslated2050": 582410,
+    "populationGap2050": 73455,
+    "housingNeedGap2050": 27620,
+    "classNeedGap2050": 332,
+    "doctorNeedGap2050": 261
+  },
+  "fertility": {
+    "latestRate": 1.29,
+    "replacementRate": 2.1,
+    "generationReplacementRatio": 0.6142857142857143,
+    "twoGenerationBase": 0.37734693877551023
+  }
+}

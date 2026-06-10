@@ -1,0 +1,182 @@
+[
+  {
+    "id": "mock_v1_sample",
+    "title": "Données synthétiques V1 pour valider le dashboard",
+    "publisher": "Projet swiss-10m-dashboard",
+    "url": null,
+    "accessedAt": "2026-06-10",
+    "type": "mock",
+    "license": "not for factual use",
+    "notes": "Jeu synthétique clairement marqué comme mock. Ne pas citer comme statistique réelle."
+  },
+  {
+    "id": "bfs_statpop_population_balance",
+    "title": "OFS STATPOP - Bilan démographique selon le niveau géographique institutionnel",
+    "publisher": "Office fédéral de la statistique",
+    "url": "https://opendata.swiss/fr/dataset/demografische-bilanz-nach-institutionellen-gliederungen2",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Population, naissances, décès, immigration, émigration et soldes par canton."
+  },
+  {
+    "id": "ocstat_geneva_population",
+    "title": "OCSTAT - Population résidante du canton de Genève",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/graphiques/affichage.asp?filtreGraph=01_01",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Population, variation annuelle, solde naturel et solde migratoire."
+  },
+  {
+    "id": "ocstat_geneva_housing",
+    "title": "OCSTAT - Construction et logement à Genève",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/domaines/09/09_02/",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Parc de logements, logements construits et vacance."
+  },
+  {
+    "id": "ocstat_geneva_prices",
+    "title": "OCSTAT - Indice genevois des prix à la consommation",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/graphiques/affichage.asp?dom=1&filtreGraph=05_02",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Indice genevois des prix à la consommation, total et groupes de dépenses."
+  },
+  {
+    "id": "ocstat_geneva_transport",
+    "title": "OCSTAT - Transports publics genevois et véhicules",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/domaines/11/11_02/tableaux.asp",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Tableaux T 11.04.1.01 et T 11.02.01, TPG et véhicules en circulation."
+  },
+  {
+    "id": "ocstat_geneva_frontaliers",
+    "title": "OCSTAT - Frontaliers étrangers actifs",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/domaines/03/03_05/tableaux.asp",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Tableau T 03.05.2.04, frontaliers étrangers actifs en Suisse et dans le canton de Genève."
+  },
+  {
+    "id": "ofsp_lamal_premiums",
+    "title": "OFSP - Primes de l’assurance-maladie",
+    "publisher": "Office fédéral de la santé publique",
+    "url": "https://opendata.swiss/fr/dataset/health-insurance-premiums",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public data",
+    "notes": "Primes LAMal par canton et catégorie."
+  },
+  {
+    "id": "ocstat_geneva_housing_subsidized",
+    "title": "OCSTAT - Logements subventionnés selon le type",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/domaines/09/09_02/tableaux.asp",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Tableau T 09.02.1.2.05, logements subventionnés selon le type depuis 1977."
+  },
+  {
+    "id": "ofsp_health_premium_subsidies",
+    "title": "OFSP - Réduction des primes dans l’assurance obligatoire des soins",
+    "publisher": "Office fédéral de la santé publique",
+    "url": "https://dashboardassurancemaladie.admin.ch/primes.html",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public data",
+    "notes": "Subsides / réductions individuelles des primes LAMal."
+  },
+  {
+    "id": "ocstat_geneva_social_assistance",
+    "title": "OCSTAT - Aide sociale économique à Genève",
+    "publisher": "Office cantonal de la statistique Genève / Hospice général",
+    "url": "https://statistique.ge.ch/domaines/13/13_03/",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Dépenses nettes d’aide sociale économique / Hospice général, à distinguer des subsides LAMal."
+  },
+  {
+    "id": "bfs_fibs_social_assistance_ch",
+    "title": "OFS FIBS - Dépenses nettes d’aide sociale économique, Suisse",
+    "publisher": "Office fédéral de la statistique",
+    "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/securite-sociale/aide-sociale/depenses-prestations-sociales-sous-condition-ressources.html",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Proxy national utilisé pour afficher la croissance cumulée quand l’export cantonal Genève n’est pas encore disponible."
+  },
+  {
+    "id": "bfs_fibs_social_assistance_ge",
+    "title": "OFS FIBS - Dépenses nettes d’aide sociale économique, Genève",
+    "publisher": "Office fédéral de la statistique",
+    "url": "https://www.aidesocialeasl.bfs.admin.ch/",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Export cantonal Genève attendu pour remplacer le proxy national dans la courbe aide sociale."
+  },
+  {
+    "id": "ofsp_dashboard_health_insurance",
+    "title": "OFSP - Dashboard assurance-maladie AOS",
+    "publisher": "Office fédéral de la santé publique",
+    "url": "https://opendata.swiss/fr/dataset/dashboard-krankenversicherung-okp",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public data",
+    "notes": "Primes moyennes mensuelles et prestations brutes par assuré, avec séries par canton."
+  },
+  {
+    "id": "ocstat_geneva_health_system",
+    "title": "OCSTAT - Système de santé à Genève",
+    "publisher": "Office cantonal de la statistique Genève",
+    "url": "https://statistique.ge.ch/domaines/14/14_02/tableaux.asp",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Lits dans les hôpitaux et cliniques, médecins autorisés à pratiquer."
+  },
+  {
+    "id": "bfs_ocstat_geneva_gdp",
+    "title": "PIB cantonal du canton de Genève",
+    "publisher": "OFS / OCSTAT Genève",
+    "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/economie-nationale/comptes-nationaux/produit-interieur-brut-canton.html",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Produit intérieur brut cantonal total et par habitant, utilisé comme proxy économie."
+  },
+  {
+    "id": "ge_education_annuary",
+    "title": "Annuaire statistique de l’enseignement public et privé à Genève",
+    "publisher": "État de Genève / SRED / OCSTAT",
+    "url": "https://www.ge.ch/annuaire-statistique-enseignement-public-prive-geneve",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public statistics",
+    "notes": "Effectifs élèves, classes scolaires, enseignants et séries chronologiques."
+  },
+  {
+    "id": "tpg_annual_reports_finance",
+    "title": "TPG - Rapports annuels, états financiers et tarifs unireso",
+    "publisher": "Transports publics genevois / État de Genève",
+    "url": "https://www.tpg.ch/fr/nous-connaitre/publications/rapports-annuels",
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "official public reports",
+    "notes": "Fréquentation, revenus de transport, indemnités/subventions d’exploitation et prix proxy de l’abonnement annuel adulte."
+  }
+]

@@ -1,0 +1,11 @@
+key,value,unit,source,confidence,comment
+avg_household_size,2.1,persons_per_household,OCSTAT/OFS,medium,A remplacer par valeur Genève exacte
+students_share_population,0.12,ratio,OCSTAT/OFS,low,Part approximative à remplacer par population par âge
+students_per_class,21,students_per_class,policy_assumption,medium,Hypothèse pédagogique
+doctors_per_1000_target,4.5,doctors_per_1000,policy_assumption,low,A calibrer avec données Genève
+hospital_beds_per_1000_target,3,beds_per_1000,policy_assumption,low,A calibrer
+daily_trips_per_person,3,trips_per_day,transport_assumption,low,A calibrer avec enquête mobilité
+water_liters_per_person_day,150,liter_per_day,environment_assumption,low,A sourcer
+waste_kg_per_person_year,350,kg_per_year,environment_assumption,low,A sourcer
+electricity_kwh_per_person_year,6500,kwh_per_year,energy_assumption,low,A sourcer
+geneva_growth_share,0.058,ratio,model_assumption,medium,Part de Genève dans la population suisse utilisée pour traduire le scénario national

@@ -1,0 +1,146 @@
+[
+  {
+    "year": "2008",
+    "gdp_million_chf": "47597.2914",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2009",
+    "gdp_million_chf": "46480.21062",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2010",
+    "gdp_million_chf": "48388.04695",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2011",
+    "gdp_million_chf": "48535.59144",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2012",
+    "gdp_million_chf": "49396.84318",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2013",
+    "gdp_million_chf": "50196.61483",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2014",
+    "gdp_million_chf": "50311.47867",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2015",
+    "gdp_million_chf": "50042.25798",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2016",
+    "gdp_million_chf": "50364.83604",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2017",
+    "gdp_million_chf": "51443.49671",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2018",
+    "gdp_million_chf": "53899.99455",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2019",
+    "gdp_million_chf": "54591.22122",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2020",
+    "gdp_million_chf": "52015.88663",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2021",
+    "gdp_million_chf": "56228.85977",
+    "gdp_per_capita_chf": "",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "PIB cantonal Genève, fichier manuel Excel."
+  },
+  {
+    "year": "2023",
+    "gdp_million_chf": "62216",
+    "gdp_per_capita_chf": "119817",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "OCSTAT Mémento statistique du canton de Genève 2025, PIB 2023 provisoire."
+  },
+  {
+    "year": "2024",
+    "gdp_million_chf": "62877",
+    "gdp_per_capita_chf": "119152",
+    "jobs": "",
+    "data_type": "official",
+    "source_id": "bfs_ocstat_geneva_gdp",
+    "source_note": "OCSTAT Mémento statistique du canton de Genève 2025, PIB 2024 provisoire."
+  }
+]

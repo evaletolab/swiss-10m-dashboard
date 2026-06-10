@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ge_education_manual_source_missing",
+    "dataset": "ge_education",
+    "missingFields": [
+      "school_classes"
+    ],
+    "reason": "Comparer la croissance démographique avec la pression scolaire et les classes scolaires.",
+    "preferredSource": "Annuaire statistique de l’enseignement public et privé à Genève / SRED / OCSTAT",
+    "sourceUrl": "https://www.ge.ch/annuaire-statistique-enseignement-public-prive-geneve",
+    "acceptedFormats": [
+      "CSV",
+      "XLS",
+      "XLSX",
+      "PDF"
+    ],
+    "destinationPath": "data/raw/ocstat/manual/ge_education.csv ou data/raw/ocstat/manual/ge_education.xlsx",
+    "instructions": "Déposer si disponible une série annuelle avec le nombre de classes scolaires à Genève. Les effectifs élèves, enseignants ETP et taille moyenne de classe sont déjà couverts par SRED/OFS."
+  },
+  {
+    "id": "ge_public_transport_fare_missing",
+    "dataset": "ge_public_transport_finance",
+    "missingFields": [
+      "adult_annual_subscription_chf"
+    ],
+    "reason": "Comparer le prix usager des transports publics avec les subventions et la croissance démographique.",
+    "preferredSource": "Tarifs unireso / TPG, lois tarifaires et archives Grand Conseil",
+    "sourceUrl": "https://www.tpg.ch/fr/tarifs-titres-de-transport",
+    "acceptedFormats": [
+      "CSV",
+      "XLS",
+      "XLSX",
+      "PDF"
+    ],
+    "destinationPath": "data/raw/tpg/manual/ge_public_transport_finance.csv ou data/raw/tpg/manual/ge_public_transport_finance.xlsx",
+    "instructions": "Compléter la série avec le prix de l’abonnement annuel adulte Tout Genève/zone 10 par année."
+  },
+  {
+    "id": "ge_social_assistance_spending_missing",
+    "dataset": "ge_social_spending",
+    "missingFields": [
+      "year",
+      "social_assistance_million_chf"
+    ],
+    "reason": "Comparer la croissance des dépenses nettes d’aide sociale avec la démographie et le PIB.",
+    "preferredSource": "OCSTAT domaine 13 Sécurité sociale, prestations sociales sous condition de ressources / aide sociale, ou Comptes de l’État de Genève Tome 2 Cohésion sociale",
+    "sourceUrl": "https://statistique.ge.ch/domaines/13/13_03/",
+    "acceptedFormats": [
+      "CSV",
+      "XLS",
+      "XLSX",
+      "PDF"
+    ],
+    "destinationPath": "data/raw/ocstat/manual/ge_social_spending.csv",
+    "instructions": "Déposer une série annuelle avec les dépenses nettes d’aide sociale économique / Hospice général en millions CHF. Ne pas inclure les subsides LAMal afin d’éviter un double comptage."
+  }
+]

@@ -1,0 +1,27 @@
+year,housing_stock,new_housing_units,vacancy_rate,avg_household_size,new_residents_per_new_housing_unit,housing_absorption_ratio,data_type,source_id,source_note
+2000,,,0.0084,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2001,,,0.0038,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2002,,,0.0024,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2003,,,0.0017,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2004,,,0.0015,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2005,,,0.0019,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2006,,,0.0015,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2007,,,0.0019,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2008,,,0.002,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2009,,,0.0022,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2010,,,0.0023,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2011,,,0.0025,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2012,,,0.0033,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2013,223548,,0.0036,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2014,225213,1665,0.0039,2.1,3.8,0.263,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2015,227201,1988,0.0041,2.1,4,0.25,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2016,229345,2144,0.0046,2.1,3.43,0.2917,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2017,231573,2228,0.0051,2.1,2.15,0.4653,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2018,234502,2929,0.0053,2.1,1.95,0.5116,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2019,236791,2289,0.0054,2.1,1.85,0.541,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2020,238935,2144,0.0049,2.1,2.17,0.4613,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2021,242607,3672,0.0052,2.1,0.6,1.6578,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2022,245966,3359,0.0038,2.1,0.92,1.0818,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2023,249770,3804,0.0042,2.1,1.23,0.8153,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2024,251810,2040,0.0046,2.1,5.05,0.1981,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.
+2025,254829,3019,0.0034,2.1,,,official,ocstat_geneva_housing,OCSTAT tableaux T 09.02.1.1.03 T et T 09.02.2.2.01; gain annuel dérivé du stock de logements si le tableau de gain total est absent.

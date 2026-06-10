@@ -1,0 +1,180 @@
+year,scenario,population,annual_growth,total_growth_since_base_year,notes
+1981,observed,349562,,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1982,observed,352461,2899,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1983,observed,355806,3345,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1984,observed,357752,1946,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1985,observed,360462,2710,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1986,observed,362157,1695,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1987,observed,363550,1393,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1988,observed,365525,1975,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1989,observed,371356,5831,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1990,observed,373019,1663,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1991,observed,378655,5636,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1992,observed,381404,2749,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1993,observed,383911,2507,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1994,observed,387606,3695,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1995,observed,391699,4093,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1996,observed,395466,3767,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1997,observed,394588,-878,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1998,observed,396659,2071,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+1999,observed,398910,2251,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2000,observed,403067,4157,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2001,observed,408146,5079,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2002,observed,413618,5472,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2003,observed,418747,5129,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2004,observed,423993,5246,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2005,observed,427396,3403,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2006,observed,430638,3242,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2007,observed,433235,2597,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2008,observed,438177,4942,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2009,observed,446106,7929,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2010,observed,453292,7186,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2011,observed,457715,4423,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2012,observed,460534,2819,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2013,observed,463101,2567,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2014,observed,469433,6332,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2015,observed,477385,7952,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2016,observed,484736,7351,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2017,observed,489524,4788,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2018,observed,495249,5725,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2019,observed,499480,4231,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2020,observed,504128,4648,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2021,observed,506343,2215,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2022,observed,509448,3105,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2023,observed,514114,4666,,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2024,observed,524410,10296,0,"OFS STATPOP / PX-Web, bilan démographique institutionnel filtré sur Genève. Population issue de l'effectif disponible dans l'export OFS; variation et migration nette dérivées si absentes."
+2024,linear_trend_2000_base_year,524410,,0,Extrapolation linéaire de la tendance 2000-2024
+2025,linear_trend_2000_base_year,529466,5056,5056,Extrapolation linéaire de la tendance 2000-2024
+2026,linear_trend_2000_base_year,534522,5056,10112,Extrapolation linéaire de la tendance 2000-2024
+2027,linear_trend_2000_base_year,539578,5056,15168,Extrapolation linéaire de la tendance 2000-2024
+2028,linear_trend_2000_base_year,544634,5056,20224,Extrapolation linéaire de la tendance 2000-2024
+2029,linear_trend_2000_base_year,549690,5056,25280,Extrapolation linéaire de la tendance 2000-2024
+2030,linear_trend_2000_base_year,554746,5056,30336,Extrapolation linéaire de la tendance 2000-2024
+2031,linear_trend_2000_base_year,559802,5056,35392,Extrapolation linéaire de la tendance 2000-2024
+2032,linear_trend_2000_base_year,564858,5056,40448,Extrapolation linéaire de la tendance 2000-2024
+2033,linear_trend_2000_base_year,569914,5056,45504,Extrapolation linéaire de la tendance 2000-2024
+2034,linear_trend_2000_base_year,574970,5056,50560,Extrapolation linéaire de la tendance 2000-2024
+2035,linear_trend_2000_base_year,580026,5056,55616,Extrapolation linéaire de la tendance 2000-2024
+2036,linear_trend_2000_base_year,585082,5056,60672,Extrapolation linéaire de la tendance 2000-2024
+2037,linear_trend_2000_base_year,590137,5056,65727,Extrapolation linéaire de la tendance 2000-2024
+2038,linear_trend_2000_base_year,595193,5056,70783,Extrapolation linéaire de la tendance 2000-2024
+2039,linear_trend_2000_base_year,600249,5056,75839,Extrapolation linéaire de la tendance 2000-2024
+2040,linear_trend_2000_base_year,605305,5056,80895,Extrapolation linéaire de la tendance 2000-2024
+2041,linear_trend_2000_base_year,610361,5056,85951,Extrapolation linéaire de la tendance 2000-2024
+2042,linear_trend_2000_base_year,615417,5056,91007,Extrapolation linéaire de la tendance 2000-2024
+2043,linear_trend_2000_base_year,620473,5056,96063,Extrapolation linéaire de la tendance 2000-2024
+2044,linear_trend_2000_base_year,625529,5056,101119,Extrapolation linéaire de la tendance 2000-2024
+2045,linear_trend_2000_base_year,630585,5056,106175,Extrapolation linéaire de la tendance 2000-2024
+2046,linear_trend_2000_base_year,635641,5056,111231,Extrapolation linéaire de la tendance 2000-2024
+2047,linear_trend_2000_base_year,640697,5056,116287,Extrapolation linéaire de la tendance 2000-2024
+2048,linear_trend_2000_base_year,645753,5056,121343,Extrapolation linéaire de la tendance 2000-2024
+2049,linear_trend_2000_base_year,650809,5056,126399,Extrapolation linéaire de la tendance 2000-2024
+2050,linear_trend_2000_base_year,655865,5056,131455,Extrapolation linéaire de la tendance 2000-2024
+2024,cagr_trend_2000_base_year,524410,,0,Extrapolation CAGR 2000-2024
+2025,cagr_trend_2000_base_year,530192,5782,5782,Extrapolation CAGR 2000-2024
+2026,cagr_trend_2000_base_year,536038,5846,11628,Extrapolation CAGR 2000-2024
+2027,cagr_trend_2000_base_year,541948,5910,17538,Extrapolation CAGR 2000-2024
+2028,cagr_trend_2000_base_year,547923,5975,23513,Extrapolation CAGR 2000-2024
+2029,cagr_trend_2000_base_year,553965,6041,29555,Extrapolation CAGR 2000-2024
+2030,cagr_trend_2000_base_year,560073,6108,35663,Extrapolation CAGR 2000-2024
+2031,cagr_trend_2000_base_year,566248,6175,41838,Extrapolation CAGR 2000-2024
+2032,cagr_trend_2000_base_year,572491,6243,48081,Extrapolation CAGR 2000-2024
+2033,cagr_trend_2000_base_year,578803,6312,54393,Extrapolation CAGR 2000-2024
+2034,cagr_trend_2000_base_year,585185,6382,60775,Extrapolation CAGR 2000-2024
+2035,cagr_trend_2000_base_year,591637,6452,67227,Extrapolation CAGR 2000-2024
+2036,cagr_trend_2000_base_year,598161,6523,73751,Extrapolation CAGR 2000-2024
+2037,cagr_trend_2000_base_year,604756,6595,80346,Extrapolation CAGR 2000-2024
+2038,cagr_trend_2000_base_year,611424,6668,87014,Extrapolation CAGR 2000-2024
+2039,cagr_trend_2000_base_year,618165,6741,93755,Extrapolation CAGR 2000-2024
+2040,cagr_trend_2000_base_year,624981,6816,100571,Extrapolation CAGR 2000-2024
+2041,cagr_trend_2000_base_year,631872,6891,107462,Extrapolation CAGR 2000-2024
+2042,cagr_trend_2000_base_year,638839,6967,114429,Extrapolation CAGR 2000-2024
+2043,cagr_trend_2000_base_year,645882,7044,121472,Extrapolation CAGR 2000-2024
+2044,cagr_trend_2000_base_year,653004,7121,128594,Extrapolation CAGR 2000-2024
+2045,cagr_trend_2000_base_year,660204,7200,135794,Extrapolation CAGR 2000-2024
+2046,cagr_trend_2000_base_year,667483,7279,143073,Extrapolation CAGR 2000-2024
+2047,cagr_trend_2000_base_year,674843,7360,150433,Extrapolation CAGR 2000-2024
+2048,cagr_trend_2000_base_year,682283,7441,157873,Extrapolation CAGR 2000-2024
+2049,cagr_trend_2000_base_year,689806,7523,165396,Extrapolation CAGR 2000-2024
+2050,cagr_trend_2000_base_year,697412,7606,173002,Extrapolation CAGR 2000-2024
+2024,recent_trend_2015_base_year,524410,,0,Extrapolation linéaire récente 2015-2024
+2025,recent_trend_2015_base_year,529635,5225,5225,Extrapolation linéaire récente 2015-2024
+2026,recent_trend_2015_base_year,534860,5225,10450,Extrapolation linéaire récente 2015-2024
+2027,recent_trend_2015_base_year,540085,5225,15675,Extrapolation linéaire récente 2015-2024
+2028,recent_trend_2015_base_year,545310,5225,20900,Extrapolation linéaire récente 2015-2024
+2029,recent_trend_2015_base_year,550535,5225,26125,Extrapolation linéaire récente 2015-2024
+2030,recent_trend_2015_base_year,555760,5225,31350,Extrapolation linéaire récente 2015-2024
+2031,recent_trend_2015_base_year,560985,5225,36575,Extrapolation linéaire récente 2015-2024
+2032,recent_trend_2015_base_year,566210,5225,41800,Extrapolation linéaire récente 2015-2024
+2033,recent_trend_2015_base_year,571435,5225,47025,Extrapolation linéaire récente 2015-2024
+2034,recent_trend_2015_base_year,576660,5225,52250,Extrapolation linéaire récente 2015-2024
+2035,recent_trend_2015_base_year,581885,5225,57475,Extrapolation linéaire récente 2015-2024
+2036,recent_trend_2015_base_year,587110,5225,62700,Extrapolation linéaire récente 2015-2024
+2037,recent_trend_2015_base_year,592335,5225,67925,Extrapolation linéaire récente 2015-2024
+2038,recent_trend_2015_base_year,597560,5225,73150,Extrapolation linéaire récente 2015-2024
+2039,recent_trend_2015_base_year,602785,5225,78375,Extrapolation linéaire récente 2015-2024
+2040,recent_trend_2015_base_year,608010,5225,83600,Extrapolation linéaire récente 2015-2024
+2041,recent_trend_2015_base_year,613235,5225,88825,Extrapolation linéaire récente 2015-2024
+2042,recent_trend_2015_base_year,618460,5225,94050,Extrapolation linéaire récente 2015-2024
+2043,recent_trend_2015_base_year,623685,5225,99275,Extrapolation linéaire récente 2015-2024
+2044,recent_trend_2015_base_year,628910,5225,104500,Extrapolation linéaire récente 2015-2024
+2045,recent_trend_2015_base_year,634135,5225,109725,Extrapolation linéaire récente 2015-2024
+2046,recent_trend_2015_base_year,639360,5225,114950,Extrapolation linéaire récente 2015-2024
+2047,recent_trend_2015_base_year,644585,5225,120175,Extrapolation linéaire récente 2015-2024
+2048,recent_trend_2015_base_year,649810,5225,125400,Extrapolation linéaire récente 2015-2024
+2049,recent_trend_2015_base_year,655035,5225,130625,Extrapolation linéaire récente 2015-2024
+2050,recent_trend_2015_base_year,660260,5225,135850,Extrapolation linéaire récente 2015-2024
+2024,initiative_linear,524410,,0,Trajectoire linéaire compatible avec le scénario initiative
+2025,initiative_linear,526641,2231,2231,Trajectoire linéaire compatible avec le scénario initiative
+2026,initiative_linear,528872,2231,4462,Trajectoire linéaire compatible avec le scénario initiative
+2027,initiative_linear,531102,2231,6692,Trajectoire linéaire compatible avec le scénario initiative
+2028,initiative_linear,533333,2231,8923,Trajectoire linéaire compatible avec le scénario initiative
+2029,initiative_linear,535564,2231,11154,Trajectoire linéaire compatible avec le scénario initiative
+2030,initiative_linear,537795,2231,13385,Trajectoire linéaire compatible avec le scénario initiative
+2031,initiative_linear,540025,2231,15615,Trajectoire linéaire compatible avec le scénario initiative
+2032,initiative_linear,542256,2231,17846,Trajectoire linéaire compatible avec le scénario initiative
+2033,initiative_linear,544487,2231,20077,Trajectoire linéaire compatible avec le scénario initiative
+2034,initiative_linear,546718,2231,22308,Trajectoire linéaire compatible avec le scénario initiative
+2035,initiative_linear,548948,2231,24538,Trajectoire linéaire compatible avec le scénario initiative
+2036,initiative_linear,551179,2231,26769,Trajectoire linéaire compatible avec le scénario initiative
+2037,initiative_linear,553410,2231,29000,Trajectoire linéaire compatible avec le scénario initiative
+2038,initiative_linear,555641,2231,31231,Trajectoire linéaire compatible avec le scénario initiative
+2039,initiative_linear,557872,2231,33462,Trajectoire linéaire compatible avec le scénario initiative
+2040,initiative_linear,560102,2231,35692,Trajectoire linéaire compatible avec le scénario initiative
+2041,initiative_linear,562333,2231,37923,Trajectoire linéaire compatible avec le scénario initiative
+2042,initiative_linear,564564,2231,40154,Trajectoire linéaire compatible avec le scénario initiative
+2043,initiative_linear,566795,2231,42385,Trajectoire linéaire compatible avec le scénario initiative
+2044,initiative_linear,569025,2231,44615,Trajectoire linéaire compatible avec le scénario initiative
+2045,initiative_linear,571256,2231,46846,Trajectoire linéaire compatible avec le scénario initiative
+2046,initiative_linear,573487,2231,49077,Trajectoire linéaire compatible avec le scénario initiative
+2047,initiative_linear,575718,2231,51308,Trajectoire linéaire compatible avec le scénario initiative
+2048,initiative_linear,577948,2231,53538,Trajectoire linéaire compatible avec le scénario initiative
+2049,initiative_linear,580179,2231,55769,Trajectoire linéaire compatible avec le scénario initiative
+2050,initiative_linear,582410,2231,58000,Trajectoire linéaire compatible avec le scénario initiative
+2024,initiative_cagr,524410,,0,Trajectoire CAGR compatible avec le scénario initiative
+2025,initiative_cagr,526530,2120,2120,Trajectoire CAGR compatible avec le scénario initiative
+2026,initiative_cagr,528659,2129,4249,Trajectoire CAGR compatible avec le scénario initiative
+2027,initiative_cagr,530796,2137,6386,Trajectoire CAGR compatible avec le scénario initiative
+2028,initiative_cagr,532942,2146,8532,Trajectoire CAGR compatible avec le scénario initiative
+2029,initiative_cagr,535096,2155,10686,Trajectoire CAGR compatible avec le scénario initiative
+2030,initiative_cagr,537260,2163,12850,Trajectoire CAGR compatible avec le scénario initiative
+2031,initiative_cagr,539432,2172,15022,Trajectoire CAGR compatible avec le scénario initiative
+2032,initiative_cagr,541613,2181,17203,Trajectoire CAGR compatible avec le scénario initiative
+2033,initiative_cagr,543802,2190,19392,Trajectoire CAGR compatible avec le scénario initiative
+2034,initiative_cagr,546001,2198,21591,Trajectoire CAGR compatible avec le scénario initiative
+2035,initiative_cagr,548208,2207,23798,Trajectoire CAGR compatible avec le scénario initiative
+2036,initiative_cagr,550424,2216,26014,Trajectoire CAGR compatible avec le scénario initiative
+2037,initiative_cagr,552650,2225,28240,Trajectoire CAGR compatible avec le scénario initiative
+2038,initiative_cagr,554884,2234,30474,Trajectoire CAGR compatible avec le scénario initiative
+2039,initiative_cagr,557127,2243,32717,Trajectoire CAGR compatible avec le scénario initiative
+2040,initiative_cagr,559380,2252,34970,Trajectoire CAGR compatible avec le scénario initiative
+2041,initiative_cagr,561641,2261,37231,Trajectoire CAGR compatible avec le scénario initiative
+2042,initiative_cagr,563912,2271,39502,Trajectoire CAGR compatible avec le scénario initiative
+2043,initiative_cagr,566191,2280,41781,Trajectoire CAGR compatible avec le scénario initiative
+2044,initiative_cagr,568480,2289,44070,Trajectoire CAGR compatible avec le scénario initiative
+2045,initiative_cagr,570779,2298,46369,Trajectoire CAGR compatible avec le scénario initiative
+2046,initiative_cagr,573086,2308,48676,Trajectoire CAGR compatible avec le scénario initiative
+2047,initiative_cagr,575403,2317,50993,Trajectoire CAGR compatible avec le scénario initiative
+2048,initiative_cagr,577729,2326,53319,Trajectoire CAGR compatible avec le scénario initiative
+2049,initiative_cagr,580065,2336,55655,Trajectoire CAGR compatible avec le scénario initiative
+2050,initiative_cagr,582410,2345,58000,Trajectoire CAGR compatible avec le scénario initiative

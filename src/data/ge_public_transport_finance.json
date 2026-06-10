@@ -1,0 +1,189 @@
+[
+  {
+    "year": "2009",
+    "transport_revenue_million_chf": "",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "",
+    "operating_expenses_million_chf": "330.41",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2010.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2010",
+    "transport_revenue_million_chf": "127.9",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "183.54",
+    "operating_expenses_million_chf": "354.89",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2011.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2011",
+    "transport_revenue_million_chf": "135.23",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "203.42",
+    "operating_expenses_million_chf": "369.92",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2012.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2012",
+    "transport_revenue_million_chf": "144.33",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "222.05",
+    "operating_expenses_million_chf": "399.83",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2013.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2013",
+    "transport_revenue_million_chf": "152.13",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "204.69",
+    "operating_expenses_million_chf": "388.5",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2014.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2014",
+    "transport_revenue_million_chf": "153.68",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "207.28",
+    "operating_expenses_million_chf": "382.22",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2015.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2015",
+    "transport_revenue_million_chf": "142.59",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "221.62",
+    "operating_expenses_million_chf": "414.5",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2016.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2016",
+    "transport_revenue_million_chf": "145.3",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "223.75",
+    "operating_expenses_million_chf": "415.31",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2017.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2017",
+    "transport_revenue_million_chf": "146.09",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "236.41",
+    "operating_expenses_million_chf": "428.97",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2018.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2018",
+    "transport_revenue_million_chf": "150.72",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "240.45",
+    "operating_expenses_million_chf": "440.12",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2019.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2019",
+    "transport_revenue_million_chf": "153.75",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "211.41",
+    "operating_expenses_million_chf": "460.23",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2020.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2020",
+    "transport_revenue_million_chf": "115.85",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "251.42",
+    "operating_expenses_million_chf": "472.54",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2021.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2021",
+    "transport_revenue_million_chf": "121.8",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "266.12",
+    "operating_expenses_million_chf": "493.49",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2022.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2022",
+    "transport_revenue_million_chf": "142.79",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "268.7",
+    "operating_expenses_million_chf": "504.32",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2023.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2023",
+    "transport_revenue_million_chf": "152.79",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "273.98",
+    "operating_expenses_million_chf": "523.43",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2024.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2024",
+    "transport_revenue_million_chf": "156.55",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "283.37",
+    "operating_expenses_million_chf": "551.98",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2025.pdf, extraction automatique des lignes financières."
+  },
+  {
+    "year": "2025",
+    "transport_revenue_million_chf": "167.38",
+    "subscriptions_revenue_million_chf": "",
+    "operating_subsidy_million_chf": "312.68",
+    "operating_expenses_million_chf": "598",
+    "adult_annual_subscription_chf": "",
+    "data_type": "official",
+    "source_id": "tpg_annual_reports_finance",
+    "source_note": "TPG PDF tpg_rapport_2025.pdf, extraction automatique des lignes financières."
+  }
+]
