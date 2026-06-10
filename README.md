@@ -73,6 +73,29 @@ Notes importantes:
 - `health_premium_subsidy_cantonal` contient une rupture 2020 documentée par la réforme genevoise des subsides. La projection utilise un lissage linéaire 10 ans au lieu d’un CAGR brut.
 - Les références des charts thématiques sont toujours `population` et `gdp`: population en ligne forte, PIB en pointillé.
 
+## Liens Sources Pour Reprise
+
+Ces liens permettent de retrouver ou reconstruire les données utilisées:
+
+- OFS STATPOP, bilan démographique: https://opendata.swiss/fr/dataset/demografische-bilanz-nach-institutionellen-gliederungen2
+- OCSTAT population Genève: https://statistique.ge.ch/graphiques/affichage.asp?filtreGraph=01_01
+- OCSTAT construction et logement: https://statistique.ge.ch/domaines/09/09_02/
+- OCSTAT logements subventionnés: https://statistique.ge.ch/domaines/09/09_02/tableaux.asp
+- OCSTAT transports publics et véhicules: https://statistique.ge.ch/domaines/11/11_02/tableaux.asp
+- OCSTAT frontaliers: https://statistique.ge.ch/domaines/03/03_05/tableaux.asp
+- OCSTAT système de santé: https://statistique.ge.ch/domaines/14/14_02/tableaux.asp
+- OCSTAT / Hospice général, aide sociale économique: https://statistique.ge.ch/domaines/13/13_03/
+- OCSTAT indice genevois des prix: https://statistique.ge.ch/graphiques/affichage.asp?dom=1&filtreGraph=05_02
+- OFSP primes LAMal: https://opendata.swiss/fr/dataset/health-insurance-premiums
+- OFSP dashboard assurance-maladie AOS: https://opendata.swiss/fr/dataset/dashboard-krankenversicherung-okp
+- OFSP dashboard primes et réduction des primes: https://dashboardassurancemaladie.admin.ch/primes.html
+- OFS FIBS aide sociale Suisse: https://www.bfs.admin.ch/bfs/fr/home/statistiques/securite-sociale/aide-sociale/depenses-prestations-sociales-sous-condition-ressources.html
+- OFS FIBS aide sociale cantonale: https://www.aidesocialeasl.bfs.admin.ch/
+- PIB cantonal OFS: https://www.bfs.admin.ch/bfs/fr/home/statistiques/economie-nationale/comptes-nationaux/produit-interieur-brut-canton.html
+- Annuaire statistique enseignement Genève: https://www.ge.ch/annuaire-statistique-enseignement-public-prive-geneve
+- Rapports annuels TPG: https://www.tpg.ch/fr/nous-connaitre/publications/rapports-annuels
+- RTS, réforme genevoise des subsides maladie 2020: https://www.rts.ch/info/regions/geneve/10883302-le-nombre-de-beneficiaires-des-subsides-maladie-va-doubler-a-geneve.html
+
 ## Hypothèse V1: Tension D'absorption Et Coûts
 
 La référence détaillée est documentée dans [`METHODOLOGIE.md`](./METHODOLOGIE.md).
@@ -130,6 +153,10 @@ Les demandes ouvertes sont générées dans `data/generated/download_requests.md
 ## Contraintes Éditoriales
 
 Le site ne conclut pas automatiquement pour ou contre l'initiative. Il montre la pente démographique, les capacités d'absorption et les hypothèses utilisées. Quand une donnée manque, l'interface affiche `donnée manquante`; quand une valeur est une hypothèse, elle est visible avec source, confiance et commentaire.
+
+## Licence
+
+Code publié sous licence MIT. Voir [`LICENSE`](./LICENSE).
 
 ## Sources Et Demandes
 

@@ -175,3 +175,7 @@ Cette règle reste simple, transparente et améliorable.
 - Les constantes doivent être remplacées par de meilleures données locales si disponibles.
 - Les coûts 2050 restent des projections: la tension ne remplace pas un modèle budgétaire complet.
 - Les résultats doivent être lus comme des ordres de grandeur, pas comme des montants définitifs.
+
+## TODO méthodologique
+
+- Ajouter une courbe théorique idéale d'absorption. Piste V1: capacité idéale = croissance démographique + marge d'absorption. Cette marge ne doit pas être présentée comme une convention établie tant qu'elle n'est pas calibrée sur une source ou une règle publique. Les valeurs de type `10%`, `15%` ou `20%` sont des hypothèses de travail à tester, pas des normes.
