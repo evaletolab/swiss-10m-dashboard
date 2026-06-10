@@ -5,7 +5,7 @@ import type { GrowthComparisonRow, ScenarioName } from '../lib/types'
 const primaryMetrics = new Set([
   'population',
   'annual_growth',
-  'annual_growth_rate',
+  'population_growth_cumulative',
   'gdp',
   'housing_stock',
   'subsidized_housing',
@@ -73,7 +73,7 @@ export function ComparisonGrid({ baseYear, targetYear, scenario, rows }: Props) 
       <div className="mb-5 max-w-3xl">
         <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Lecture centrale: trajectoire et besoins</h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
-          Valeurs brutes par domaine: 2010 observé, base observée {baseYear}, puis estimation {targetYear} selon {scenarioLabel}. Les cellules manquantes restent visibles.
+          Valeurs brutes et taux cumulés par domaine: 2010 observé, base observée {baseYear}, puis estimation {targetYear} selon {scenarioLabel}. Les cellules manquantes restent visibles.
           <br />
           <strong className="text-slate-900">Estimation {targetYear} selon {scenarioLabel}: tension pondérée annualisée de {annualWeightedGrowthLabel}, soit {weightedGrowthLabel} cumulés.</strong>
         </p>

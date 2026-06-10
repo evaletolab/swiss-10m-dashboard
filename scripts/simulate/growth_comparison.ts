@@ -136,6 +136,43 @@ function addMetric(rows: CsvRow[], input: {
   })
 }
 
+function addCumulativePercentMetric(rows: CsvRow[], input: {
+  scenario: string
+  scenarioLabel: string
+  domain: string
+  metric: string
+  label: string
+  valueBase: number | null
+  value2050: number | null
+  dataTypeBase?: string
+  dataType2050?: string
+  sourceId: string
+  note: string
+}) {
+  rows.push({
+    scenario: input.scenario,
+    scenario_label: input.scenarioLabel,
+    domain: input.domain,
+    metric: input.metric,
+    label: input.label,
+    unit: '%',
+    year_2010: START_YEAR,
+    base_year: null,
+    target_year: TARGET_YEAR,
+    value_2010: 0,
+    value_base: input.valueBase,
+    value_2050: input.value2050,
+    growth_2010_to_base_pct: input.valueBase,
+    growth_2010_to_2050_pct: input.value2050,
+    growth_base_to_2050_pct: input.valueBase === null || input.value2050 === null ? null : Number((input.value2050 - input.valueBase).toFixed(2)),
+    data_type_2010: 'observed',
+    data_type_base: input.dataTypeBase ?? (input.valueBase === null ? 'missing' : 'observed'),
+    data_type_2050: input.dataType2050 ?? (input.value2050 === null ? 'missing' : 'estimated'),
+    source_id: input.sourceId,
+    note: input.note,
+  })
+}
+
 function addPressureMetric(rows: CsvRow[], input: {
   scenario: string
   scenarioLabel: string
@@ -185,8 +222,6 @@ export async function buildGrowthComparison() {
   const demographyBase = rowForYear(geDemography, baseYear)
   const population2010 = numberOrNull(demography2010?.population)
   const populationBase = numberOrNull(demographyBase?.population)
-  const population2009 = numberOrNull(rowForYear(geDemography, START_YEAR - 1)?.population)
-  const populationPreviousBase = numberOrNull(rowForYear(geDemography, baseYear - 1)?.population)
   const avgHouseholdSize = assumptionValue(assumptions, 'avg_household_size')
   const studentsPerClassAssumption = assumptionValue(assumptions, 'students_per_class')
   const doctorsPer1000Target = assumptionValue(assumptions, 'doctors_per_1000_target')
@@ -229,18 +264,16 @@ export async function buildGrowthComparison() {
       note: 'Variation annuelle observée; 2050 correspond à la croissance annuelle du scénario.',
     })
 
-    addMetric(rows, {
+    addCumulativePercentMetric(rows, {
       scenario,
       scenarioLabel,
       domain: 'Démographie',
-      metric: 'annual_growth_rate',
-      label: 'Croissance relative annuelle',
-      unit: '%',
-      value2010: population2009 === null ? null : numberOrNull(demography2010?.total_growth) === null ? null : Number((numberOrNull(demography2010?.total_growth)! / population2009 * 100).toFixed(2)),
-      valueBase: populationPreviousBase === null ? null : numberOrNull(demographyBase?.total_growth) === null ? null : Number((numberOrNull(demographyBase?.total_growth)! / populationPreviousBase * 100).toFixed(2)),
-      value2050: population2050 === null ? null : numberOrNull(scenario2050?.annual_growth) === null ? null : Number((numberOrNull(scenario2050?.annual_growth)! / population2050 * 100).toFixed(2)),
+      metric: 'population_growth_cumulative',
+      label: 'Croissance cumulée population',
+      valueBase: cumulativeGrowth(populationBase, population2010),
+      value2050: cumulativeGrowth(population2050, population2010),
       sourceId: 'ocstat_geneva_population',
-      note: 'Croissance annuelle rapportée à la population de l’année précédente.',
+      note: 'Croissance réelle cumulée depuis 2010: 2010 = 0 %, base observée puis projection 2050 selon le scénario.',
     })
 
     const economy2010 = rowForYear(economy, START_YEAR)
