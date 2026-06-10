@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "pnpm data && vite build",
+    "build:gh-pages": "pnpm data && vite build --base=/swiss-10m-dashboard/ && touch dist/.nojekyll",
     "preview": "vite preview",
     "data": "pnpm download && pnpm normalize && pnpm simulate && pnpm export:web",
     "download": "tsx scripts/download/download_all.ts",

@@ -22,6 +22,7 @@ pnpm simulate
 pnpm export:web
 pnpm validate
 pnpm build
+pnpm build:gh-pages
 ```
 
 ## Architecture
@@ -56,7 +57,7 @@ Les métadonnées affichées par les cartes viennent de `data/generated/sources.
 | La Suisse ne remplace plus ses générations | Bilan démographique suisse, fécondité et remplacement | OFS STATPOP, fallback mock |
 | Suisse : réel, tendance et initiative | Scénarios suisse générés depuis la démographie normalisée | OFS STATPOP, fallback mock |
 | Genève : réel, tendance et initiative | Population observée Genève puis scénarios 2050 | OCSTAT population Genève, fallback mock |
-| Croissance cumulée normalisée | Population, PIB, logement, élèves, santé, TPG, aides santé | `data/generated/growth_comparison_ge.csv` |
+| Croissance cumulée normalisée | Population, PIB, logement, classes scolaires, santé, TPG, aides santé; charges 2050 ajustées par tension d'absorption | `data/generated/growth_comparison_ge.csv` |
 | Logement vs population et PIB | Stock de logements, population, PIB | OCSTAT construction/logement, OFS/OCSTAT PIB |
 | Écoles / élèves vs population et PIB | Élèves et étudiants, population, PIB | Annuaire statistique SRED/OCSTAT, OFS/OCSTAT PIB |
 | Santé vs population et PIB | Coût santé par assuré, population, PIB | OFSP dashboard AOS, OFS/OCSTAT PIB |
@@ -68,8 +69,35 @@ Notes importantes:
 
 - `housing_stock` a un point 2010 estimé par rétropolation linéaire si la série OCSTAT disponible commence après 2010. Le statut est `estimated`.
 - `social_assistance_spending` utilise actuellement `bfs_fibs_social_assistance_ch` comme proxy national. La demande cantonale Genève reste ouverte et doit remplacer ce proxy dès que disponible.
-- `school_classes` reste une donnée demandée, mais le chart Écoles utilise `students`, qui est alimenté.
+- `school_classes` est estimé depuis les élèves publics/subventionnés et la taille moyenne de classe; la donnée officielle directe reste demandée.
 - Les références des charts thématiques sont toujours `population` et `gdp`: population en ligne forte, PIB en pointillé.
+
+## Hypothèse V1: Tension D'absorption Et Coûts
+
+La référence détaillée est documentée dans [`METHODOLOGIE.md`](./METHODOLOGIE.md).
+
+La tension d'absorption est un indicateur interne destiné à rendre lisible l'écart entre croissance démographique et capacités matérielles. Elle n'est pas une statistique officielle, ni une prévision budgétaire. Son annualisation est une estimation de lecture, obtenue depuis des indices pondérés selon un choix méthodologique explicite.
+
+Formule V1:
+
+```txt
+tension = 35% logement + 20% écoles + 20% santé + 25% transports
+```
+
+Chaque composante mesure un effort relatif par rapport à une capacité de base disponible ou estimée:
+
+- logement: logements additionnels requis / stock de logements de base;
+- écoles: classes additionnelles requises / classes de base estimées;
+- santé: médecins additionnels requis / médecins théoriques de base;
+- transports: trajets publics additionnels requis / fréquentation quotidienne TPG de base.
+
+La tension affichée pour 2050 cumule l'effort historique 2010-base et l'effort additionnel du scénario 2050. Pour les courbes de charges, seule la tension additionnelle base-2050 est utilisée comme coefficient simple:
+
+```txt
+charge 2050 ajustée = projection tendance coût x (1 + tension additionnelle / 100)
+```
+
+Exemple de lecture: si la tension additionnelle vaut 14%, une charge projetée à 100 CHF devient environ 114 CHF. L'objectif est de matérialiser un ordre de grandeur, pas d'affirmer un coût comptable.
 
 ## Données Manuelles
 
@@ -117,5 +145,13 @@ pnpm validate
 pnpm lint
 pnpm build
 ```
+
+Pour produire le dossier statique compatible GitHub Pages du repository:
+
+```bash
+pnpm build:gh-pages
+```
+
+La commande génère `dist/` avec la base Vite `/swiss-10m-dashboard/` et ajoute `dist/.nojekyll`.
 
 Les warnings `Syntax Warning: Invalid Font Weight` pendant la normalisation viennent de l'extraction PDF et ne bloquent pas la génération.
