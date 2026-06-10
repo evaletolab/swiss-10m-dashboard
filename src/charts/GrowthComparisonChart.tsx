@@ -48,7 +48,8 @@ function selectedRows(rows: GrowthComparisonRow[], scenario: ScenarioName, domai
     : domain
       ? base.filter((row) => row.domain === domain && row.metric !== 'annual_growth' && row.metric !== 'annual_growth_rate')
       : base.filter((row) => overviewMetrics.includes(row.metric))
-  return [...new Map([...subjectRows, ...references].map((row) => [row.metric, row])).values()]
+  const orderedRows = metric ? [...references, ...subjectRows] : [...subjectRows, ...references]
+  return [...new Map(orderedRows.map((row) => [row.metric, row])).values()]
 }
 
 function lineName(row: GrowthComparisonRow, focusedMetric?: string) {
@@ -59,8 +60,8 @@ function lineName(row: GrowthComparisonRow, focusedMetric?: string) {
 }
 
 function lineStrokeWidth(row: GrowthComparisonRow, focusedMetric?: string) {
-  if (row.metric === 'population') return 4
-  if (focusedMetric === row.metric) return 3
+  if (focusedMetric === row.metric) return 4
+  if (row.metric === 'population') return 3
   if (row.metric === 'gdp') return 2.5
   return 2
 }
@@ -80,7 +81,7 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
     ? selectedRows(rows, compareToScenario, domain, metric, includeReferences).filter((row) => pressureAdjustedCostMetrics.has(row.metric))
     : []
   const first = metrics[0]
-  const legendHeight = toggleable ? 104 : 44
+  const legendHeight = toggleable ? 104 : 64
   const data = [
     {
       year: 2010,
