@@ -19,6 +19,7 @@ import scenariosChData from '../data/scenarios_ch.json'
 import scenariosGeData from '../data/scenarios_ge.json'
 import sourcesData from '../data/sources.json'
 import summaryData from '../data/summary.json'
+import { toNumber } from '../lib/format'
 import { TARGET_YEAR } from '../lib/series'
 import type { DemographyRow, GrowthComparisonRow, ScenarioName, ScenarioRow, Source } from '../lib/types'
 
@@ -33,6 +34,20 @@ type Summary = {
     generationReplacementRatio?: number | string | null
     twoGenerationBase?: number | string | null
   }
+}
+
+function annualizedMetricGrowth(rows: GrowthComparisonRow[], scenario: ScenarioName, metric: string) {
+  const row = rows.find((item) => item.scenario === scenario && item.metric === metric)
+  const totalGrowth = toNumber(row?.growth_2010_to_2050_pct)
+  const startYear = Number(row?.year_2010 ?? 2010)
+  const targetYear = Number(row?.target_year ?? TARGET_YEAR)
+  if (totalGrowth === null || targetYear <= startYear) return 'donnée manquante'
+  const annualGrowth = (Math.pow(1 + totalGrowth / 100, 1 / (targetYear - startYear)) - 1) * 100
+  return `${annualGrowth.toFixed(1)} %/an`
+}
+
+function costDescription(text: string, rows: GrowthComparisonRow[], scenario: ScenarioName, metric: string) {
+  return `${text} Croissance moyenne annualisée 2010-2050: ${annualizedMetricGrowth(rows, scenario, metric)}.`
 }
 
 function App() {
@@ -101,7 +116,7 @@ function App() {
       <AbsorptionPressureBlock rows={growthComparison} scenario={scenario} onScenarioChange={setScenario} />
 
       <section className="mt-8">
-        <ChartCard title="Croissance cumulée normalisée" description="Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible." sourceIds={['ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']}>
+        <ChartCard title="Croissance cumulée normalisée" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']}>
           <div className="mb-4 flex justify-end"><ScenarioSelector value={scenario} onChange={setScenario} /></div>
           <div className="h-[300px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} compareToScenario="linear_trend_2000_base_year" toggleable /></div>
         </ChartCard>
@@ -117,19 +132,19 @@ function App() {
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Santé vs population et PIB" description="Croissance du coût de santé par assuré comparée aux références démographique et économique." sourceIds={['ofsp_dashboard_health_insurance', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Santé vs population et PIB" description={costDescription('Croissance du coût de santé par assuré comparée aux références démographique et économique.', growthComparison, scenario, 'health_cost_per_insured')} sourceIds={['ofsp_dashboard_health_insurance', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Santé" metric="health_cost_per_insured" />
         </ChartCard>
-        <ChartCard title="Transports publics vs population et PIB" description="Croissance des charges d’exploitation TPG comparée aux références démographique et économique." sourceIds={['tpg_annual_reports_finance', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Transports publics vs population et PIB" description={costDescription('Croissance des charges d’exploitation TPG comparée aux références démographique et économique.', growthComparison, scenario, 'operating_expenses')} sourceIds={['tpg_annual_reports_finance', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Transports publics" metric="operating_expenses" />
         </ChartCard>
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Aide sociale économique (proxy Suisse) vs population et PIB Genève" description="Croissance cumulée des dépenses nettes d’aide sociale comparée à la démographie et au PIB. Le fichier actuellement installé est un proxy national OFS Suisse; il doit être remplacé par l’export cantonal Genève dès qu’il est disponible." sourceIds={['bfs_fibs_social_assistance_ch', 'ocstat_geneva_social_assistance', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Aide sociale économique (proxy Suisse) vs population et PIB Genève" description={costDescription('Croissance cumulée des dépenses nettes d’aide sociale comparée à la démographie et au PIB. Le fichier actuellement installé est un proxy national OFS Suisse; il doit être remplacé par l’export cantonal Genève dès qu’il est disponible.', growthComparison, scenario, 'social_assistance_spending')} sourceIds={['bfs_fibs_social_assistance_ch', 'ocstat_geneva_social_assistance', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Aide sociale" metric="social_assistance_spending" />
         </ChartCard>
-        <ChartCard title="Aide santé vs population et PIB" description="Croissance cumulée de la part cantonale des subsides d’assurance-maladie comparée à la démographie et au PIB." sourceIds={['ofsp_health_premium_subsidies', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Aide santé vs population et PIB" description={costDescription('Croissance cumulée de la part cantonale des subsides d’assurance-maladie comparée à la démographie et au PIB. La rupture 2020 est lissée linéairement sur 10 ans.', growthComparison, scenario, 'health_premium_subsidy_cantonal')} sourceIds={['ofsp_health_premium_subsidies', 'rts_geneva_health_subsidy_reform_2020', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Aide santé" metric="health_premium_subsidy_cantonal" />
         </ChartCard>
       </section>

@@ -63,13 +63,14 @@ Les métadonnées affichées par les cartes viennent de `data/generated/sources.
 | Santé vs population et PIB | Coût santé par assuré, population, PIB | OFSP dashboard AOS, OFS/OCSTAT PIB |
 | Transports publics vs population et PIB | Charges d'exploitation TPG, population, PIB | Rapports annuels TPG, OFS/OCSTAT PIB |
 | Aide sociale vs population et PIB | Aide sociale économique, population, PIB | Proxy OFS FIBS Suisse tant que l'export Genève manque |
-| Aide santé vs population et PIB | Part cantonale des subsides LAMal, population, PIB | OFSP réduction des primes, OFS/OCSTAT PIB |
+| Aide santé vs population et PIB | Part cantonale des subsides LAMal, population, PIB | OFSP réduction des primes, RTS réforme genevoise 2020, OFS/OCSTAT PIB |
 
 Notes importantes:
 
 - `housing_stock` a un point 2010 estimé par rétropolation linéaire si la série OCSTAT disponible commence après 2010. Le statut est `estimated`.
 - `social_assistance_spending` utilise actuellement `bfs_fibs_social_assistance_ch` comme proxy national. La demande cantonale Genève reste ouverte et doit remplacer ce proxy dès que disponible.
 - `school_classes` est estimé depuis les élèves publics/subventionnés et la taille moyenne de classe; la donnée officielle directe reste demandée.
+- `health_premium_subsidy_cantonal` contient une rupture 2020 documentée par la réforme genevoise des subsides. La projection utilise un lissage linéaire 10 ans au lieu d’un CAGR brut.
 - Les références des charts thématiques sont toujours `population` et `gdp`: population en ligne forte, PIB en pointillé.
 
 ## Hypothèse V1: Tension D'absorption Et Coûts

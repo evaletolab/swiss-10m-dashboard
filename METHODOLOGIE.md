@@ -126,6 +126,20 @@ Exemples indicatifs:
 
 Ces rythmes donnent une lecture temporelle du score composite. Ils s'ajoutent conceptuellement à la croissance naturelle des coûts, mais le modèle applique uniquement la tension additionnelle `2024 -> 2050` pour éviter de compter deux fois la tension historique.
 
+## Rupture 2020 des subsides maladie
+
+La série des subsides maladie à Genève contient une rupture nette en 2020. Cette rupture est documentée par la réforme genevoise des subsides annoncée fin 2019, en accompagnement de la RFFA: enveloppe supplémentaire d'environ 176 à 180 M CHF, élargissement du nombre de bénéficiaires et hausse du barème maximal jusqu'à 300 CHF par mois.
+
+Cette rupture n'est pas traitée comme une erreur d'extraction. Elle est conservée comme fait politique et budgétaire observé. En revanche, elle ne doit pas être projetée comme une croissance exponentielle naturelle jusqu'en 2050.
+
+Pour ce poste, la V1 utilise donc un **lissage linéaire sur 10 ans**:
+
+```txt
+tendance subsides maladie 2050 = valeur 2024 + variation annuelle moyenne 2014-2024 x (2050 - 2024)
+```
+
+Ce choix garde l'effet de la réforme 2020 dans la pente décennale, tout en évitant qu'un changement de régime soit transformé en CAGR permanent. L'hypothèse reste prudente mais assume qu'une nouvelle réforme de soutien aux primes pourrait encore survenir d'ici 2050.
+
 ## 5 why sur la valeur composite
 
 ### 1. Pourquoi le score composite existe ?
