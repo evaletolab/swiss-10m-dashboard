@@ -100,6 +100,16 @@
     "notes": "Subsides / réductions individuelles des primes LAMal."
   },
   {
+    "id": "rts_geneva_health_subsidy_reform_2020",
+    "title": "RTS - Le nombre de bénéficiaires des subsides maladie va doubler à Genève",
+    "publisher": "Radio Télévision Suisse",
+    "url": "https://www.rts.ch/info/regions/geneve/10883302-le-nombre-de-beneficiaires-des-subsides-maladie-va-doubler-a-geneve.html",
+    "accessedAt": "2026-06-10",
+    "type": "context_source",
+    "license": "public web article",
+    "notes": "Article du 21.11.2019 documentant la réforme genevoise 2020: 176 M CHF de subsides supplémentaires, bénéficiaires plus que doublés et barème maximal porté à 300 CHF."
+  },
+  {
     "id": "ocstat_geneva_social_assistance",
     "title": "OCSTAT - Aide sociale économique à Genève",
     "publisher": "Office cantonal de la statistique Genève / Hospice général",

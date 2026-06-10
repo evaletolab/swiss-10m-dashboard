@@ -48,6 +48,12 @@ function cagrEstimate(startValue: number | null, endValue: number | null, startY
   return Number((endValue * Math.pow(1 + rate, targetYear - endYear)).toFixed(2))
 }
 
+function linearTrendEstimate(startValue: number | null, endValue: number | null, startYear: number, endYear: number, targetYear = TARGET_YEAR) {
+  if (startValue === null || endValue === null || endYear <= startYear) return null
+  const annualChange = (endValue - startValue) / (endYear - startYear)
+  return Number((endValue + annualChange * (targetYear - endYear)).toFixed(2))
+}
+
 function ratioPct(numerator: number | null, denominator: number | null) {
   if (numerator === null || denominator === null || denominator <= 0) return null
   return Number((numerator / denominator * 100).toFixed(2))
@@ -79,6 +85,15 @@ function linearBackcast(rows: Row[], field: string, startYear: number, endYear: 
   if (!first || !last || first.year === last.year) return null
   const annualChange = (last.value - first.value) / (last.year - first.year)
   return Number((first.value - annualChange * (first.year - startYear)).toFixed(2))
+}
+
+function smoothedLinearEstimate(rows: Row[], field: string, baseYear: number, windowYears = 10) {
+  const baseValue = numberOrNull(rowForYear(rows, baseYear)?.[field])
+  const windowStartYear = baseYear - windowYears
+  const windowStartValue = numberOrNull(rowForYear(rows, windowStartYear)?.[field])
+  const startYear = windowStartValue === null ? START_YEAR : windowStartYear
+  const startValue = windowStartValue ?? numberOrNull(rowForYear(rows, START_YEAR)?.[field])
+  return linearTrendEstimate(startValue, baseValue, startYear, baseYear)
 }
 
 function addMetric(rows: CsvRow[], input: {
@@ -400,7 +415,7 @@ export async function buildGrowthComparison() {
 
     const healthSubsidy2010 = numberOrNull(social2010?.health_premium_subsidy_cantonal_million_chf)
     const healthSubsidyBase = numberOrNull(socialBase?.health_premium_subsidy_cantonal_million_chf)
-    const healthSubsidyTrend2050 = cagrEstimate(healthSubsidy2010, healthSubsidyBase, START_YEAR, baseYear)
+    const healthSubsidyTrend2050 = smoothedLinearEstimate(socialSpending, 'health_premium_subsidy_cantonal_million_chf', baseYear, 10)
     const healthSubsidyAdjusted2050 = applyPressureUplift(healthSubsidyTrend2050, pressureScenario)
     addMetric(rows, {
       scenario,
@@ -415,8 +430,8 @@ export async function buildGrowthComparison() {
       dataType2010: healthSubsidy2010 === null ? 'missing' : 'observed',
       dataTypeBase: healthSubsidyBase === null ? 'missing' : 'observed',
       dataType2050: healthSubsidyAdjusted2050 === null ? 'missing' : 'estimated',
-      sourceId: 'ofsp_health_premium_subsidies',
-      note: 'Part cantonale des réductions de primes LAMal; 2050 = tendance coût majorée par la tension d’absorption du scénario.',
+      sourceId: 'ofsp_health_premium_subsidies;rts_geneva_health_subsidy_reform_2020',
+      note: 'Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans majoré par la tension d’absorption du scénario.',
     })
 
     const healthCost2010 = numberOrNull(health2010?.health_cost_per_insured)
