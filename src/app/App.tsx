@@ -116,9 +116,9 @@ function App() {
       <AbsorptionPressureBlock rows={growthComparison} scenario={scenario} onScenarioChange={setScenario} />
 
       <section className="mt-8">
-        <ChartCard title="Croissance cumulée normalisée" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']}>
+        <ChartCard title="Croissance cumulée normalisée" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']} contentClassName="h-[560px]">
           <div className="mb-4 flex justify-end"><ScenarioSelector value={scenario} onChange={setScenario} /></div>
-          <div className="h-[300px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} compareToScenario="linear_trend_2000_base_year" toggleable /></div>
+          <div className="h-[500px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} compareToScenario="linear_trend_2000_base_year" yDomain={[0, 1200]} toggleable /></div>
         </ChartCard>
       </section>
 

@@ -8,6 +8,7 @@ type Props = {
   rows: GrowthComparisonRow[]
   scenario: ScenarioName
   compareToScenario?: ScenarioName
+  yDomain?: [number, number]
   domain?: string
   metric?: string
   includeReferences?: boolean
@@ -72,13 +73,14 @@ function sourceMetricFromKey(metricName: string) {
   return metricName.startsWith('baseline_') ? metricName.replace('baseline_', '') : metricName
 }
 
-export function GrowthComparisonChart({ rows, scenario, compareToScenario, domain, metric, includeReferences = true, toggleable = false }: Props) {
+export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDomain, domain, metric, includeReferences = true, toggleable = false }: Props) {
   const [enabledMetrics, setEnabledMetrics] = useState<Set<string>>(() => new Set(defaultToggleableMetrics))
   const metrics = selectedRows(rows, scenario, domain, metric, includeReferences)
   const baselineMetrics = compareToScenario && compareToScenario !== scenario
     ? selectedRows(rows, compareToScenario, domain, metric, includeReferences).filter((row) => pressureAdjustedCostMetrics.has(row.metric))
     : []
   const first = metrics[0]
+  const legendHeight = toggleable ? 104 : 44
   const data = [
     {
       year: 2010,
@@ -113,12 +115,23 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, domai
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 0 }}>
+      <LineChart data={data} margin={{ top: 10, right: 24, left: 8, bottom: 12 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" />
-        <YAxis tickFormatter={(value) => `${Number(value).toFixed(0)} %`} />
+        <YAxis width={58} domain={yDomain} tickFormatter={(value) => `${Number(value).toFixed(0)} %`} />
         <Tooltip formatter={(value) => value === null ? 'donnée manquante' : `${Number(value).toFixed(1)} %`} />
-        <Legend onClick={toggleLegendMetric} wrapperStyle={toggleable ? { cursor: 'pointer' } : undefined} />
+        <Legend
+          height={legendHeight}
+          iconSize={10}
+          onClick={toggleLegendMetric}
+          verticalAlign="bottom"
+          wrapperStyle={{
+            cursor: toggleable ? 'pointer' : undefined,
+            fontSize: 12,
+            lineHeight: '18px',
+            paddingTop: 12,
+          }}
+        />
         {metrics.map((row) => (
           <Line
             key={row.metric}
