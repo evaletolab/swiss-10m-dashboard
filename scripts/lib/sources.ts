@@ -6,7 +6,7 @@ export type Source = {
   publisher: string
   url: string | null
   accessedAt: string
-  type: 'api' | 'file' | 'manual' | 'mock' | 'official_reference'
+  type: 'api' | 'file' | 'manual' | 'mock' | 'official_reference' | 'context_source'
   license: string
   notes: string
 }
@@ -14,6 +14,16 @@ export type Source = {
 const today = new Date().toISOString().slice(0, 10)
 
 export const baseSources: Source[] = [
+  {
+    id: 'cagr_method_explanation',
+    title: 'Taux de croissance annuel composé (CAGR)',
+    publisher: 'Wikipédia',
+    url: 'https://fr.wikipedia.org/wiki/Taux_de_croissance_annuel_compos%C3%A9',
+    accessedAt: today,
+    type: 'context_source',
+    license: 'public web article',
+    notes: 'Source méthodologique pour expliquer la logique CAGR utilisée dans certaines projections tendancielles.',
+  },
   {
     id: 'mock_v1_sample',
     title: 'Données synthétiques V1 pour valider le dashboard',

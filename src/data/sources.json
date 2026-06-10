@@ -1,5 +1,15 @@
 [
   {
+    "id": "cagr_method_explanation",
+    "title": "Taux de croissance annuel composé (CAGR)",
+    "publisher": "Wikipédia",
+    "url": "https://fr.wikipedia.org/wiki/Taux_de_croissance_annuel_compos%C3%A9",
+    "accessedAt": "2026-06-10",
+    "type": "context_source",
+    "license": "public web article",
+    "notes": "Source méthodologique pour expliquer la logique CAGR utilisée dans certaines projections tendancielles."
+  },
+  {
     "id": "mock_v1_sample",
     "title": "Données synthétiques V1 pour valider le dashboard",
     "publisher": "Projet swiss-10m-dashboard",

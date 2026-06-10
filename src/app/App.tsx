@@ -80,7 +80,7 @@ function App() {
 
       <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-6 text-slate-600 shadow-sm md:p-6">
         <p>
-          Ce travail n’a pas de valeur académique et n’engage que son auteur. Son but est de déplacer l’angle du débat vers les ordres de grandeur,
+          Ce travail n’a pas de valeur académique, a été réalisé à 100% en vibe coding et n’engage que son auteur. Son but est de déplacer l’angle du débat vers les ordres de grandeur,
           les hypothèses et les données vérifiables. Une erreur, une source manquante ou une correction peut être signalée <a className="font-medium text-slate-900 underline" href="https://github.com/evaletolab/swiss-10m-dashboard" target="_blank" rel="noreferrer">ici</a>.
         </p>
       </section>
@@ -116,7 +116,7 @@ function App() {
       <AbsorptionPressureBlock rows={growthComparison} scenario={scenario} onScenarioChange={setScenario} />
 
       <section className="mt-8">
-        <ChartCard title="Croissance cumulée normalisée" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']} contentClassName="h-[560px]">
+        <ChartCard title="Croissance cumulée normalisée" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['cagr_method_explanation', 'ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']} contentClassName="h-[560px]">
           <div className="mb-4 flex justify-end"><ScenarioSelector value={scenario} onChange={setScenario} /></div>
           <div className="h-[500px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} compareToScenario="linear_trend_2000_base_year" yDomain={[0, 1200]} toggleable /></div>
         </ChartCard>
