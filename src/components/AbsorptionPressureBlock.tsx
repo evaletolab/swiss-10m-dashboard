@@ -74,11 +74,14 @@ export function AbsorptionPressureBlock({ rows, scenario, onScenarioChange }: Pr
             Calcul: {formatPressure(pressure?.growth_2010_to_2050_pct)} en 2050 - {formatPressure(pressure?.growth_2010_to_base_pct)} en 2024 =
             {' '}{formatUpliftPct(costUpliftPct)}. Appliqué aux charges: {formatCostExample(costUpliftPct)}.
           </p>
-          <p className="mt-3 text-sm leading-6 text-orange-900">
-            Le <strong>{formatAnnualizedPressure(selected2050)}</strong> n’est pas la croissance naturelle des coûts. C’est l’annualisation
-            de la tension 2010-2050, calculée à partir des indices logement, écoles, santé et transports avec une pondération méthodologique
-            assumée. Cette tension s’ajoute à la croissance naturelle des coûts. Suivre ce <a className="font-semibold underline" href="https://github.com/evaletolab/swiss-10m-dashboard/blob/master/METHODOLOGIE.md" target="_blank" rel="noreferrer">lien</a> pour consulter la méthodologie.
-          </p>
+          <div className="mt-3 rounded-2xl bg-white/70 px-4 py-3 text-sm leading-6 text-orange-900">
+            <p className="font-semibold">Note méthodologique</p>
+            <p className="mt-1">
+              Le <strong>{formatAnnualizedPressure(selected2050)}</strong> n’est pas une prévision d’augmentation naturelle des coûts. C’est une manière de résumer,
+              sous forme annualisée, l’évolution d’un score composite de tension entre 2010 et 2050. Cette tension s’ajoute à la croissance naturelle des coûts.
+              Suivre ce <a className="font-semibold underline" href="https://github.com/evaletolab/swiss-10m-dashboard/blob/master/METHODOLOGIE.md" target="_blank" rel="noreferrer">lien</a> pour consulter la méthodologie.
+            </p>
+          </div>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
           <div className="rounded-2xl bg-white p-4">

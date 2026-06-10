@@ -1,20 +1,7 @@
-export const conclusionText = `Le débat sur la Suisse à 10 millions en 2050 est traité comme ça :
+export const conclusionText = `La Suisse à 10 millions n’est pas seulement une question de seuil démographique. C’est une question de capacité d’adaptation.
 
-Limiter = xénophobie / fermeture / décroissance.
-Ne pas limiter = paix, prospérité et ouverture avec l’Europe.
+Si le logement, les écoles, la santé et les transports gagnent en productivité, en densité intelligente et en efficacité, la croissance peut être absorbée.
 
-C’est absurde. La question est très technique.
+Si ces systèmes restent rigides, la croissance démographique devient une tension visible dans la vie quotidienne.
 
-Avec 1,29 enfant par femme, la Suisse ne remplace plus ses générations. En seulement deux générations, la base reproductive ne représente plus qu’environ 37 % de la génération initiale.
-
-Donc il faut une compensation migratoire. C’est obligatoire.
-
-Mais la vraie question est : combien ?
-
-a) À partir de quel niveau est-on “xénophobe” ?
-b) À partir de quel niveau produit-on un suicide économique ?
-c) Et aujourd’hui, la compensation est à 50 %, 100 %, 150 % ?
-
-Alors combien ?
-
-O.`
+L’enjeu n’est donc pas seulement « combien d’habitants ? », mais : quelle capacité collective à absorber cette croissance sans dégrader la qualité de vie ?`

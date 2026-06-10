@@ -85,10 +85,18 @@ function App() {
         </p>
       </section>
 
+      <section className="mt-8 rounded-3xl border border-sky-200 bg-sky-50 p-5 text-sky-950 shadow-sm md:p-6">
+        <h2 className="text-xl font-semibold">À retenir</h2>
+        <p className="mt-3 text-sm leading-6">
+          La croissance démographique peut augmenter la tension sur certains systèmes lorsque l’offre ne suit pas:
+          logements disponibles, capacités scolaires, coûts de santé, infrastructures de transport.
+        </p>
+      </section>
+
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         <div className="rounded-3xl border border-slate-200 bg-white p-6">
           <h2 className="text-xl font-semibold text-slate-950">La simplification suspecte</h2>
-          <p className="mt-3 text-slate-600">Limiter = fermeture. Ne pas limiter = prospérité automatique. Ce cadrage masque les contraintes matérielles.</p>
+          <p className="mt-3 text-slate-600">Limiter = fermeture, xénophobie. Ne pas limiter = prospérité automatique. Ce cadrage masque les contraintes matérielles.</p>
         </div>
         <div className="rounded-3xl border border-slate-200 bg-white p-6">
           <h2 className="text-xl font-semibold text-slate-950">Question technique réelle</h2>
@@ -96,13 +104,11 @@ function App() {
         </div>
       </section>
 
-      <ComparisonGrid baseYear={baseYear} targetYear={TARGET_YEAR} scenario={scenario} rows={growthComparison} />
-
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
         <ChartCard title="La Suisse ne remplace plus ses générations" description={narrative.fertility} sourceIds={['bfs_statpop_population_balance']}>
           <FertilityReplacementChart rows={chDemography} summary={summary.fertility} />
         </ChartCard>
-        <ChartCard title="Suisse : réel, tendance et initiative" description="Les observations, extrapolations maison et scénarios doivent rester distingués. La question de fond: à partir de quel seuil le débat cesse-t-il d’être réduit à “raciste/xénophobe” et devient-il une question mesurable de capacité d’absorption ?" sourceIds={['bfs_statpop_population_balance']}>
+        <ChartCard title="Combien d’habitants en plus d’ici 2050 ?" description="Les observations, extrapolations maison et scénarios doivent rester distingués. La question de fond: à partir de quel seuil le débat cesse-t-il d’être réduit à “raciste/xénophobe” et devient-il une question mesurable de capacité d’absorption ?" sourceIds={['bfs_statpop_population_balance']}>
           <SwitzerlandPopulationChart rows={scenariosCh} />
         </ChartCard>
       </section>
@@ -116,26 +122,26 @@ function App() {
       <AbsorptionPressureBlock rows={growthComparison} scenario={scenario} onScenarioChange={setScenario} />
 
       <section className="mt-8">
-        <ChartCard title="Croissance cumulée normalisée" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['cagr_method_explanation', 'ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']} contentClassName="h-[560px]">
+        <ChartCard title="Où se concentre la tension ?" description={`Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible. Charges TPG annualisées: ${annualizedMetricGrowth(growthComparison, scenario, 'operating_expenses')}.`} sourceIds={['cagr_method_explanation', 'ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']} contentClassName="h-[560px]">
           <div className="mb-4 flex justify-end"><ScenarioSelector value={scenario} onChange={setScenario} /></div>
           <div className="h-[500px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} compareToScenario="linear_trend_2000_base_year" yDomain={[0, 1200]} toggleable /></div>
         </ChartCard>
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Logement vs population et PIB" description="Croissance du stock de logements comparée aux références démographique et économique. Le point 2010 est une estimation extrapolée si le stock observé démarre après 2010." sourceIds={['ocstat_geneva_housing', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Le logement absorbe-t-il la croissance ?" description="Croissance du stock de logements comparée aux références démographique et économique. Le point 2010 est une estimation extrapolée si le stock observé démarre après 2010." sourceIds={['ocstat_geneva_housing', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Logement" metric="housing_stock" />
         </ChartCard>
-        <ChartCard title="Écoles / élèves vs population et PIB" description="Croissance des élèves et étudiants comparée aux références démographique et économique. Note classes: school_classes = élèves publics/subventionnés / taille moyenne de classe." sourceIds={['ge_education_annuary', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Les écoles suivent-elles la démographie ?" description="Croissance des élèves et étudiants comparée aux références démographique et économique. Note classes: school_classes = élèves publics/subventionnés / taille moyenne de classe." sourceIds={['ge_education_annuary', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Écoles" metric="students" />
         </ChartCard>
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Santé vs population et PIB" description={costDescription('Croissance du coût de santé par assuré comparée aux références démographique et économique.', growthComparison, scenario, 'health_cost_per_insured')} sourceIds={['ofsp_dashboard_health_insurance', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="La santé suit-elle la démographie ?" description={costDescription('Croissance du coût de santé par assuré comparée aux références démographique et économique.', growthComparison, scenario, 'health_cost_per_insured')} sourceIds={['ofsp_dashboard_health_insurance', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Santé" metric="health_cost_per_insured" />
         </ChartCard>
-        <ChartCard title="Transports publics vs population et PIB" description={costDescription('Croissance des charges d’exploitation TPG comparée aux références démographique et économique.', growthComparison, scenario, 'operating_expenses')} sourceIds={['tpg_annual_reports_finance', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Les transports absorbent-ils la croissance ?" description={costDescription('Croissance des charges d’exploitation TPG comparée aux références démographique et économique.', growthComparison, scenario, 'operating_expenses')} sourceIds={['tpg_annual_reports_finance', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Transports publics" metric="operating_expenses" />
         </ChartCard>
       </section>
@@ -151,7 +157,16 @@ function App() {
 
       <AssumptionsPanel rows={assumptionsData as Array<Record<string, string | number | null>>} />
 
+      <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-5 text-slate-700 shadow-sm md:p-6">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Ce que cela ne dit pas</h2>
+        <p className="mt-3 text-sm leading-6">
+          Ces indicateurs ne prouvent pas qu’un habitant supplémentaire crée mécaniquement un coût supplémentaire identique. Ils montrent plutôt où la croissance
+          démographique peut amplifier des tensions déjà présentes lorsque les infrastructures, les politiques publiques ou la productivité ne suivent pas.
+        </p>
+      </section>
+
       <section className="mt-8"><ConclusionBlock /></section>
+      <ComparisonGrid baseYear={baseYear} targetYear={TARGET_YEAR} scenario={scenario} rows={growthComparison} />
       <StudySourcesBlock sources={sources} />
     </main>
   )
