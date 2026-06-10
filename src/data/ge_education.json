@@ -28,12 +28,12 @@
     "students_public_subsidized": "95888",
     "students_private": "12872",
     "students_total": "108760",
-    "school_classes": "",
+    "school_classes": "4938",
     "teachers_fte": "5786.3",
     "students_per_class": "19.42",
     "data_type": "official",
-    "source_id": "ge_education_annuary;bfs_class_size",
-    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I."
+    "source_id": "ge_education_annuary;bfs_class_size;bfs_class_size_estimated_classes",
+    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I. Classes équivalentes estimées: élèves publics/subventionnés divisés par la taille moyenne OFS des classes publiques obligatoires; ne remplace pas un comptage officiel des classes."
   },
   {
     "year": "2016",
@@ -100,48 +100,48 @@
     "students_public_subsidized": "103951",
     "students_private": "13599",
     "students_total": "117550",
-    "school_classes": "",
+    "school_classes": "5320",
     "teachers_fte": "",
     "students_per_class": "19.54",
     "data_type": "official",
-    "source_id": "ge_education_annuary;bfs_class_size",
-    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I."
+    "source_id": "ge_education_annuary;bfs_class_size;bfs_class_size_estimated_classes",
+    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I. Classes équivalentes estimées: élèves publics/subventionnés divisés par la taille moyenne OFS des classes publiques obligatoires; ne remplace pas un comptage officiel des classes."
   },
   {
     "year": "2022",
     "students_public_subsidized": "104724",
     "students_private": "14164",
     "students_total": "118888",
-    "school_classes": "",
+    "school_classes": "5370",
     "teachers_fte": "",
     "students_per_class": "19.5",
     "data_type": "official",
-    "source_id": "ge_education_annuary;bfs_class_size",
-    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I."
+    "source_id": "ge_education_annuary;bfs_class_size;bfs_class_size_estimated_classes",
+    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I. Classes équivalentes estimées: élèves publics/subventionnés divisés par la taille moyenne OFS des classes publiques obligatoires; ne remplace pas un comptage officiel des classes."
   },
   {
     "year": "2023",
     "students_public_subsidized": "105418",
     "students_private": "14469",
     "students_total": "119887",
-    "school_classes": "",
+    "school_classes": "5395",
     "teachers_fte": "",
     "students_per_class": "19.54",
     "data_type": "official",
-    "source_id": "ge_education_annuary;bfs_class_size",
-    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I."
+    "source_id": "ge_education_annuary;bfs_class_size;bfs_class_size_estimated_classes",
+    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I. Classes équivalentes estimées: élèves publics/subventionnés divisés par la taille moyenne OFS des classes publiques obligatoires; ne remplace pas un comptage officiel des classes."
   },
   {
     "year": "2024",
     "students_public_subsidized": "107205",
     "students_private": "14614",
     "students_total": "121819",
-    "school_classes": "",
+    "school_classes": "5489",
     "teachers_fte": "9549.5",
     "students_per_class": "19.53",
     "data_type": "official",
-    "source_id": "ge_education_annuary;bfs_class_size",
-    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I."
+    "source_id": "ge_education_annuary;bfs_class_size;bfs_class_size_estimated_classes",
+    "source_note": "Annuaire statistique de l’enseignement public et privé à Genève 2025, page imprimable SRED/OCSTAT; 2021-2024 public reconstruit par somme des degrés publiés. OFS asset 36520014, taille moyenne des classes dans les institutions publiques, canton de Genève; moyenne simple des degrés primaire 1-2, primaire 3-8 et secondaire I. Classes équivalentes estimées: élèves publics/subventionnés divisés par la taille moyenne OFS des classes publiques obligatoires; ne remplace pas un comptage officiel des classes."
   },
   {
     "year": "2025",

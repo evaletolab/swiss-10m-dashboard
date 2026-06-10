@@ -81,6 +81,31 @@ function readWorkbookRows(): CsvRow[] {
     })).filter((row) => numberOrNull(row.year) !== null && numberOrNull(row.social_assistance_million_chf) !== null)
   }
 
+  const cantonHeaderIndex = rows.findIndex((row) =>
+    row.some((cell) => normalizeLabel(cell) === 'annee')
+    && row.some((cell) => ['canton', 'region'].includes(normalizeLabel(cell)))
+    && row.some((cell) => normalizeLabel(cell) === 'aide sociale')
+  )
+  if (cantonHeaderIndex !== -1) {
+    const headers = rows[cantonHeaderIndex].map(normalizeLabel)
+    const yearIndex = headers.findIndex((label) => label === 'annee')
+    const cantonIndex = headers.findIndex((label) => ['canton', 'region'].includes(label))
+    const socialAssistanceIndex = headers.findIndex((label) => label === 'aide sociale')
+    return rows.slice(cantonHeaderIndex + 1).map((row): CsvRow => {
+      const canton = normalizeLabel(row[cantonIndex])
+      if (canton !== 'ge' && !canton.includes('geneve')) return { year: null }
+      return {
+        year: numberOrNull(row[yearIndex]),
+        social_assistance_million_chf: numberOrNull(row[socialAssistanceIndex]),
+        health_premium_subsidy_cantonal_million_chf: null,
+        health_premium_subsidy_total_million_chf: null,
+        data_type: 'official',
+        source_id: 'bfs_fibs_social_assistance_ge',
+        source_note: 'OFS FIBS, dépenses nettes d’aide sociale économique pour Genève, en millions CHF à prix courants.',
+      }
+    }).filter((row) => numberOrNull(row.year) !== null && numberOrNull(row.social_assistance_million_chf) !== null)
+  }
+
   const headerIndex = rows.findIndex((row) => row.some((cell) => normalizeLabel(cell) === 'annee') && row.some((cell) => normalizeLabel(cell) === 'aide sociale'))
   if (headerIndex === -1) return []
   const headers = rows[headerIndex].map(normalizeLabel)

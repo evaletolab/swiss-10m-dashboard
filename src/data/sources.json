@@ -177,6 +177,16 @@
     "accessedAt": "2026-06-10",
     "type": "official_reference",
     "license": "official public reports",
-    "notes": "Fréquentation, revenus de transport, indemnités/subventions d’exploitation et prix proxy de l’abonnement annuel adulte."
+    "notes": "Fréquentation, revenus de transport, indemnités/subventions d’exploitation et charges d’exploitation."
+  },
+  {
+    "id": "absorption_pressure_v1",
+    "title": "Indice V1 de tension d’absorption",
+    "publisher": "swiss-10m-dashboard",
+    "url": null,
+    "accessedAt": "2026-06-10",
+    "type": "official_reference",
+    "license": "project methodology",
+    "notes": "Indice composite interne: 35% logement, 20% écoles, 20% santé, 25% transports. Mesure un effort d’absorption; la tension additionnelle 2024-2050 sert de coefficient de majoration des charges projetées 2050."
   }
 ]

@@ -163,6 +163,24 @@ function mergeRowsByYear(...rowGroups: CsvRow[][]): CsvRow[] {
   return [...rows.values()].sort((a, b) => Number(a.year) - Number(b.year))
 }
 
+function addEstimatedSchoolClasses(rows: CsvRow[]): CsvRow[] {
+  return rows.map((row) => {
+    if (numberOrNull(row.school_classes) !== null) return row
+    const students = numberOrNull(row.students_public_subsidized)
+    const studentsPerClass = numberOrNull(row.students_per_class)
+    if (students === null || studentsPerClass === null || studentsPerClass <= 0) return row
+    return {
+      ...row,
+      school_classes: Math.round(students / studentsPerClass),
+      source_id: [row.source_id, 'bfs_class_size_estimated_classes'].filter(Boolean).join(';'),
+      source_note: [
+        row.source_note,
+        'Classes équivalentes estimées: élèves publics/subventionnés divisés par la taille moyenne OFS des classes publiques obligatoires; ne remplace pas un comptage officiel des classes.',
+      ].filter(Boolean).join(' '),
+    }
+  })
+}
+
 function requestMissingEducationFields(missingFields: string[]) {
   const onlySchoolClassesMissing = missingFields.length === 1 && missingFields[0] === 'school_classes'
   addDownloadRequest({
@@ -175,7 +193,7 @@ function requestMissingEducationFields(missingFields: string[]) {
     acceptedFormats: ['CSV', 'XLS', 'XLSX', 'PDF'],
     destinationPath: `${manualCsvPath} ou data/raw/ocstat/manual/ge_education.xlsx`,
     instructions: onlySchoolClassesMissing
-      ? 'Déposer si disponible une série annuelle avec le nombre de classes scolaires à Genève. Les effectifs élèves, enseignants ETP et taille moyenne de classe sont déjà couverts par SRED/OFS.'
+      ? 'Déposer si disponible une série annuelle avec le nombre officiel de classes scolaires à Genève. Le fichier OFS actuel donne la taille moyenne des classes et permet seulement des classes équivalentes estimées.'
       : 'Déposer une série annuelle avec élèves publics/subventionnés, élèves privés, total élèves, classes scolaires et enseignants ETP si disponibles. Le fichier OFS taille des classes peut compléter students_per_class mais ne suffit pas pour les effectifs.',
   })
 }
@@ -185,13 +203,8 @@ export async function normalizeGeEducation() {
   const sredSummaryRows = readSredSummaryRows()
 
   if (!existsSync(fromRoot(manualCsvPath))) {
-    const rows = mergeRowsByYear(sredSummaryRows, classSizeRows)
-    const missingFields = rows.some((row) => numberOrNull(row.school_classes) !== null)
-      ? []
-      : ['school_classes']
-    if (missingFields.length > 0) {
-      requestMissingEducationFields(missingFields)
-    }
+    const rows = addEstimatedSchoolClasses(mergeRowsByYear(sredSummaryRows, classSizeRows))
+    requestMissingEducationFields(['school_classes'])
     if (rows.length > 0) {
       await writeCsv('data/normalized/ge_education.csv', rows, geEducationColumns)
       return rows

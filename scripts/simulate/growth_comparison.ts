@@ -5,6 +5,13 @@ const TARGET_YEAR = 2050
 
 type Row = Record<string, string>
 
+const pressureWeights = {
+  housing: 0.35,
+  schools: 0.2,
+  health: 0.2,
+  transport: 0.25,
+}
+
 const scenarioLabels: Record<string, string> = {
   linear_trend_2000_base_year: 'Tendance linéaire',
   cagr_trend_2000_base_year: 'Tendance CAGR',
@@ -39,6 +46,27 @@ function cagrEstimate(startValue: number | null, endValue: number | null, startY
   if (startValue === null || endValue === null || startValue <= 0 || endValue <= 0 || endYear <= startYear) return null
   const rate = Math.pow(endValue / startValue, 1 / (endYear - startYear)) - 1
   return Number((endValue * Math.pow(1 + rate, targetYear - endYear)).toFixed(2))
+}
+
+function ratioPct(numerator: number | null, denominator: number | null) {
+  if (numerator === null || denominator === null || denominator <= 0) return null
+  return Number((numerator / denominator * 100).toFixed(2))
+}
+
+function weightedPressure(components: Array<{ value: number | null, weight: number }>) {
+  const available = components.filter((component): component is { value: number, weight: number } => component.value !== null)
+  const totalWeight = available.reduce((sum, component) => sum + component.weight, 0)
+  if (totalWeight === 0) return null
+  return Number((available.reduce((sum, component) => sum + component.value * component.weight, 0) / totalWeight).toFixed(2))
+}
+
+function applyPressureUplift(value: number | null, upliftPct: number | null) {
+  if (value === null || upliftPct === null) return null
+  return Number((value * (1 + upliftPct / 100)).toFixed(2))
+}
+
+function assumptionValue(rows: Row[], key: string) {
+  return numberOrNull(rows.find((row) => row.key === key)?.value)
 }
 
 function linearBackcast(rows: Row[], field: string, startYear: number, endYear: number) {
@@ -93,6 +121,36 @@ function addMetric(rows: CsvRow[], input: {
   })
 }
 
+function addPressureMetric(rows: CsvRow[], input: {
+  scenario: string
+  scenarioLabel: string
+  valueBase: number | null
+  value2050: number | null
+}) {
+  rows.push({
+    scenario: input.scenario,
+    scenario_label: input.scenarioLabel,
+    domain: 'Tension',
+    metric: 'absorption_pressure',
+    label: 'Tension d’absorption',
+    unit: 'points',
+    year_2010: START_YEAR,
+    base_year: null,
+    target_year: TARGET_YEAR,
+    value_2010: 0,
+    value_base: input.valueBase,
+    value_2050: input.value2050,
+    growth_2010_to_base_pct: input.valueBase,
+    growth_2010_to_2050_pct: input.value2050,
+    growth_base_to_2050_pct: input.valueBase === null || input.value2050 === null ? null : Number((input.value2050 - input.valueBase).toFixed(2)),
+    data_type_2010: 'observed',
+    data_type_base: input.valueBase === null ? 'missing' : 'estimated',
+    data_type_2050: input.value2050 === null ? 'missing' : 'estimated',
+    source_id: 'absorption_pressure_v1',
+    note: 'Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. Ce n’est pas une inflation, mais une tension relative aux capacités 2024.',
+  })
+}
+
 export async function buildGrowthComparison() {
   const geDemography = await readCsv('data/normalized/ge_demography.csv')
   const geScenarios = await readCsv('data/generated/scenarios_ge.csv')
@@ -105,6 +163,7 @@ export async function buildGrowthComparison() {
   const socialSpending = await readCsv('data/normalized/ge_social_spending.csv')
   const transport = await readCsv('data/normalized/ge_transport.csv')
   const transportFinance = await readCsv('data/normalized/ge_public_transport_finance.csv')
+  const assumptions = await readCsv('data/normalized/assumptions.csv')
 
   const baseYear = latestObservedYear(geScenarios)
   const demography2010 = rowForYear(geDemography, START_YEAR)
@@ -113,6 +172,10 @@ export async function buildGrowthComparison() {
   const populationBase = numberOrNull(demographyBase?.population)
   const population2009 = numberOrNull(rowForYear(geDemography, START_YEAR - 1)?.population)
   const populationPreviousBase = numberOrNull(rowForYear(geDemography, baseYear - 1)?.population)
+  const avgHouseholdSize = assumptionValue(assumptions, 'avg_household_size')
+  const studentsPerClassAssumption = assumptionValue(assumptions, 'students_per_class')
+  const doctorsPer1000Target = assumptionValue(assumptions, 'doctors_per_1000_target')
+  const dailyTripsPerPerson = assumptionValue(assumptions, 'daily_trips_per_person')
 
   const scenarios = Array.from(new Set(geScenarios.map((row) => row.scenario))).filter((scenario) => scenario !== 'observed')
   const rows: CsvRow[] = []
@@ -204,7 +267,7 @@ export async function buildGrowthComparison() {
       dataType2050: housingBaseStock === null || additionalHousing === null ? 'missing' : 'estimated',
       sourceId: 'ocstat_geneva_housing',
       note: observedHousing2010 === null && housing2010Stock !== null
-        ? 'Stock observé depuis la première année disponible; 2010 rétropolé linéairement pour afficher la croissance cumulée, 2050 = stock base + besoin additionnel du scénario.'
+        ? 'Stock observé depuis la première année disponible; 2010 est une estimation extrapolée linéairement pour afficher la croissance cumulée, 2050 = stock base + besoin additionnel du scénario.'
         : 'Stock observé; 2050 = stock base + besoin additionnel du scénario.',
     })
 
@@ -244,6 +307,9 @@ export async function buildGrowthComparison() {
 
     const classesBase = numberOrNull(educationBase?.school_classes)
     const requiredClasses = numberOrNull(needs2050?.required_classes)
+    const classes2010 = numberOrNull(education2010?.school_classes)
+    const classes2010Estimated = String(education2010?.source_id ?? '').includes('bfs_class_size_estimated_classes')
+    const classesBaseEstimated = String(educationBase?.source_id ?? '').includes('bfs_class_size_estimated_classes')
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -251,16 +317,55 @@ export async function buildGrowthComparison() {
       metric: 'school_classes',
       label: 'Classes scolaires',
       unit: 'classes',
-      value2010: numberOrNull(education2010?.school_classes),
+      value2010: classes2010,
       valueBase: classesBase,
       value2050: classesBase === null || requiredClasses === null ? null : classesBase + requiredClasses,
+      dataType2010: classes2010 === null ? 'missing' : classes2010Estimated ? 'estimated' : 'observed',
+      dataTypeBase: classesBase === null ? 'missing' : classesBaseEstimated ? 'estimated' : 'observed',
       dataType2050: classesBase === null || requiredClasses === null ? 'missing' : 'estimated',
       sourceId: 'ge_education_annuary',
-      note: 'Classes observées; 2050 = classes base + besoin additionnel si le stock existe.',
+      note: classesBaseEstimated
+        ? 'Classes équivalentes estimées depuis les effectifs et la taille moyenne OFS; 2050 = base estimée + besoin additionnel.'
+        : 'Classes observées; 2050 = classes base + besoin additionnel si le stock existe.',
     })
 
     const health2010 = rowForYear(health, START_YEAR)
     const healthBase = rowForYear(health, baseYear)
+    const doctorsBase = numberOrNull(healthBase?.physicians)
+    const bedsBase = numberOrNull(healthBase?.total_hospital_beds)
+    const transport2010 = rowForYear(transport, START_YEAR)
+    const transportBase = rowForYear(transport, baseYear)
+    const tpgPassengers2010 = numberOrNull(transport2010?.tpg_passengers)
+    const tpgPassengersBase = numberOrNull(transportBase?.tpg_passengers)
+    const additionalPopulationBase = populationBase === null || population2010 === null ? null : populationBase - population2010
+    const requiredHousingBase = avgHouseholdSize === null || additionalPopulationBase === null ? null : additionalPopulationBase / avgHouseholdSize
+    const requiredClassesBase = studentsBase === null || students2010 === null
+      ? null
+      : (studentsBase - students2010) / (numberOrNull(educationBase?.students_per_class) ?? studentsPerClassAssumption ?? 21)
+    const theoreticalDoctorsBase = populationBase === null || doctorsPer1000Target === null ? null : populationBase * doctorsPer1000Target / 1000
+    const requiredDoctorsBase = additionalPopulationBase === null || doctorsPer1000Target === null ? null : additionalPopulationBase * doctorsPer1000Target / 1000
+    const tpgDailyBase = tpgPassengersBase === null ? null : tpgPassengersBase / 365
+    const requiredDailyTripsBase = additionalPopulationBase === null || dailyTripsPerPerson === null ? null : additionalPopulationBase * dailyTripsPerPerson
+
+    const pressureBase = weightedPressure([
+      { value: ratioPct(requiredHousingBase, housingBaseStock), weight: pressureWeights.housing },
+      { value: ratioPct(requiredClassesBase, classesBase), weight: pressureWeights.schools },
+      { value: ratioPct(requiredDoctorsBase, theoreticalDoctorsBase), weight: pressureWeights.health },
+      { value: ratioPct(requiredDailyTripsBase, tpgDailyBase), weight: pressureWeights.transport },
+    ])
+    const pressureScenario = weightedPressure([
+      { value: ratioPct(additionalHousing, housingBaseStock), weight: pressureWeights.housing },
+      { value: ratioPct(requiredClasses, classesBase), weight: pressureWeights.schools },
+      { value: ratioPct(numberOrNull(needs2050?.required_doctors), theoreticalDoctorsBase), weight: pressureWeights.health },
+      { value: ratioPct(numberOrNull(needs2050?.required_daily_transit_trips), tpgDailyBase), weight: pressureWeights.transport },
+    ])
+    addPressureMetric(rows, {
+      scenario,
+      scenarioLabel,
+      valueBase: pressureBase,
+      value2050: pressureBase === null || pressureScenario === null ? null : Number((pressureBase + pressureScenario).toFixed(2)),
+    })
+
     const social2010 = rowForYear(socialSpending, START_YEAR)
     const socialBase = rowForYear(socialSpending, baseYear)
     const socialRawSourceId = String(socialBase?.source_id ?? social2010?.source_id ?? 'ocstat_geneva_social_assistance')
@@ -272,6 +377,8 @@ export async function buildGrowthComparison() {
     const socialIsSwissProxy = socialSourceId.includes('bfs_fibs_social_assistance_ch')
     const socialValue2010 = numberOrNull(social2010?.social_assistance_million_chf)
     const socialValueBase = numberOrNull(socialBase?.social_assistance_million_chf)
+    const socialTrend2050 = cagrEstimate(socialValue2010, socialValueBase, START_YEAR, baseYear)
+    const socialAdjusted2050 = applyPressureUplift(socialTrend2050, pressureScenario)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -281,16 +388,20 @@ export async function buildGrowthComparison() {
       unit: 'M CHF',
       value2010: socialValue2010,
       valueBase: socialValueBase,
-      value2050: cagrEstimate(socialValue2010, socialValueBase, START_YEAR, baseYear),
+      value2050: socialAdjusted2050,
       dataType2010: socialIsSwissProxy && socialValue2010 !== null ? 'official_proxy' : undefined,
       dataTypeBase: socialIsSwissProxy && socialValueBase !== null ? 'official_proxy' : undefined,
-      dataType2050: socialValue2010 === null || socialValueBase === null ? 'missing' : 'estimated',
+      dataType2050: socialAdjusted2050 === null ? 'missing' : 'estimated',
       sourceId: socialSourceId,
       note: socialIsSwissProxy
-        ? 'Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève.'
-        : 'Dépenses nettes d’aide sociale économique; à compléter par fichier OCSTAT ou comptes de l’État.',
+        ? 'Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût majorée par la tension d’absorption du scénario.'
+        : 'Dépenses nettes d’aide sociale économique; 2050 = tendance coût majorée par la tension d’absorption du scénario.',
     })
 
+    const healthSubsidy2010 = numberOrNull(social2010?.health_premium_subsidy_cantonal_million_chf)
+    const healthSubsidyBase = numberOrNull(socialBase?.health_premium_subsidy_cantonal_million_chf)
+    const healthSubsidyTrend2050 = cagrEstimate(healthSubsidy2010, healthSubsidyBase, START_YEAR, baseYear)
+    const healthSubsidyAdjusted2050 = applyPressureUplift(healthSubsidyTrend2050, pressureScenario)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -298,14 +409,20 @@ export async function buildGrowthComparison() {
       metric: 'health_premium_subsidy_cantonal',
       label: 'Subsides maladie cantonaux',
       unit: 'M CHF',
-      value2010: numberOrNull(social2010?.health_premium_subsidy_cantonal_million_chf),
-      valueBase: numberOrNull(socialBase?.health_premium_subsidy_cantonal_million_chf),
-      value2050: cagrEstimate(numberOrNull(social2010?.health_premium_subsidy_cantonal_million_chf), numberOrNull(socialBase?.health_premium_subsidy_cantonal_million_chf), START_YEAR, baseYear),
-      dataType2050: numberOrNull(social2010?.health_premium_subsidy_cantonal_million_chf) === null || numberOrNull(socialBase?.health_premium_subsidy_cantonal_million_chf) === null ? 'missing' : 'estimated',
+      value2010: healthSubsidy2010,
+      valueBase: healthSubsidyBase,
+      value2050: healthSubsidyAdjusted2050,
+      dataType2010: healthSubsidy2010 === null ? 'missing' : 'observed',
+      dataTypeBase: healthSubsidyBase === null ? 'missing' : 'observed',
+      dataType2050: healthSubsidyAdjusted2050 === null ? 'missing' : 'estimated',
       sourceId: 'ofsp_health_premium_subsidies',
-      note: 'Part cantonale des réductions de primes LAMal; 2050 estimé par tendance 2010-base.',
+      note: 'Part cantonale des réductions de primes LAMal; 2050 = tendance coût majorée par la tension d’absorption du scénario.',
     })
 
+    const healthCost2010 = numberOrNull(health2010?.health_cost_per_insured)
+    const healthCostBase = numberOrNull(healthBase?.health_cost_per_insured)
+    const healthCostTrend2050 = cagrEstimate(healthCost2010, healthCostBase, START_YEAR, baseYear)
+    const healthCostAdjusted2050 = applyPressureUplift(healthCostTrend2050, pressureScenario)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -313,16 +430,14 @@ export async function buildGrowthComparison() {
       metric: 'health_cost_per_insured',
       label: 'Coût santé par assuré',
       unit: 'CHF/an',
-      value2010: numberOrNull(health2010?.health_cost_per_insured),
-      valueBase: numberOrNull(healthBase?.health_cost_per_insured),
-      value2050: cagrEstimate(numberOrNull(health2010?.health_cost_per_insured), numberOrNull(healthBase?.health_cost_per_insured), START_YEAR, baseYear),
-      dataType2050: numberOrNull(health2010?.health_cost_per_insured) === null || numberOrNull(healthBase?.health_cost_per_insured) === null ? 'missing' : 'estimated',
+      value2010: healthCost2010,
+      valueBase: healthCostBase,
+      value2050: healthCostAdjusted2050,
+      dataType2050: healthCostAdjusted2050 === null ? 'missing' : 'estimated',
       sourceId: 'ofsp_dashboard_health_insurance',
-      note: 'Coûts annuels par assuré; 2050 estimé par tendance 2010-base.',
+      note: 'Coûts annuels par assuré; 2050 = tendance coût majorée par la tension d’absorption du scénario.',
     })
 
-    const doctorsBase = numberOrNull(healthBase?.physicians)
-    const bedsBase = numberOrNull(healthBase?.total_hospital_beds)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -353,8 +468,6 @@ export async function buildGrowthComparison() {
       note: 'Lits observés; 2050 = stock base + besoin additionnel si le stock existe.',
     })
 
-    const transport2010 = rowForYear(transport, START_YEAR)
-    const transportBase = rowForYear(transport, baseYear)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -362,10 +475,10 @@ export async function buildGrowthComparison() {
       metric: 'tpg_passengers',
       label: 'Fréquentation TPG',
       unit: 'voyageurs/an',
-      value2010: numberOrNull(transport2010?.tpg_passengers),
-      valueBase: numberOrNull(transportBase?.tpg_passengers),
-      value2050: cagrEstimate(numberOrNull(transport2010?.tpg_passengers), numberOrNull(transportBase?.tpg_passengers), START_YEAR, baseYear),
-      dataType2050: numberOrNull(transport2010?.tpg_passengers) === null || numberOrNull(transportBase?.tpg_passengers) === null ? 'missing' : 'estimated',
+      value2010: tpgPassengers2010,
+      valueBase: tpgPassengersBase,
+      value2050: cagrEstimate(tpgPassengers2010, tpgPassengersBase, START_YEAR, baseYear),
+      dataType2050: tpgPassengers2010 === null || tpgPassengersBase === null ? 'missing' : 'estimated',
       sourceId: 'ocstat_geneva_transport',
       note: 'Fréquentation annuelle; 2050 estimé par tendance si la série est complète.',
     })
@@ -387,6 +500,10 @@ export async function buildGrowthComparison() {
       note: 'Revenus des transports selon comptes de résultat TPG; 2050 estimé par tendance.',
     })
 
+    const operatingSubsidy2010 = numberOrNull(finance2010?.operating_subsidy_million_chf)
+    const operatingSubsidyBase = numberOrNull(financeBase?.operating_subsidy_million_chf)
+    const operatingSubsidyTrend2050 = cagrEstimate(operatingSubsidy2010, operatingSubsidyBase, START_YEAR, baseYear)
+    const operatingSubsidyAdjusted2050 = applyPressureUplift(operatingSubsidyTrend2050, pressureScenario)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -394,14 +511,18 @@ export async function buildGrowthComparison() {
       metric: 'operating_subsidy',
       label: 'Subvention / indemnité TPG',
       unit: 'M CHF',
-      value2010: numberOrNull(finance2010?.operating_subsidy_million_chf),
-      valueBase: numberOrNull(financeBase?.operating_subsidy_million_chf),
-      value2050: cagrEstimate(numberOrNull(finance2010?.operating_subsidy_million_chf), numberOrNull(financeBase?.operating_subsidy_million_chf), START_YEAR, baseYear),
-      dataType2050: numberOrNull(finance2010?.operating_subsidy_million_chf) === null || numberOrNull(financeBase?.operating_subsidy_million_chf) === null ? 'missing' : 'estimated',
+      value2010: operatingSubsidy2010,
+      valueBase: operatingSubsidyBase,
+      value2050: operatingSubsidyAdjusted2050,
+      dataType2050: operatingSubsidyAdjusted2050 === null ? 'missing' : 'estimated',
       sourceId: 'tpg_annual_reports_finance',
-      note: 'Indemnité/subvention d’exploitation; 2050 estimé par tendance si la série est fournie.',
+      note: 'Indemnité/subvention d’exploitation; 2050 = tendance coût majorée par la tension d’absorption du scénario.',
     })
 
+    const operatingExpenses2010 = numberOrNull(finance2010?.operating_expenses_million_chf)
+    const operatingExpensesBase = numberOrNull(financeBase?.operating_expenses_million_chf)
+    const operatingExpensesTrend2050 = cagrEstimate(operatingExpenses2010, operatingExpensesBase, START_YEAR, baseYear)
+    const operatingExpensesAdjusted2050 = applyPressureUplift(operatingExpensesTrend2050, pressureScenario)
     addMetric(rows, {
       scenario,
       scenarioLabel,
@@ -409,27 +530,12 @@ export async function buildGrowthComparison() {
       metric: 'operating_expenses',
       label: 'Charges d’exploitation TPG',
       unit: 'M CHF',
-      value2010: numberOrNull(finance2010?.operating_expenses_million_chf),
-      valueBase: numberOrNull(financeBase?.operating_expenses_million_chf),
-      value2050: cagrEstimate(numberOrNull(finance2010?.operating_expenses_million_chf), numberOrNull(financeBase?.operating_expenses_million_chf), START_YEAR, baseYear),
-      dataType2050: numberOrNull(finance2010?.operating_expenses_million_chf) === null || numberOrNull(financeBase?.operating_expenses_million_chf) === null ? 'missing' : 'estimated',
+      value2010: operatingExpenses2010,
+      valueBase: operatingExpensesBase,
+      value2050: operatingExpensesAdjusted2050,
+      dataType2050: operatingExpensesAdjusted2050 === null ? 'missing' : 'estimated',
       sourceId: 'tpg_annual_reports_finance',
-      note: 'Charges d’exploitation selon comptes de résultat TPG; 2050 estimé par tendance.',
-    })
-
-    addMetric(rows, {
-      scenario,
-      scenarioLabel,
-      domain: 'Transports publics',
-      metric: 'adult_annual_subscription',
-      label: 'Abonnement annuel adulte',
-      unit: 'CHF',
-      value2010: numberOrNull(finance2010?.adult_annual_subscription_chf),
-      valueBase: numberOrNull(financeBase?.adult_annual_subscription_chf),
-      value2050: cagrEstimate(numberOrNull(finance2010?.adult_annual_subscription_chf), numberOrNull(financeBase?.adult_annual_subscription_chf), START_YEAR, baseYear),
-      dataType2050: numberOrNull(finance2010?.adult_annual_subscription_chf) === null || numberOrNull(financeBase?.adult_annual_subscription_chf) === null ? 'missing' : 'estimated',
-      sourceId: 'tpg_annual_reports_finance',
-      note: 'Proxy prix usager: abonnement annuel adulte Tout Genève/zone 10.',
+      note: 'Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût majorée par la tension d’absorption du scénario.',
     })
   }
 

@@ -9,18 +9,7 @@
 - URL: https://www.ge.ch/annuaire-statistique-enseignement-public-prive-geneve
 - Formats acceptés: CSV, XLS, XLSX, PDF
 - Destination: `data/raw/ocstat/manual/ge_education.csv ou data/raw/ocstat/manual/ge_education.xlsx`
-- Instruction: Déposer si disponible une série annuelle avec le nombre de classes scolaires à Genève. Les effectifs élèves, enseignants ETP et taille moyenne de classe sont déjà couverts par SRED/OFS.
-
-## ge_public_transport_fare_missing
-
-- Dataset: ge_public_transport_finance
-- Champs/années manquants: adult_annual_subscription_chf
-- Raison: Comparer le prix usager des transports publics avec les subventions et la croissance démographique.
-- Source conseillée: Tarifs unireso / TPG, lois tarifaires et archives Grand Conseil
-- URL: https://www.tpg.ch/fr/tarifs-titres-de-transport
-- Formats acceptés: CSV, XLS, XLSX, PDF
-- Destination: `data/raw/tpg/manual/ge_public_transport_finance.csv ou data/raw/tpg/manual/ge_public_transport_finance.xlsx`
-- Instruction: Compléter la série avec le prix de l’abonnement annuel adulte Tout Genève/zone 10 par année.
+- Instruction: Déposer si disponible une série annuelle avec le nombre officiel de classes scolaires à Genève. Le fichier OFS actuel donne la taille moyenne des classes et permet seulement des classes équivalentes estimées.
 
 ## ge_social_assistance_spending_missing
 
