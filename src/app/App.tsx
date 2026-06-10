@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { AbsorptionPressureBlock } from '../components/AbsorptionPressureBlock'
 import { AssumptionsPanel } from '../components/AssumptionsPanel'
 import { ChartCard } from '../components/ChartCard'
 import { ComparisonGrid } from '../components/ComparisonGrid'
 import { ConclusionBlock } from '../components/ConclusionBlock'
 import { ScenarioSelector } from '../components/ScenarioSelector'
+import { StudySourcesBlock } from '../components/StudySourcesBlock'
 import { FertilityReplacementChart } from '../charts/FertilityReplacementChart'
 import { GenevaPopulationChart } from '../charts/GenevaPopulationChart'
 import { GrowthComparisonChart } from '../charts/GrowthComparisonChart'
@@ -15,9 +17,10 @@ import downloadRequestsData from '../data/download_requests.json'
 import growthComparisonData from '../data/growth_comparison_ge.json'
 import scenariosChData from '../data/scenarios_ch.json'
 import scenariosGeData from '../data/scenarios_ge.json'
+import sourcesData from '../data/sources.json'
 import summaryData from '../data/summary.json'
 import { TARGET_YEAR } from '../lib/series'
-import type { DemographyRow, GrowthComparisonRow, ScenarioName, ScenarioRow } from '../lib/types'
+import type { DemographyRow, GrowthComparisonRow, ScenarioName, ScenarioRow, Source } from '../lib/types'
 
 type Summary = {
   baseYear?: number | string | null
@@ -40,6 +43,7 @@ function App() {
   const growthComparison = growthComparisonData as GrowthComparisonRow[]
   const summary = summaryData as Summary
   const downloadRequests = downloadRequestsData as Array<Record<string, unknown>>
+  const sources = sourcesData as Source[]
   const baseYear = Number(summary.geneva?.baseYear ?? summary.baseYear ?? 2024)
 
   return (
@@ -59,9 +63,16 @@ function App() {
         </section>
       ) : null}
 
+      <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-6 text-slate-600 shadow-sm md:p-6">
+        <p>
+          Ce travail n’a pas de valeur académique et n’engage que son auteur. Son but est de déplacer l’angle du débat vers les ordres de grandeur,
+          les hypothèses et les données vérifiables. Une erreur, une source manquante ou une correction peut être signalée <a className="font-medium text-slate-900 underline" href="https://github.com/evaletolab/swiss-10m-dashboard" target="_blank" rel="noreferrer">ici</a>.
+        </p>
+      </section>
+
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         <div className="rounded-3xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-950">Caricature médiatique</h2>
+          <h2 className="text-xl font-semibold text-slate-950">La simplification suspecte</h2>
           <p className="mt-3 text-slate-600">Limiter = fermeture. Ne pas limiter = prospérité automatique. Ce cadrage masque les contraintes matérielles.</p>
         </div>
         <div className="rounded-3xl border border-slate-200 bg-white p-6">
@@ -73,29 +84,34 @@ function App() {
       <ComparisonGrid baseYear={baseYear} targetYear={TARGET_YEAR} scenario={scenario} rows={growthComparison} />
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="La Suisse ne remplace plus ses générations" description={narrative.fertility} sourceIds={['bfs_statpop_population_balance', 'mock_v1_sample']}>
+        <ChartCard title="La Suisse ne remplace plus ses générations" description={narrative.fertility} sourceIds={['bfs_statpop_population_balance']}>
           <FertilityReplacementChart rows={chDemography} summary={summary.fertility} />
         </ChartCard>
-        <ChartCard title="Suisse : réel, tendance et initiative" description="Les observations, extrapolations maison et scénarios doivent rester distingués." sourceIds={['bfs_statpop_population_balance', 'mock_v1_sample']}>
+        <ChartCard title="Suisse : réel, tendance et initiative" description="Les observations, extrapolations maison et scénarios doivent rester distingués. La question de fond: à partir de quel seuil le débat cesse-t-il d’être réduit à “raciste/xénophobe” et devient-il une question mesurable de capacité d’absorption ?" sourceIds={['bfs_statpop_population_balance']}>
           <SwitzerlandPopulationChart rows={scenariosCh} />
         </ChartCard>
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Genève : réel, tendance et initiative" description="Les lignes séparent l’observé, la tendance historique et la trajectoire initiative traduite pour Genève." sourceIds={['ocstat_geneva_population', 'mock_v1_sample']}>
+        <ChartCard title="Genève : réel, tendance et initiative" description="Les lignes séparent l’observé, la tendance historique et la trajectoire initiative traduite pour Genève." sourceIds={['ocstat_geneva_population']}>
           <GenevaPopulationChart rows={scenariosGe} />
         </ChartCard>
-        <ChartCard title="Croissance cumulée normalisée" description="Chaque série part de 0 % en 2010. La comparaison montre ce qui croît plus vite ou moins vite que la population et le PIB.">
+      </section>
+
+      <AbsorptionPressureBlock rows={growthComparison} scenario={scenario} onScenarioChange={setScenario} />
+
+      <section className="mt-8">
+        <ChartCard title="Croissance cumulée normalisée" description="Chaque série part de 0 % en 2010. La tension d’absorption majore les charges projetées 2050; les pointillés montrent la tendance actuelle pour rendre l’écart visible." sourceIds={['ocstat_geneva_population', 'bfs_ocstat_geneva_gdp', 'absorption_pressure_v1', 'ocstat_geneva_housing', 'ge_education_annuary', 'ofsp_dashboard_health_insurance', 'tpg_annual_reports_finance', 'ofsp_health_premium_subsidies']}>
           <div className="mb-4 flex justify-end"><ScenarioSelector value={scenario} onChange={setScenario} /></div>
-          <div className="h-[300px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} toggleable /></div>
+          <div className="h-[300px]"><GrowthComparisonChart rows={growthComparison} scenario={scenario} compareToScenario="linear_trend_2000_base_year" toggleable /></div>
         </ChartCard>
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Logement vs population et PIB" description="Croissance du stock de logements comparée aux références démographique et économique." sourceIds={['ocstat_geneva_housing', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Logement vs population et PIB" description="Croissance du stock de logements comparée aux références démographique et économique. Le point 2010 est une estimation extrapolée si le stock observé démarre après 2010." sourceIds={['ocstat_geneva_housing', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Logement" metric="housing_stock" />
         </ChartCard>
-        <ChartCard title="Écoles / élèves vs population et PIB" description="Croissance des élèves et étudiants comparée aux références démographique et économique." sourceIds={['ge_education_annuary', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Écoles / élèves vs population et PIB" description="Croissance des élèves et étudiants comparée aux références démographique et économique. Note classes: school_classes = élèves publics/subventionnés / taille moyenne de classe." sourceIds={['ge_education_annuary', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Écoles" metric="students" />
         </ChartCard>
       </section>
@@ -110,7 +126,7 @@ function App() {
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Aide sociale vs population et PIB" description="Croissance cumulée des dépenses nettes d’aide sociale comparée à la démographie et au PIB. Si l’export cantonal Genève manque, le fichier OFS Suisse sert de proxy de croissance clairement libellé." sourceIds={['ocstat_geneva_social_assistance', 'bfs_fibs_social_assistance_ch', 'bfs_ocstat_geneva_gdp']}>
+        <ChartCard title="Aide sociale économique (proxy Suisse) vs population et PIB Genève" description="Croissance cumulée des dépenses nettes d’aide sociale comparée à la démographie et au PIB. Le fichier actuellement installé est un proxy national OFS Suisse; il doit être remplacé par l’export cantonal Genève dès qu’il est disponible." sourceIds={['bfs_fibs_social_assistance_ch', 'ocstat_geneva_social_assistance', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Aide sociale" metric="social_assistance_spending" />
         </ChartCard>
         <ChartCard title="Aide santé vs population et PIB" description="Croissance cumulée de la part cantonale des subsides d’assurance-maladie comparée à la démographie et au PIB." sourceIds={['ofsp_health_premium_subsidies', 'bfs_ocstat_geneva_gdp']}>
@@ -121,6 +137,7 @@ function App() {
       <AssumptionsPanel rows={assumptionsData as Array<Record<string, string | number | null>>} />
 
       <section className="mt-8"><ConclusionBlock /></section>
+      <StudySourcesBlock sources={sources} />
     </main>
   )
 }

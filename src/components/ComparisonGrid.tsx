@@ -1,4 +1,5 @@
 import { formatGridValue } from '../lib/series'
+import { toNumber } from '../lib/format'
 import type { GrowthComparisonRow, ScenarioName } from '../lib/types'
 
 const primaryMetrics = new Set([
@@ -18,7 +19,6 @@ const primaryMetrics = new Set([
   'transport_revenue',
   'operating_subsidy',
   'operating_expenses',
-  'adult_annual_subscription',
 ])
 
 const statusLabels: Record<string, string> = {
@@ -27,6 +27,12 @@ const statusLabels: Record<string, string> = {
   estimated: 'estimé',
   assumption: 'hypothèse',
   missing: 'manquant',
+}
+
+function annualizedGrowthLabel(totalGrowthPct: number | null, startYear: number, endYear: number) {
+  if (totalGrowthPct === null || endYear <= startYear) return 'donnée manquante'
+  const annualGrowth = (Math.pow(1 + totalGrowthPct / 100, 1 / (endYear - startYear)) - 1) * 100
+  return `${annualGrowth.toFixed(1)} %/an`
 }
 
 type Props = {
@@ -58,6 +64,9 @@ export function ComparisonGrid({ baseYear, targetYear, scenario, rows }: Props) 
     .filter((row) => row.scenario === scenario && primaryMetrics.has(row.metric))
     .sort((a, b) => `${a.domain}-${a.metric}`.localeCompare(`${b.domain}-${b.metric}`))
   const scenarioLabel = selectedRows[0]?.scenario_label ?? 'scénario'
+  const weightedGrowth = toNumber(rows.find((row) => row.scenario === scenario && row.metric === 'absorption_pressure')?.growth_2010_to_2050_pct)
+  const weightedGrowthLabel = weightedGrowth === null ? 'donnée manquante' : `${weightedGrowth.toFixed(1)} %`
+  const annualWeightedGrowthLabel = annualizedGrowthLabel(weightedGrowth, 2010, targetYear)
 
   return (
     <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
@@ -65,6 +74,8 @@ export function ComparisonGrid({ baseYear, targetYear, scenario, rows }: Props) 
         <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Lecture centrale: trajectoire et besoins</h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
           Valeurs brutes par domaine: 2010 observé, base observée {baseYear}, puis estimation {targetYear} selon {scenarioLabel}. Les cellules manquantes restent visibles.
+          <br />
+          <strong className="text-slate-900">Estimation {targetYear} selon {scenarioLabel}: tension pondérée annualisée de {annualWeightedGrowthLabel}, soit {weightedGrowthLabel} cumulés.</strong>
         </p>
       </div>
       <div className="overflow-x-auto">

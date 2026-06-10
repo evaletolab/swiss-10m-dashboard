@@ -8,4 +8,5 @@ export const colors = {
   housing: '#0f766e',
   health: '#be123c',
   transport: '#7c3aed',
+  pressure: '#ea580c',
 }

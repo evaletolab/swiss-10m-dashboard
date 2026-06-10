@@ -7,6 +7,7 @@ import type { GrowthComparisonRow, ScenarioName } from '../lib/types'
 type Props = {
   rows: GrowthComparisonRow[]
   scenario: ScenarioName
+  compareToScenario?: ScenarioName
   domain?: string
   metric?: string
   includeReferences?: boolean
@@ -19,7 +20,7 @@ const metricColors: Record<string, string> = {
   housing_stock: colors.housing,
   subsidized_housing: colors.cagr,
   students: colors.transport,
-  school_classes: colors.linear,
+  school_classes: colors.recent,
   physicians: colors.health,
   hospital_beds: colors.cagr,
   tpg_passengers: colors.transport,
@@ -30,10 +31,13 @@ const metricColors: Record<string, string> = {
   health_cost_per_insured: colors.health,
   social_assistance_spending: colors.cagr,
   health_premium_subsidy_cantonal: colors.health,
+  absorption_pressure: colors.pressure,
 }
 
-const overviewMetrics = ['population', 'gdp', 'housing_stock', 'students', 'health_cost_per_insured', 'operating_expenses', 'health_premium_subsidy_cantonal']
+const overviewMetrics = ['population', 'gdp', 'housing_stock', 'school_classes', 'health_cost_per_insured', 'operating_expenses', 'health_premium_subsidy_cantonal']
+const defaultToggleableMetrics = new Set(overviewMetrics)
 const referenceMetrics = new Set(['population', 'gdp'])
+const pressureAdjustedCostMetrics = new Set(['health_cost_per_insured', 'operating_expenses', 'health_premium_subsidy_cantonal'])
 
 function selectedRows(rows: GrowthComparisonRow[], scenario: ScenarioName, domain?: string, metric?: string, includeReferences = true) {
   const base = rows.filter((row) => row.scenario === scenario)
@@ -60,14 +64,37 @@ function lineStrokeWidth(row: GrowthComparisonRow, focusedMetric?: string) {
   return 2
 }
 
-export function GrowthComparisonChart({ rows, scenario, domain, metric, includeReferences = true, toggleable = false }: Props) {
-  const [enabledMetrics, setEnabledMetrics] = useState<Set<string>>(() => new Set(overviewMetrics))
+function baselineKey(metricName: string) {
+  return `baseline_${metricName}`
+}
+
+function sourceMetricFromKey(metricName: string) {
+  return metricName.startsWith('baseline_') ? metricName.replace('baseline_', '') : metricName
+}
+
+export function GrowthComparisonChart({ rows, scenario, compareToScenario, domain, metric, includeReferences = true, toggleable = false }: Props) {
+  const [enabledMetrics, setEnabledMetrics] = useState<Set<string>>(() => new Set(defaultToggleableMetrics))
   const metrics = selectedRows(rows, scenario, domain, metric, includeReferences)
+  const baselineMetrics = compareToScenario && compareToScenario !== scenario
+    ? selectedRows(rows, compareToScenario, domain, metric, includeReferences).filter((row) => pressureAdjustedCostMetrics.has(row.metric))
+    : []
   const first = metrics[0]
   const data = [
-    { year: 2010, ...Object.fromEntries(metrics.map((row) => [row.metric, toNumber(row.value_2010) === null ? null : 0])) },
-    { year: Number(first?.base_year ?? 2024), ...Object.fromEntries(metrics.map((row) => [row.metric, toNumber(row.growth_2010_to_base_pct)])) },
-    { year: 2050, ...Object.fromEntries(metrics.map((row) => [row.metric, toNumber(row.growth_2010_to_2050_pct)])) },
+    {
+      year: 2010,
+      ...Object.fromEntries(metrics.map((row) => [row.metric, toNumber(row.value_2010) === null ? null : 0])),
+      ...Object.fromEntries(baselineMetrics.map((row) => [baselineKey(row.metric), toNumber(row.value_2010) === null ? null : 0])),
+    },
+    {
+      year: Number(first?.base_year ?? 2024),
+      ...Object.fromEntries(metrics.map((row) => [row.metric, toNumber(row.growth_2010_to_base_pct)])),
+      ...Object.fromEntries(baselineMetrics.map((row) => [baselineKey(row.metric), toNumber(row.growth_2010_to_base_pct)])),
+    },
+    {
+      year: 2050,
+      ...Object.fromEntries(metrics.map((row) => [row.metric, toNumber(row.growth_2010_to_2050_pct)])),
+      ...Object.fromEntries(baselineMetrics.map((row) => [baselineKey(row.metric), toNumber(row.growth_2010_to_2050_pct)])),
+    },
   ]
 
   function toggleMetric(metricName: string) {
@@ -81,7 +108,7 @@ export function GrowthComparisonChart({ rows, scenario, domain, metric, includeR
 
   function toggleLegendMetric(payload: unknown) {
     const dataKey = (payload as { dataKey?: unknown }).dataKey
-    if (toggleable && typeof dataKey === 'string') toggleMetric(dataKey)
+    if (toggleable && typeof dataKey === 'string') toggleMetric(sourceMetricFromKey(dataKey))
   }
 
   return (
@@ -102,6 +129,21 @@ export function GrowthComparisonChart({ rows, scenario, domain, metric, includeR
             strokeWidth={lineStrokeWidth(row, metric)}
             strokeDasharray={row.metric === 'gdp' ? '5 5' : undefined}
             dot
+            connectNulls={false}
+            hide={toggleable && !enabledMetrics.has(row.metric)}
+          />
+        ))}
+        {baselineMetrics.map((row) => (
+          <Line
+            key={baselineKey(row.metric)}
+            type="monotone"
+            dataKey={baselineKey(row.metric)}
+            name={`Tendance actuelle - ${row.label}`}
+            stroke={metricColors[row.metric] ?? colors.neutral}
+            strokeWidth={1.75}
+            strokeDasharray="2 6"
+            strokeOpacity={0.45}
+            dot={false}
             connectNulls={false}
             hide={toggleable && !enabledMetrics.has(row.metric)}
           />

@@ -7,8 +7,10 @@ type ScenarioSelectorProps = {
 
 const options: Array<{ value: ScenarioName; label: string }> = [
   { value: 'linear_trend_2000_base_year', label: 'Tendance actuelle' },
-  { value: 'initiative_linear', label: 'Scénario initiative' },
+  { value: 'cagr_trend_2000_base_year', label: 'Tendance CAGR' },
   { value: 'recent_trend_2015_base_year', label: 'Tendance récente' },
+  { value: 'initiative_linear', label: 'Scénario initiative' },
+  { value: 'initiative_cagr', label: 'Scénario initiative CAGR' },
 ]
 
 export function ScenarioSelector({ value, onChange }: ScenarioSelectorProps) {
