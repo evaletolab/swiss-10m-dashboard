@@ -62,7 +62,7 @@ function App() {
   const baseYear = Number(summary.geneva?.baseYear ?? summary.baseYear ?? 2024)
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-12">
+    <main className="mx-auto max-w-[var(--container-4xl)] px-4 py-8 md:px-8 md:py-12">
       <div className="fixed bottom-4 left-4 right-4 z-50 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-xl backdrop-blur md:bottom-6 md:left-auto md:right-6 md:w-[22rem]">
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Scénario affiché</p>
         <ScenarioSelector value={scenario} onChange={setScenario} />
