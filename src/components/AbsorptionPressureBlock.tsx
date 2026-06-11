@@ -68,17 +68,18 @@ export function AbsorptionPressureBlock({ rows, scenario, onScenarioChange }: Pr
             logements, écoles, santé et transports. Plus l’indice monte, plus les capacités doivent croître pour éviter la rareté locale.
           </p>
           <p className="mt-3 rounded-2xl bg-white/70 px-4 py-3 text-sm leading-6">
-            Indice = 35 % logement + 20 % écoles + 20 % santé + 25 % transports. Coûts 2050 = tendance coût x (1 + tension additionnelle / 100).
+            Indice = 35 % logement + 20 % écoles + 20 % santé + 25 % transports. Coûts 2050 = tendance coût x (1 + écart de tension vs tendance actuelle / 100).
           </p>
           <p className="mt-3 text-sm leading-6 text-orange-900">
-            Calcul: {formatPressure(pressure?.growth_2010_to_2050_pct)} en 2050 - {formatPressure(pressure?.growth_2010_to_base_pct)} en 2024 =
+            Impact coût: tension additionnelle du scénario comparée à la tendance actuelle =
             {' '}{formatUpliftPct(costUpliftPct)}. Appliqué aux charges: {formatCostExample(costUpliftPct)}.
           </p>
           <div className="mt-3 rounded-2xl bg-white/70 px-4 py-3 text-sm leading-6 text-orange-900">
             <p className="font-semibold">Note méthodologique</p>
             <p className="mt-1">
               Le <strong>{formatAnnualizedPressure(selected2050)}</strong> n’est pas une prévision d’augmentation naturelle des coûts. C’est une manière de résumer,
-              sous forme annualisée, l’évolution d’un score composite de tension entre 2010 et 2050. Cette tension s’ajoute à la croissance naturelle des coûts.
+              sous forme annualisée, l’évolution d’un score composite de tension entre 2010 et 2050. L’impact sur les coûts est calculé comme un écart de scénario
+              par rapport à la tendance actuelle, pour éviter de compter deux fois la tension déjà présente dans les coûts observés.
               Suivre ce <a className="font-semibold underline" href="https://github.com/evaletolab/swiss-10m-dashboard/blob/master/METHODOLOGIE.md" target="_blank" rel="noreferrer">lien</a> pour consulter la méthodologie.
             </p>
           </div>
@@ -98,7 +99,7 @@ export function AbsorptionPressureBlock({ rows, scenario, onScenarioChange }: Pr
             <p className="text-xs font-medium uppercase tracking-wide text-orange-700">Impact coûts V1</p>
             <p className="mt-1 text-3xl font-semibold">{formatMultiplier(costUpliftPct)}</p>
             <p className="mt-1 text-sm font-semibold text-orange-900">{formatCostExample(costUpliftPct)}</p>
-            <p className="mt-1 text-xs leading-5 text-orange-800">Coefficient appliqué aux charges projetées 2050.</p>
+            <p className="mt-1 text-xs leading-5 text-orange-800">Coefficient appliqué aux charges projetées 2050, relativement à la tendance actuelle.</p>
           </div>
           <div className="rounded-2xl bg-white p-4 sm:col-span-2 lg:col-span-1">
             <p className="text-xs font-medium uppercase tracking-wide text-orange-700">Écart vs tendance actuelle</p>

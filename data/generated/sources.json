@@ -207,6 +207,6 @@
     "accessedAt": "2026-06-10",
     "type": "official_reference",
     "license": "project methodology",
-    "notes": "Indice composite interne: 35% logement, 20% écoles, 20% santé, 25% transports. Mesure un effort d’absorption; la tension additionnelle 2024-2050 sert de coefficient de majoration des charges projetées 2050."
+    "notes": "Indice composite interne: 35% logement, 20% écoles, 20% santé, 25% transports. Mesure un effort d’absorption; l’impact coût V1 est l’écart de tension du scénario par rapport à la tendance actuelle."
   }
 ]

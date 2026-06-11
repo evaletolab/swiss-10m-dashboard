@@ -85,27 +85,44 @@ Les constantes viennent de `src/data/assumptions.json` et sont des hypothèses d
 
 Ces constantes ne sont pas neutres. Elles sont assumées comme choix méthodologiques V1 et doivent être remplacées dès que de meilleures séries officielles ou locales sont disponibles.
 
-## Historique, scénario et double comptage
+## Baseline, scénarios et double comptage
 
 La tension existe déjà sur la période historique `2010 -> 2024`.
 
 Dans les données actuelles, le score 2024 est d'environ **19.8 points**. Cette tension historique est probablement déjà partiellement intégrée aux coûts observés: loyers, subsides, coûts de santé, charges de transport, fonctionnement public.
 
-Pour éviter le double comptage, le modèle n'ajoute pas toute la tension `2010 -> 2050` aux coûts. Il ajoute seulement la tension additionnelle après la base observée:
+Pour éviter le double comptage, la **tendance actuelle** sert de baseline coût. Elle est considérée comme une extrapolation qui contient déjà, implicitement, les tensions observées et leur prolongement tendanciel.
+
+Le modèle n'ajoute donc plus directement la tension additionnelle `2024 -> 2050` aux coûts. Il applique seulement l'écart de tension du scénario par rapport à la tendance actuelle:
 
 ```txt
-tension additionnelle = ITAC 2050 - ITAC 2024
-charge 2050 ajustée = projection naturelle de coût 2050 x (1 + tension additionnelle / 100)
+tension additionnelle scénario = ITAC 2050 scénario - ITAC 2024
+tension additionnelle baseline = ITAC 2050 tendance actuelle - ITAC 2024
+écart de tension = tension additionnelle scénario - tension additionnelle baseline
+
+charge 2050 ajustée = projection naturelle de coût 2050 x (1 + écart de tension / 100)
+```
+
+Lecture V1:
+
+```txt
+tendance actuelle = +0
+tendance CAGR = +X si elle produit plus de tension que la baseline
+scénario initiative = -X si elle produit moins de tension que la baseline
 ```
 
 Exemple:
 
 ```txt
 ITAC 2024 = 19.8 points
+ITAC 2050 tendance actuelle = 52.4 points
 ITAC 2050 scénario initiative = 34.2 points
-tension additionnelle = 34.2 - 19.8 = +14.4 points
 
-100 CHF projetés en 2050 deviennent 114 CHF
+tension additionnelle baseline = 52.4 - 19.8 = +32.6 points
+tension additionnelle initiative = 34.2 - 19.8 = +14.4 points
+écart de tension initiative = 14.4 - 32.6 = -18.2 points
+
+100 CHF projetés en 2050 deviennent 82 CHF relativement à la baseline
 ```
 
 ## Annualisation
@@ -124,7 +141,7 @@ Exemples indicatifs:
 | Tendance linéaire | `52.4 pts` | environ `1.1%/an` |
 | Tendance CAGR | `62.7 pts` | environ `1.2%/an` |
 
-Ces rythmes donnent une lecture temporelle du score composite. Ils s'ajoutent conceptuellement à la croissance naturelle des coûts, mais le modèle applique uniquement la tension additionnelle `2024 -> 2050` pour éviter de compter deux fois la tension historique.
+Ces rythmes donnent une lecture temporelle du score composite. Ils ne sont pas appliqués directement comme inflation. Le modèle applique seulement l'écart de tension du scénario par rapport à la tendance actuelle, afin de ne pas empiler une seconde fois une tension déjà présente dans la projection tendancielle des coûts.
 
 ## Rupture 2020 des subsides maladie
 
@@ -154,19 +171,19 @@ Parce que les coûts observés suivent déjà leur propre dynamique: inflation, 
 
 Parce que la tension mesure un écart de capacité. Un budget peut augmenter sans que les logements, classes, médecins ou transports augmentent assez vite. Inversement, une capacité peut être créée avant que le coût complet soit visible.
 
-### 4. Pourquoi distinguer 2010-2024 et 2024-2050 ?
+### 4. Pourquoi distinguer la baseline et les scénarios ?
 
-Parce que la tension `2010 -> 2024` existe déjà. Elle est probablement déjà partiellement incorporée dans les coûts observés. Si on ajoutait toute la tension `2010 -> 2050` aux charges futures, on compterait deux fois la partie historique.
+Parce que la tension historique et son prolongement tendanciel sont déjà partiellement incorporés dans les coûts observés. Si on ajoute une tension absolue par-dessus la tendance actuelle, on risque de compter deux fois le même phénomène.
 
-### 5. Pourquoi ajouter seulement la tension additionnelle aux charges 2050 ?
+### 5. Pourquoi appliquer seulement l'écart de tension ?
 
-Parce que la projection naturelle de coût part déjà des coûts observés à la base. La seule partie à ajouter est donc la pression supplémentaire créée par le scénario après la base observée:
+Parce que la projection naturelle de coût part déjà des coûts observés à la base. La seule partie à ajouter ou retrancher est donc l'écart du scénario par rapport à la tendance actuelle:
 
 ```txt
-surcoût tension = ITAC 2050 - ITAC 2024
+impact coût V1 = (ITAC 2050 scénario - ITAC 2024) - (ITAC 2050 tendance actuelle - ITAC 2024)
 ```
 
-Cette règle reste simple, transparente et améliorable.
+Cette règle garde une baseline lisible: tendance actuelle `+0`, scénario plus tendu `+X`, scénario moins tendu `-X`.
 
 ## Limites
 

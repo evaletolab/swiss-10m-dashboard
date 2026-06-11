@@ -190,12 +190,12 @@
     "value_2050": "52.4",
     "growth_2010_to_base_pct": "19.75",
     "growth_2010_to_2050_pct": "52.4",
-    "growth_base_to_2050_pct": "32.65",
+    "growth_base_to_2050_pct": "0",
     "data_type_2010": "observed",
     "data_type_base": "estimated",
     "data_type_2050": "estimated",
     "source_id": "absorption_pressure_v1",
-    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. Ce n’est pas une inflation, mais une tension relative aux capacités 2024."
+    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. L’impact coût correspond à l’écart de tension du scénario par rapport à la tendance actuelle."
   },
   {
     "scenario": "linear_trend_2000_base_year",
@@ -209,15 +209,15 @@
     "target_year": "2050",
     "value_2010": "1931.95292",
     "value_base": "2585.633862",
-    "value_2050": "5892.96",
+    "value_2050": "4442.49",
     "growth_2010_to_base_pct": "33.84",
-    "growth_2010_to_2050_pct": "205.03",
-    "growth_base_to_2050_pct": "127.91",
+    "growth_2010_to_2050_pct": "129.95",
+    "growth_base_to_2050_pct": "71.81",
     "data_type_2010": "official_proxy",
     "data_type_base": "official_proxy",
     "data_type_2050": "estimated",
     "source_id": "bfs_fibs_social_assistance_ch",
-    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "linear_trend_2000_base_year",
@@ -231,15 +231,15 @@
     "target_year": "2050",
     "value_2010": "158.2",
     "value_base": "447.77",
-    "value_2050": "1633.36",
+    "value_2050": "1231.33",
     "growth_2010_to_base_pct": "183.04",
-    "growth_2010_to_2050_pct": "932.47",
-    "growth_base_to_2050_pct": "264.78",
+    "growth_2010_to_2050_pct": "678.34",
+    "growth_base_to_2050_pct": "174.99",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_health_premium_subsidies;rts_geneva_health_subsidy_reform_2020",
-    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans majoré par la tension d’absorption du scénario."
+    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans ajusté par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "linear_trend_2000_base_year",
@@ -253,15 +253,15 @@
     "target_year": "2050",
     "value_2010": "3969.8",
     "value_base": "5762.8",
-    "value_2050": "15273.8",
+    "value_2050": "11514.36",
     "growth_2010_to_base_pct": "45.17",
-    "growth_2010_to_2050_pct": "284.75",
-    "growth_base_to_2050_pct": "165.04",
+    "growth_2010_to_2050_pct": "190.05",
+    "growth_base_to_2050_pct": "99.8",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_dashboard_health_insurance",
-    "note": "Coûts annuels par assuré; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Coûts annuels par assuré; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "linear_trend_2000_base_year",
@@ -363,15 +363,15 @@
     "target_year": "2050",
     "value_2010": "183.54",
     "value_base": "283.37",
-    "value_2050": "842.09",
+    "value_2050": "634.82",
     "growth_2010_to_base_pct": "54.39",
-    "growth_2010_to_2050_pct": "358.8",
-    "growth_base_to_2050_pct": "197.17",
+    "growth_2010_to_2050_pct": "245.88",
+    "growth_base_to_2050_pct": "124.03",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "linear_trend_2000_base_year",
@@ -385,15 +385,15 @@
     "target_year": "2050",
     "value_2010": "354.89",
     "value_base": "551.98",
-    "value_2050": "1662.98",
+    "value_2050": "1253.66",
     "growth_2010_to_base_pct": "55.54",
-    "growth_2010_to_2050_pct": "368.59",
-    "growth_base_to_2050_pct": "201.28",
+    "growth_2010_to_2050_pct": "253.25",
+    "growth_base_to_2050_pct": "127.12",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "cagr_trend_2000_base_year",
@@ -586,12 +586,12 @@
     "value_2050": "62.72",
     "growth_2010_to_base_pct": "19.75",
     "growth_2010_to_2050_pct": "62.72",
-    "growth_base_to_2050_pct": "42.97",
+    "growth_base_to_2050_pct": "10.32",
     "data_type_2010": "observed",
     "data_type_base": "estimated",
     "data_type_2050": "estimated",
     "source_id": "absorption_pressure_v1",
-    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. Ce n’est pas une inflation, mais une tension relative aux capacités 2024."
+    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. L’impact coût correspond à l’écart de tension du scénario par rapport à la tendance actuelle."
   },
   {
     "scenario": "cagr_trend_2000_base_year",
@@ -605,15 +605,15 @@
     "target_year": "2050",
     "value_2010": "1931.95292",
     "value_base": "2585.633862",
-    "value_2050": "6351.43",
+    "value_2050": "4900.95",
     "growth_2010_to_base_pct": "33.84",
-    "growth_2010_to_2050_pct": "228.76",
-    "growth_base_to_2050_pct": "145.64",
+    "growth_2010_to_2050_pct": "153.68",
+    "growth_base_to_2050_pct": "89.55",
     "data_type_2010": "official_proxy",
     "data_type_base": "official_proxy",
     "data_type_2050": "estimated",
     "source_id": "bfs_fibs_social_assistance_ch",
-    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "cagr_trend_2000_base_year",
@@ -627,15 +627,15 @@
     "target_year": "2050",
     "value_2010": "158.2",
     "value_base": "447.77",
-    "value_2050": "1760.43",
+    "value_2050": "1358.4",
     "growth_2010_to_base_pct": "183.04",
-    "growth_2010_to_2050_pct": "1012.79",
-    "growth_base_to_2050_pct": "293.15",
+    "growth_2010_to_2050_pct": "758.66",
+    "growth_base_to_2050_pct": "203.37",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_health_premium_subsidies;rts_geneva_health_subsidy_reform_2020",
-    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans majoré par la tension d’absorption du scénario."
+    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans ajusté par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "cagr_trend_2000_base_year",
@@ -649,15 +649,15 @@
     "target_year": "2050",
     "value_2010": "3969.8",
     "value_base": "5762.8",
-    "value_2050": "16462.08",
+    "value_2050": "12702.64",
     "growth_2010_to_base_pct": "45.17",
-    "growth_2010_to_2050_pct": "314.68",
-    "growth_base_to_2050_pct": "185.66",
+    "growth_2010_to_2050_pct": "219.98",
+    "growth_base_to_2050_pct": "120.42",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_dashboard_health_insurance",
-    "note": "Coûts annuels par assuré; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Coûts annuels par assuré; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "cagr_trend_2000_base_year",
@@ -759,15 +759,15 @@
     "target_year": "2050",
     "value_2010": "183.54",
     "value_base": "283.37",
-    "value_2050": "907.6",
+    "value_2050": "700.33",
     "growth_2010_to_base_pct": "54.39",
-    "growth_2010_to_2050_pct": "394.5",
-    "growth_base_to_2050_pct": "220.29",
+    "growth_2010_to_2050_pct": "281.57",
+    "growth_base_to_2050_pct": "147.14",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "cagr_trend_2000_base_year",
@@ -781,15 +781,15 @@
     "target_year": "2050",
     "value_2010": "354.89",
     "value_base": "551.98",
-    "value_2050": "1792.36",
+    "value_2050": "1383.04",
     "growth_2010_to_base_pct": "55.54",
-    "growth_2010_to_2050_pct": "405.05",
-    "growth_base_to_2050_pct": "224.71",
+    "growth_2010_to_2050_pct": "289.71",
+    "growth_base_to_2050_pct": "150.56",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "recent_trend_2015_base_year",
@@ -982,12 +982,12 @@
     "value_2050": "53.49",
     "growth_2010_to_base_pct": "19.75",
     "growth_2010_to_2050_pct": "53.49",
-    "growth_base_to_2050_pct": "33.74",
+    "growth_base_to_2050_pct": "1.09",
     "data_type_2010": "observed",
     "data_type_base": "estimated",
     "data_type_2050": "estimated",
     "source_id": "absorption_pressure_v1",
-    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. Ce n’est pas une inflation, mais une tension relative aux capacités 2024."
+    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. L’impact coût correspond à l’écart de tension du scénario par rapport à la tendance actuelle."
   },
   {
     "scenario": "recent_trend_2015_base_year",
@@ -1001,15 +1001,15 @@
     "target_year": "2050",
     "value_2010": "1931.95292",
     "value_base": "2585.633862",
-    "value_2050": "5941.39",
+    "value_2050": "4490.91",
     "growth_2010_to_base_pct": "33.84",
-    "growth_2010_to_2050_pct": "207.53",
-    "growth_base_to_2050_pct": "129.78",
+    "growth_2010_to_2050_pct": "132.45",
+    "growth_base_to_2050_pct": "73.69",
     "data_type_2010": "official_proxy",
     "data_type_base": "official_proxy",
     "data_type_2050": "estimated",
     "source_id": "bfs_fibs_social_assistance_ch",
-    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "recent_trend_2015_base_year",
@@ -1023,15 +1023,15 @@
     "target_year": "2050",
     "value_2010": "158.2",
     "value_base": "447.77",
-    "value_2050": "1646.78",
+    "value_2050": "1244.75",
     "growth_2010_to_base_pct": "183.04",
-    "growth_2010_to_2050_pct": "940.95",
-    "growth_base_to_2050_pct": "267.77",
+    "growth_2010_to_2050_pct": "686.82",
+    "growth_base_to_2050_pct": "177.99",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_health_premium_subsidies;rts_geneva_health_subsidy_reform_2020",
-    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans majoré par la tension d’absorption du scénario."
+    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans ajusté par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "recent_trend_2015_base_year",
@@ -1045,15 +1045,15 @@
     "target_year": "2050",
     "value_2010": "3969.8",
     "value_base": "5762.8",
-    "value_2050": "15399.31",
+    "value_2050": "11639.87",
     "growth_2010_to_base_pct": "45.17",
-    "growth_2010_to_2050_pct": "287.91",
-    "growth_base_to_2050_pct": "167.22",
+    "growth_2010_to_2050_pct": "193.21",
+    "growth_base_to_2050_pct": "101.98",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_dashboard_health_insurance",
-    "note": "Coûts annuels par assuré; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Coûts annuels par assuré; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "recent_trend_2015_base_year",
@@ -1155,15 +1155,15 @@
     "target_year": "2050",
     "value_2010": "183.54",
     "value_base": "283.37",
-    "value_2050": "849.01",
+    "value_2050": "641.74",
     "growth_2010_to_base_pct": "54.39",
-    "growth_2010_to_2050_pct": "362.57",
-    "growth_base_to_2050_pct": "199.61",
+    "growth_2010_to_2050_pct": "249.65",
+    "growth_base_to_2050_pct": "126.47",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "recent_trend_2015_base_year",
@@ -1177,15 +1177,15 @@
     "target_year": "2050",
     "value_2010": "354.89",
     "value_base": "551.98",
-    "value_2050": "1676.64",
+    "value_2050": "1267.32",
     "growth_2010_to_base_pct": "55.54",
-    "growth_2010_to_2050_pct": "372.44",
-    "growth_base_to_2050_pct": "203.75",
+    "growth_2010_to_2050_pct": "257.1",
+    "growth_base_to_2050_pct": "129.6",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_linear",
@@ -1378,12 +1378,12 @@
     "value_2050": "34.16",
     "growth_2010_to_base_pct": "19.75",
     "growth_2010_to_2050_pct": "34.16",
-    "growth_base_to_2050_pct": "14.41",
+    "growth_base_to_2050_pct": "-18.24",
     "data_type_2010": "observed",
     "data_type_base": "estimated",
     "data_type_2050": "estimated",
     "source_id": "absorption_pressure_v1",
-    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. Ce n’est pas une inflation, mais une tension relative aux capacités 2024."
+    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. L’impact coût correspond à l’écart de tension du scénario par rapport à la tendance actuelle."
   },
   {
     "scenario": "initiative_linear",
@@ -1397,15 +1397,15 @@
     "target_year": "2050",
     "value_2010": "1931.95292",
     "value_base": "2585.633862",
-    "value_2050": "5082.65",
+    "value_2050": "3632.18",
     "growth_2010_to_base_pct": "33.84",
-    "growth_2010_to_2050_pct": "163.08",
-    "growth_base_to_2050_pct": "96.57",
+    "growth_2010_to_2050_pct": "88.01",
+    "growth_base_to_2050_pct": "40.48",
     "data_type_2010": "official_proxy",
     "data_type_base": "official_proxy",
     "data_type_2050": "estimated",
     "source_id": "bfs_fibs_social_assistance_ch",
-    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_linear",
@@ -1419,15 +1419,15 @@
     "target_year": "2050",
     "value_2010": "158.2",
     "value_base": "447.77",
-    "value_2050": "1408.76",
+    "value_2050": "1006.74",
     "growth_2010_to_base_pct": "183.04",
-    "growth_2010_to_2050_pct": "790.49",
-    "growth_base_to_2050_pct": "214.62",
+    "growth_2010_to_2050_pct": "536.37",
+    "growth_base_to_2050_pct": "124.83",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_health_premium_subsidies;rts_geneva_health_subsidy_reform_2020",
-    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans majoré par la tension d’absorption du scénario."
+    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans ajusté par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_linear",
@@ -1441,15 +1441,15 @@
     "target_year": "2050",
     "value_2010": "3969.8",
     "value_base": "5762.8",
-    "value_2050": "13173.58",
+    "value_2050": "9414.14",
     "growth_2010_to_base_pct": "45.17",
-    "growth_2010_to_2050_pct": "231.84",
-    "growth_base_to_2050_pct": "128.6",
+    "growth_2010_to_2050_pct": "137.14",
+    "growth_base_to_2050_pct": "63.36",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_dashboard_health_insurance",
-    "note": "Coûts annuels par assuré; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Coûts annuels par assuré; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_linear",
@@ -1551,15 +1551,15 @@
     "target_year": "2050",
     "value_2010": "183.54",
     "value_base": "283.37",
-    "value_2050": "726.3",
+    "value_2050": "519.03",
     "growth_2010_to_base_pct": "54.39",
-    "growth_2010_to_2050_pct": "295.72",
-    "growth_base_to_2050_pct": "156.31",
+    "growth_2010_to_2050_pct": "182.79",
+    "growth_base_to_2050_pct": "83.16",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_linear",
@@ -1573,15 +1573,15 @@
     "target_year": "2050",
     "value_2010": "354.89",
     "value_base": "551.98",
-    "value_2050": "1434.31",
+    "value_2050": "1024.99",
     "growth_2010_to_base_pct": "55.54",
-    "growth_2010_to_2050_pct": "304.16",
-    "growth_base_to_2050_pct": "159.85",
+    "growth_2010_to_2050_pct": "188.82",
+    "growth_base_to_2050_pct": "85.69",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_cagr",
@@ -1774,12 +1774,12 @@
     "value_2050": "34.16",
     "growth_2010_to_base_pct": "19.75",
     "growth_2010_to_2050_pct": "34.16",
-    "growth_base_to_2050_pct": "14.41",
+    "growth_base_to_2050_pct": "-18.24",
     "data_type_2010": "observed",
     "data_type_base": "estimated",
     "data_type_2050": "estimated",
     "source_id": "absorption_pressure_v1",
-    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. Ce n’est pas une inflation, mais une tension relative aux capacités 2024."
+    "note": "Indice composite V1: effort d’absorption logement 35%, écoles 20%, santé 20%, transports 25%. L’impact coût correspond à l’écart de tension du scénario par rapport à la tendance actuelle."
   },
   {
     "scenario": "initiative_cagr",
@@ -1793,15 +1793,15 @@
     "target_year": "2050",
     "value_2010": "1931.95292",
     "value_base": "2585.633862",
-    "value_2050": "5082.65",
+    "value_2050": "3632.18",
     "growth_2010_to_base_pct": "33.84",
-    "growth_2010_to_2050_pct": "163.08",
-    "growth_base_to_2050_pct": "96.57",
+    "growth_2010_to_2050_pct": "88.01",
+    "growth_base_to_2050_pct": "40.48",
     "data_type_2010": "official_proxy",
     "data_type_base": "official_proxy",
     "data_type_2050": "estimated",
     "source_id": "bfs_fibs_social_assistance_ch",
-    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Dépenses nettes d’aide sociale économique OFS FIBS Suisse; proxy de croissance en attente de l’export cantonal Genève. 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_cagr",
@@ -1815,15 +1815,15 @@
     "target_year": "2050",
     "value_2010": "158.2",
     "value_base": "447.77",
-    "value_2050": "1408.76",
+    "value_2050": "1006.74",
     "growth_2010_to_base_pct": "183.04",
-    "growth_2010_to_2050_pct": "790.49",
-    "growth_base_to_2050_pct": "214.62",
+    "growth_2010_to_2050_pct": "536.37",
+    "growth_base_to_2050_pct": "124.83",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_health_premium_subsidies;rts_geneva_health_subsidy_reform_2020",
-    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans majoré par la tension d’absorption du scénario."
+    "note": "Part cantonale des réductions de primes LAMal; rupture de régime 2020 documentée, 2050 = lissage linéaire 10 ans ajusté par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_cagr",
@@ -1837,15 +1837,15 @@
     "target_year": "2050",
     "value_2010": "3969.8",
     "value_base": "5762.8",
-    "value_2050": "13173.58",
+    "value_2050": "9414.14",
     "growth_2010_to_base_pct": "45.17",
-    "growth_2010_to_2050_pct": "231.84",
-    "growth_base_to_2050_pct": "128.6",
+    "growth_2010_to_2050_pct": "137.14",
+    "growth_base_to_2050_pct": "63.36",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "ofsp_dashboard_health_insurance",
-    "note": "Coûts annuels par assuré; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Coûts annuels par assuré; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_cagr",
@@ -1947,15 +1947,15 @@
     "target_year": "2050",
     "value_2010": "183.54",
     "value_base": "283.37",
-    "value_2050": "726.3",
+    "value_2050": "519.03",
     "growth_2010_to_base_pct": "54.39",
-    "growth_2010_to_2050_pct": "295.72",
-    "growth_base_to_2050_pct": "156.31",
+    "growth_2010_to_2050_pct": "182.79",
+    "growth_base_to_2050_pct": "83.16",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Indemnité/subvention d’exploitation; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   },
   {
     "scenario": "initiative_cagr",
@@ -1969,14 +1969,14 @@
     "target_year": "2050",
     "value_2010": "354.89",
     "value_base": "551.98",
-    "value_2050": "1434.31",
+    "value_2050": "1024.99",
     "growth_2010_to_base_pct": "55.54",
-    "growth_2010_to_2050_pct": "304.16",
-    "growth_base_to_2050_pct": "159.85",
+    "growth_2010_to_2050_pct": "188.82",
+    "growth_base_to_2050_pct": "85.69",
     "data_type_2010": "observed",
     "data_type_base": "observed",
     "data_type_2050": "estimated",
     "source_id": "tpg_annual_reports_finance",
-    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût majorée par la tension d’absorption du scénario."
+    "note": "Charges d’exploitation selon comptes de résultat TPG; 2050 = tendance coût ajustée par l’écart de tension vs tendance actuelle."
   }
 ]
