@@ -128,7 +128,7 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
       <LineChart data={data} margin={{ top: 10, right: 24, left: 8, bottom: 12 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" />
-        <YAxis width={58} domain={yDomain} tickFormatter={(value) => `${Number(value).toFixed(0)} %`} />
+        <YAxis width={58} domain={yDomain} allowDataOverflow={Boolean(yDomain)} tickFormatter={(value) => `${Number(value).toFixed(0)} %`} />
         <Tooltip formatter={(value) => value === null ? 'donnée manquante' : `${Number(value).toFixed(1)} %`} />
         <Legend
           height={legendHeight}
