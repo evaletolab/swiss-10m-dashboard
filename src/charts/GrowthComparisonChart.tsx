@@ -40,6 +40,7 @@ const defaultToggleableMetrics = new Set(overviewMetrics)
 const referenceMetrics = new Set(['population', 'gdp'])
 const pressureAdjustedCostMetrics = new Set(['health_cost_per_insured', 'operating_expenses', 'health_premium_subsidy_cantonal'])
 const emphasizedMetrics = new Set(['operating_expenses'])
+const alwaysVisibleMetrics = new Set(['operating_expenses'])
 
 function selectedRows(rows: GrowthComparisonRow[], scenario: ScenarioName, domain?: string, metric?: string, includeReferences = true) {
   const base = rows.filter((row) => row.scenario === scenario)
@@ -120,7 +121,15 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
 
   function toggleLegendMetric(payload: unknown) {
     const dataKey = (payload as { dataKey?: unknown }).dataKey
-    if (toggleable && typeof dataKey === 'string') toggleMetric(sourceMetricFromKey(dataKey))
+    if (!toggleable || typeof dataKey !== 'string') return
+    const sourceMetric = sourceMetricFromKey(dataKey)
+    if (alwaysVisibleMetrics.has(sourceMetric)) return
+    toggleMetric(sourceMetric)
+  }
+
+  function isHidden(metricName: string) {
+    const sourceMetric = sourceMetricFromKey(metricName)
+    return toggleable && !alwaysVisibleMetrics.has(sourceMetric) && !enabledMetrics.has(sourceMetric)
   }
 
   return (
@@ -153,7 +162,7 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
             strokeDasharray={row.metric === 'gdp' ? '5 5' : undefined}
             dot
             connectNulls={false}
-            hide={toggleable && !enabledMetrics.has(row.metric)}
+            hide={isHidden(row.metric)}
           />
         ))}
         {baselineMetrics.map((row) => (
@@ -168,7 +177,7 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
             strokeOpacity={0.45}
             dot={false}
             connectNulls={false}
-            hide={toggleable && !enabledMetrics.has(row.metric)}
+            hide={isHidden(row.metric)}
           />
         ))}
         {foregroundMetrics.map((row) => (
@@ -182,7 +191,7 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
             dot={{ r: 5 }}
             activeDot={{ r: 7 }}
             connectNulls={false}
-            hide={toggleable && !enabledMetrics.has(row.metric)}
+            hide={isHidden(row.metric)}
             isAnimationActive={false}
             zIndex={500}
           />
