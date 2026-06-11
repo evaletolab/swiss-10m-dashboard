@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-10",
+  "lastUpdated": "2026-06-11",
   "baseYear": 2024,
   "targetYear": 2050,
   "switzerland": {
@@ -18,8 +18,8 @@
     "initiativeTranslated2050": 582410,
     "populationGap2050": 73455,
     "housingNeedGap2050": 27620,
-    "classNeedGap2050": 332,
-    "doctorNeedGap2050": 261
+    "classNeedGap2050": 608,
+    "doctorNeedGap2050": 710
   },
   "fertility": {
     "latestRate": 1.29,

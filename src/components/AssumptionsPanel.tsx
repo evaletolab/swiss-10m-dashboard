@@ -13,11 +13,11 @@ type Props = { rows: AssumptionRow[] }
 
 const labels: Record<string, { label: string; impact: string; format?: 'percent' | 'number' }> = {
   avg_household_size: { label: 'Taille moyenne des ménages', impact: 'Convertit la croissance en logements.' },
-  students_share_population: { label: 'Part des élèves dans la population', impact: 'Dimensionne les classes à ouvrir.', format: 'percent' },
+  students_share_population: { label: 'Part élèves publics/subventionnés', impact: 'Dimensionne les classes à ouvrir.', format: 'percent' },
   students_per_class: { label: 'Élèves par classe', impact: 'Transforme les élèves estimés en classes.' },
   doctors_per_1000_target: { label: 'Médecins cible pour 1 000 habitants', impact: 'Dimensionne le besoin médical additionnel.' },
   hospital_beds_per_1000_target: { label: 'Lits hospitaliers cible pour 1 000 habitants', impact: 'Dimensionne les lits hospitaliers additionnels.' },
-  daily_trips_per_person: { label: 'Mobilité quotidienne par habitant', impact: 'Estime la pression sur les transports publics et la mobilité quotidienne.' },
+  daily_trips_per_person: { label: 'Trajets TPG par habitant et par jour', impact: 'Estime la pression sur les transports publics.' },
   water_liters_per_person_day: { label: 'Eau par habitant et par jour', impact: 'Estime le besoin journalier en eau.' },
   waste_kg_per_person_year: { label: 'Déchets par habitant et par an', impact: 'Estime le volume annuel de déchets.' },
   electricity_kwh_per_person_year: { label: 'Électricité par habitant et par an', impact: 'Estime la consommation électrique annuelle.' },

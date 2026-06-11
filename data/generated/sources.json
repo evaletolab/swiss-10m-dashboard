@@ -4,7 +4,7 @@
     "title": "Taux de croissance annuel composé (CAGR)",
     "publisher": "Wikipédia",
     "url": "https://fr.wikipedia.org/wiki/Taux_de_croissance_annuel_compos%C3%A9",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "context_source",
     "license": "public web article",
     "notes": "Source méthodologique pour expliquer la logique CAGR utilisée dans certaines projections tendancielles."
@@ -14,7 +14,7 @@
     "title": "Données synthétiques V1 pour valider le dashboard",
     "publisher": "Projet swiss-10m-dashboard",
     "url": null,
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "mock",
     "license": "not for factual use",
     "notes": "Jeu synthétique clairement marqué comme mock. Ne pas citer comme statistique réelle."
@@ -24,7 +24,7 @@
     "title": "OFS STATPOP - Bilan démographique selon le niveau géographique institutionnel",
     "publisher": "Office fédéral de la statistique",
     "url": "https://opendata.swiss/fr/dataset/demografische-bilanz-nach-institutionellen-gliederungen2",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Population, naissances, décès, immigration, émigration et soldes par canton."
@@ -34,7 +34,7 @@
     "title": "OCSTAT - Population résidante du canton de Genève",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/graphiques/affichage.asp?filtreGraph=01_01",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Population, variation annuelle, solde naturel et solde migratoire."
@@ -44,7 +44,7 @@
     "title": "OCSTAT - Construction et logement à Genève",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/domaines/09/09_02/",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Parc de logements, logements construits et vacance."
@@ -54,7 +54,7 @@
     "title": "OCSTAT - Indice genevois des prix à la consommation",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/graphiques/affichage.asp?dom=1&filtreGraph=05_02",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Indice genevois des prix à la consommation, total et groupes de dépenses."
@@ -64,7 +64,7 @@
     "title": "OCSTAT - Transports publics genevois et véhicules",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/domaines/11/11_02/tableaux.asp",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Tableaux T 11.04.1.01 et T 11.02.01, TPG et véhicules en circulation."
@@ -74,7 +74,7 @@
     "title": "OCSTAT - Frontaliers étrangers actifs",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/domaines/03/03_05/tableaux.asp",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Tableau T 03.05.2.04, frontaliers étrangers actifs en Suisse et dans le canton de Genève."
@@ -84,7 +84,7 @@
     "title": "OFSP - Primes de l’assurance-maladie",
     "publisher": "Office fédéral de la santé publique",
     "url": "https://opendata.swiss/fr/dataset/health-insurance-premiums",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public data",
     "notes": "Primes LAMal par canton et catégorie."
@@ -94,7 +94,7 @@
     "title": "OCSTAT - Logements subventionnés selon le type",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/domaines/09/09_02/tableaux.asp",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Tableau T 09.02.1.2.05, logements subventionnés selon le type depuis 1977."
@@ -104,7 +104,7 @@
     "title": "OFSP - Réduction des primes dans l’assurance obligatoire des soins",
     "publisher": "Office fédéral de la santé publique",
     "url": "https://dashboardassurancemaladie.admin.ch/primes.html",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public data",
     "notes": "Subsides / réductions individuelles des primes LAMal."
@@ -114,7 +114,7 @@
     "title": "RTS - Le nombre de bénéficiaires des subsides maladie va doubler à Genève",
     "publisher": "Radio Télévision Suisse",
     "url": "https://www.rts.ch/info/regions/geneve/10883302-le-nombre-de-beneficiaires-des-subsides-maladie-va-doubler-a-geneve.html",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "context_source",
     "license": "public web article",
     "notes": "Article du 21.11.2019 documentant la réforme genevoise 2020: 176 M CHF de subsides supplémentaires, bénéficiaires plus que doublés et barème maximal porté à 300 CHF."
@@ -124,7 +124,7 @@
     "title": "OCSTAT - Aide sociale économique à Genève",
     "publisher": "Office cantonal de la statistique Genève / Hospice général",
     "url": "https://statistique.ge.ch/domaines/13/13_03/",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Dépenses nettes d’aide sociale économique / Hospice général, à distinguer des subsides LAMal."
@@ -134,7 +134,7 @@
     "title": "OFS FIBS - Dépenses nettes d’aide sociale économique, Suisse",
     "publisher": "Office fédéral de la statistique",
     "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/securite-sociale/aide-sociale/depenses-prestations-sociales-sous-condition-ressources.html",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Proxy national utilisé pour afficher la croissance cumulée quand l’export cantonal Genève n’est pas encore disponible."
@@ -144,7 +144,7 @@
     "title": "OFS FIBS - Dépenses nettes d’aide sociale économique, Genève",
     "publisher": "Office fédéral de la statistique",
     "url": "https://www.aidesocialeasl.bfs.admin.ch/",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Export cantonal Genève attendu pour remplacer le proxy national dans la courbe aide sociale."
@@ -154,7 +154,7 @@
     "title": "OFSP - Dashboard assurance-maladie AOS",
     "publisher": "Office fédéral de la santé publique",
     "url": "https://opendata.swiss/fr/dataset/dashboard-krankenversicherung-okp",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public data",
     "notes": "Primes moyennes mensuelles et prestations brutes par assuré, avec séries par canton."
@@ -164,7 +164,7 @@
     "title": "OCSTAT - Système de santé à Genève",
     "publisher": "Office cantonal de la statistique Genève",
     "url": "https://statistique.ge.ch/domaines/14/14_02/tableaux.asp",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Lits dans les hôpitaux et cliniques, médecins autorisés à pratiquer."
@@ -174,7 +174,7 @@
     "title": "PIB cantonal du canton de Genève",
     "publisher": "OFS / OCSTAT Genève",
     "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/economie-nationale/comptes-nationaux/produit-interieur-brut-canton.html",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Produit intérieur brut cantonal total et par habitant, utilisé comme proxy économie."
@@ -184,7 +184,7 @@
     "title": "Annuaire statistique de l’enseignement public et privé à Genève",
     "publisher": "État de Genève / SRED / OCSTAT",
     "url": "https://www.ge.ch/annuaire-statistique-enseignement-public-prive-geneve",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public statistics",
     "notes": "Effectifs élèves, classes scolaires, enseignants et séries chronologiques."
@@ -194,7 +194,7 @@
     "title": "TPG - Rapports annuels, états financiers et tarifs unireso",
     "publisher": "Transports publics genevois / État de Genève",
     "url": "https://www.tpg.ch/fr/nous-connaitre/publications/rapports-annuels",
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "official public reports",
     "notes": "Fréquentation, revenus de transport, indemnités/subventions d’exploitation et charges d’exploitation."
@@ -204,7 +204,7 @@
     "title": "Indice V1 de tension d’absorption",
     "publisher": "swiss-10m-dashboard",
     "url": null,
-    "accessedAt": "2026-06-10",
+    "accessedAt": "2026-06-11",
     "type": "official_reference",
     "license": "project methodology",
     "notes": "Indice composite interne: 35% logement, 20% écoles, 20% santé, 25% transports. Mesure un effort d’absorption; l’impact coût V1 est l’écart de tension du scénario par rapport à la tendance actuelle."

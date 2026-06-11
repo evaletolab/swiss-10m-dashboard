@@ -3,49 +3,49 @@
     "key": "avg_household_size",
     "value": "2.1",
     "unit": "persons_per_household",
-    "source": "OCSTAT/OFS",
-    "confidence": "medium",
-    "comment": "A remplacer par valeur Genève exacte"
+    "source": "OCSTAT Genève",
+    "confidence": "official",
+    "comment": "Dernière valeur disponible (2024)."
   },
   {
     "key": "students_share_population",
-    "value": "0.12",
+    "value": "0.2044",
     "unit": "ratio",
-    "source": "OCSTAT/OFS",
-    "confidence": "low",
-    "comment": "Part approximative à remplacer par population par âge"
+    "source": "SRED/OCSTAT + OFS STATPOP",
+    "confidence": "official_proxy",
+    "comment": "Élèves publics/subventionnés 2024 rapportés à la population 2024."
   },
   {
     "key": "students_per_class",
-    "value": "21",
+    "value": "19.53",
     "unit": "students_per_class",
-    "source": "policy_assumption",
-    "confidence": "medium",
-    "comment": "Hypothèse pédagogique"
+    "source": "OFS / SRED-OCSTAT",
+    "confidence": "official_proxy",
+    "comment": "Taille moyenne OFS des classes publiques (2024), utilisée pour les classes équivalentes."
   },
   {
     "key": "doctors_per_1000_target",
-    "value": "4.5",
+    "value": "12.24",
     "unit": "doctors_per_1000",
-    "source": "policy_assumption",
-    "confidence": "low",
-    "comment": "A calibrer avec données Genève"
+    "source": "OCSTAT santé + OFS STATPOP",
+    "confidence": "medium",
+    "comment": "Ratio indicatif: médecins 2025 rapportés à la population officielle 2024."
   },
   {
     "key": "hospital_beds_per_1000_target",
-    "value": "3",
+    "value": "4.77",
     "unit": "beds_per_1000",
-    "source": "policy_assumption",
-    "confidence": "low",
-    "comment": "A calibrer"
+    "source": "OCSTAT santé",
+    "confidence": "official",
+    "comment": "Dernier ratio lits/population disponible (2023)."
   },
   {
     "key": "daily_trips_per_person",
-    "value": "3",
+    "value": "1.16",
     "unit": "trips_per_day",
-    "source": "transport_assumption",
-    "confidence": "low",
-    "comment": "A calibrer avec enquête mobilité"
+    "source": "OCSTAT / TPG + OFS STATPOP",
+    "confidence": "official_proxy",
+    "comment": "Trajets TPG annuels 2024 / 365 / population 2024."
   },
   {
     "key": "water_liters_per_person_day",
@@ -73,10 +73,10 @@
   },
   {
     "key": "geneva_growth_share",
-    "value": "0.058",
+    "value": "0.0585",
     "unit": "ratio",
-    "source": "model_assumption",
-    "confidence": "medium",
-    "comment": "Part de Genève dans la population suisse utilisée pour traduire le scénario national"
+    "source": "OFS STATPOP",
+    "confidence": "official",
+    "comment": "Part de Genève dans la population suisse (2024)."
   }
 ]

@@ -1,11 +1,11 @@
 key,value,unit,source,confidence,comment
-avg_household_size,2.1,persons_per_household,OCSTAT/OFS,medium,A remplacer par valeur Genève exacte
-students_share_population,0.12,ratio,OCSTAT/OFS,low,Part approximative à remplacer par population par âge
-students_per_class,21,students_per_class,policy_assumption,medium,Hypothèse pédagogique
-doctors_per_1000_target,4.5,doctors_per_1000,policy_assumption,low,A calibrer avec données Genève
-hospital_beds_per_1000_target,3,beds_per_1000,policy_assumption,low,A calibrer
-daily_trips_per_person,3,trips_per_day,transport_assumption,low,A calibrer avec enquête mobilité
+avg_household_size,2.1,persons_per_household,OCSTAT Genève,official,Dernière valeur disponible (2024).
+students_share_population,0.2044,ratio,SRED/OCSTAT + OFS STATPOP,official_proxy,Élèves publics/subventionnés 2024 rapportés à la population 2024.
+students_per_class,19.53,students_per_class,OFS / SRED-OCSTAT,official_proxy,"Taille moyenne OFS des classes publiques (2024), utilisée pour les classes équivalentes."
+doctors_per_1000_target,12.24,doctors_per_1000,OCSTAT santé + OFS STATPOP,medium,Ratio indicatif: médecins 2025 rapportés à la population officielle 2024.
+hospital_beds_per_1000_target,4.77,beds_per_1000,OCSTAT santé,official,Dernier ratio lits/population disponible (2023).
+daily_trips_per_person,1.16,trips_per_day,OCSTAT / TPG + OFS STATPOP,official_proxy,Trajets TPG annuels 2024 / 365 / population 2024.
 water_liters_per_person_day,150,liter_per_day,environment_assumption,low,A sourcer
 waste_kg_per_person_year,350,kg_per_year,environment_assumption,low,A sourcer
 electricity_kwh_per_person_year,6500,kwh_per_year,energy_assumption,low,A sourcer
-geneva_growth_share,0.058,ratio,model_assumption,medium,Part de Genève dans la population suisse utilisée pour traduire le scénario national
+geneva_growth_share,0.0585,ratio,OFS STATPOP,official,Part de Genève dans la population suisse (2024).
