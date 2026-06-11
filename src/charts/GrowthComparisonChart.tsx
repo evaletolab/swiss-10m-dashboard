@@ -27,7 +27,7 @@ const metricColors: Record<string, string> = {
   tpg_passengers: colors.transport,
   transport_revenue: colors.cagr,
   operating_subsidy: colors.health,
-  operating_expenses: colors.housing,
+  operating_expenses: colors.pressure,
   adult_annual_subscription: colors.neutral,
   health_cost_per_insured: colors.health,
   social_assistance_spending: colors.cagr,
@@ -39,6 +39,7 @@ const overviewMetrics = ['population', 'gdp', 'housing_stock', 'school_classes',
 const defaultToggleableMetrics = new Set(overviewMetrics)
 const referenceMetrics = new Set(['population', 'gdp'])
 const pressureAdjustedCostMetrics = new Set(['health_cost_per_insured', 'operating_expenses', 'health_premium_subsidy_cantonal'])
+const emphasizedMetrics = new Set(['operating_expenses'])
 
 function selectedRows(rows: GrowthComparisonRow[], scenario: ScenarioName, domain?: string, metric?: string, includeReferences = true) {
   const base = rows.filter((row) => row.scenario === scenario)
@@ -55,20 +56,20 @@ function selectedRows(rows: GrowthComparisonRow[], scenario: ScenarioName, domai
 function lineName(row: GrowthComparisonRow, focusedMetric?: string) {
   if (row.metric === 'population') return 'Référence démographique'
   if (row.metric === 'gdp') return 'Référence PIB'
-  if (focusedMetric === 'operating_expenses' && row.metric === focusedMetric) return 'Charges d’exploitation TPG (coûts)'
+  if (row.metric === 'operating_expenses') return 'Charges d’exploitation TPG (coûts)'
   if (focusedMetric && referenceMetrics.has(row.metric)) return `Référence - ${row.label}`
   return row.label
 }
 
 function lineStrokeWidth(row: GrowthComparisonRow, focusedMetric?: string) {
-  if (focusedMetric === row.metric) return 5
+  if (focusedMetric === row.metric || emphasizedMetrics.has(row.metric)) return 5
   if (row.metric === 'population') return 3
   if (row.metric === 'gdp') return 2.5
   return 2
 }
 
-function lineColor(row: GrowthComparisonRow, focusedMetric?: string) {
-  if (focusedMetric === 'operating_expenses' && row.metric === focusedMetric) return colors.pressure
+function lineColor(row: GrowthComparisonRow) {
+  if (row.metric === 'operating_expenses') return colors.pressure
   return metricColors[row.metric] ?? colors.neutral
 }
 
@@ -88,8 +89,8 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
     : []
   const first = metrics[0]
   const legendHeight = toggleable ? 104 : 64
-  const focusedMetrics = metric ? metrics.filter((row) => row.metric === metric) : []
-  const backgroundMetrics = metric ? metrics.filter((row) => row.metric !== metric) : metrics
+  const foregroundMetrics = metrics.filter((row) => row.metric === metric || emphasizedMetrics.has(row.metric))
+  const backgroundMetrics = metrics.filter((row) => !foregroundMetrics.some((foreground) => foreground.metric === row.metric))
   const data = [
     {
       year: 2010,
@@ -147,27 +148,12 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
             type="monotone"
             dataKey={row.metric}
             name={lineName(row, metric)}
-            stroke={lineColor(row, metric)}
+            stroke={lineColor(row)}
             strokeWidth={lineStrokeWidth(row, metric)}
             strokeDasharray={row.metric === 'gdp' ? '5 5' : undefined}
             dot
             connectNulls={false}
             hide={toggleable && !enabledMetrics.has(row.metric)}
-          />
-        ))}
-        {focusedMetrics.map((row) => (
-          <Line
-            key={`${row.metric}-focused`}
-            type="monotone"
-            dataKey={row.metric}
-            name={lineName(row, metric)}
-            stroke={lineColor(row, metric)}
-            strokeWidth={lineStrokeWidth(row, metric)}
-            dot={{ r: 5 }}
-            activeDot={{ r: 7 }}
-            connectNulls={false}
-            hide={toggleable && !enabledMetrics.has(row.metric)}
-            isAnimationActive={false}
           />
         ))}
         {baselineMetrics.map((row) => (
@@ -176,13 +162,29 @@ export function GrowthComparisonChart({ rows, scenario, compareToScenario, yDoma
             type="monotone"
             dataKey={baselineKey(row.metric)}
             name={`Tendance actuelle - ${row.label}`}
-            stroke={lineColor(row, metric)}
+            stroke={lineColor(row)}
             strokeWidth={1.75}
             strokeDasharray="2 6"
             strokeOpacity={0.45}
             dot={false}
             connectNulls={false}
             hide={toggleable && !enabledMetrics.has(row.metric)}
+          />
+        ))}
+        {foregroundMetrics.map((row) => (
+          <Line
+            key={`${row.metric}-focused`}
+            type="monotone"
+            dataKey={row.metric}
+            name={lineName(row, metric)}
+            stroke={lineColor(row)}
+            strokeWidth={lineStrokeWidth(row, metric)}
+            dot={{ r: 5 }}
+            activeDot={{ r: 7 }}
+            connectNulls={false}
+            hide={toggleable && !enabledMetrics.has(row.metric)}
+            isAnimationActive={false}
+            zIndex={500}
           />
         ))}
       </LineChart>
