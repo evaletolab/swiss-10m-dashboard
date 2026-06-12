@@ -9,6 +9,7 @@ export const geSocialSpendingColumns = [
   'social_assistance_million_chf',
   'health_premium_subsidy_cantonal_million_chf',
   'health_premium_subsidy_total_million_chf',
+  'housing_aid_subsidies_million_chf',
   'data_type',
   'source_id',
   'source_note',
@@ -34,6 +35,20 @@ function socialAssistanceRequest() {
   })
 }
 
+function housingAidRequest() {
+  addDownloadRequest({
+    id: 'ge_housing_aid_subsidies_history_missing',
+    dataset: 'ge_social_spending',
+    missingFields: ['year', 'housing_aid_subsidies_million_chf'],
+    reason: 'Comparer le poids des aides et subventions publiques directes au budget de fonctionnement de l’État.',
+    preferredSource: 'Budgets et comptes de l’État de Genève, politique publique G Aménagement et logement, subventions au logement',
+    sourceUrl: 'https://ge.ch/grandconseil/data/texte/PL13535A.pdf',
+    acceptedFormats: ['CSV', 'XLS', 'XLSX', 'PDF'],
+    destinationPath: manualPath,
+    instructions: 'Déposer une série annuelle 2010-2025 des subventions au logement / allocations logement en millions CHF nominaux. Le point budget 2025 disponible est 59 M CHF.',
+  })
+}
+
 async function readManualRows() {
   if (!existsSync(fromRoot(manualPath))) return []
   return (await readCsv(manualPath)).map((row): CsvRow => ({
@@ -41,6 +56,7 @@ async function readManualRows() {
     social_assistance_million_chf: row.social_assistance_million_chf,
     health_premium_subsidy_cantonal_million_chf: row.health_premium_subsidy_cantonal_million_chf,
     health_premium_subsidy_total_million_chf: row.health_premium_subsidy_total_million_chf,
+    housing_aid_subsidies_million_chf: row.housing_aid_subsidies_million_chf,
     data_type: row.data_type || 'official',
     source_id: row.source_id || 'ocstat_geneva_social_assistance',
     source_note: row.source_note || 'Aide sociale Genève, fichier manuel.',
@@ -70,15 +86,26 @@ function readWorkbookRows(): CsvRow[] {
     const headers = rows[customHeaderIndex].map(normalizeLabel)
     const yearIndex = headers.findIndex((label) => label === 'year')
     const socialAssistanceIndex = headers.findIndex((label) => label === 'social_assistance_million_chf')
+    const healthPremiumSubsidyCantonalIndex = headers.findIndex((label) => label === 'health_premium_subsidy_cantonal_million_chf')
+    const healthPremiumSubsidyTotalIndex = headers.findIndex((label) => label === 'health_premium_subsidy_total_million_chf')
+    const housingAidSubsidiesIndex = headers.findIndex((label) => label === 'housing_aid_subsidies_million_chf')
     return rows.slice(customHeaderIndex + 1).map((row): CsvRow => ({
       year: numberOrNull(row[yearIndex]),
       social_assistance_million_chf: numberOrNull(row[socialAssistanceIndex]),
-      health_premium_subsidy_cantonal_million_chf: null,
-      health_premium_subsidy_total_million_chf: null,
+      health_premium_subsidy_cantonal_million_chf: healthPremiumSubsidyCantonalIndex === -1 ? null : numberOrNull(row[healthPremiumSubsidyCantonalIndex]),
+      health_premium_subsidy_total_million_chf: healthPremiumSubsidyTotalIndex === -1 ? null : numberOrNull(row[healthPremiumSubsidyTotalIndex]),
+      housing_aid_subsidies_million_chf: housingAidSubsidiesIndex === -1 ? null : numberOrNull(row[housingAidSubsidiesIndex]),
       data_type: 'official',
       source_id: 'ocstat_geneva_social_assistance',
       source_note: 'Aide sociale Genève, fichier manuel Excel.',
-    })).filter((row) => numberOrNull(row.year) !== null && numberOrNull(row.social_assistance_million_chf) !== null)
+    })).filter((row) =>
+      numberOrNull(row.year) !== null
+      && (
+        numberOrNull(row.social_assistance_million_chf) !== null
+        || numberOrNull(row.health_premium_subsidy_cantonal_million_chf) !== null
+        || numberOrNull(row.health_premium_subsidy_total_million_chf) !== null
+        || numberOrNull(row.housing_aid_subsidies_million_chf) !== null
+      ))
   }
 
   const cantonHeaderIndex = rows.findIndex((row) =>
@@ -99,6 +126,7 @@ function readWorkbookRows(): CsvRow[] {
         social_assistance_million_chf: numberOrNull(row[socialAssistanceIndex]),
         health_premium_subsidy_cantonal_million_chf: null,
         health_premium_subsidy_total_million_chf: null,
+        housing_aid_subsidies_million_chf: null,
         data_type: 'official',
         source_id: 'bfs_fibs_social_assistance_ge',
         source_note: 'OFS FIBS, dépenses nettes d’aide sociale économique pour Genève, en millions CHF à prix courants.',
@@ -131,6 +159,7 @@ function readWorkbookRows(): CsvRow[] {
       social_assistance_million_chf: value,
       health_premium_subsidy_cantonal_million_chf: null,
       health_premium_subsidy_total_million_chf: null,
+      housing_aid_subsidies_million_chf: null,
       data_type: isGenevaWorkbook ? 'official' : 'official_proxy',
       source_id: sourceId,
       source_note: sourceNote,
@@ -151,11 +180,25 @@ async function readHealthSubsidyRows() {
       social_assistance_million_chf: null,
       health_premium_subsidy_cantonal_million_chf: total === null || cantonalShare === null ? null : Number((total * cantonalShare).toFixed(2)),
       health_premium_subsidy_total_million_chf: total,
+      housing_aid_subsidies_million_chf: null,
       data_type: row.data_type || 'official',
       source_id: 'ofsp_health_premium_subsidies',
       source_note: 'OFSP Dashboard assurance-maladie: réduction des primes AOS Genève; part cantonale calculée depuis le total et la part cantonale.',
     }
   })
+}
+
+function readHousingAidBudgetRows(): CsvRow[] {
+  return [{
+    year: 2025,
+    social_assistance_million_chf: null,
+    health_premium_subsidy_cantonal_million_chf: null,
+    health_premium_subsidy_total_million_chf: null,
+    housing_aid_subsidies_million_chf: 59,
+    data_type: 'official_budget',
+    source_id: 'geneva_budget_2025_housing_subsidies',
+    source_note: 'Budget État de Genève 2025, PL 13535-A: principales subventions aux personnes physiques, subventions au logement 59 M CHF.',
+  }]
 }
 
 function mergeRows(...groups: CsvRow[][]) {
@@ -177,13 +220,20 @@ function mergeRows(...groups: CsvRow[][]) {
 }
 
 export async function normalizeGeSocialSpending() {
-  const rows = mergeRows(await readHealthSubsidyRows(), readWorkbookRows(), await readManualRows())
+  const rows = mergeRows(await readHealthSubsidyRows(), readHousingAidBudgetRows(), readWorkbookRows(), await readManualRows())
   const hasGenevaSocialAssistance = rows.some((row) =>
     numberOrNull(row.social_assistance_million_chf) !== null
     && !String(row.source_id ?? '').includes('bfs_fibs_social_assistance_ch')
   )
   if (!hasGenevaSocialAssistance) {
     socialAssistanceRequest()
+  }
+  const hasHousingAidHistory = rows.some((row) =>
+    Number(row.year) <= 2024
+    && numberOrNull(row.housing_aid_subsidies_million_chf) !== null
+  )
+  if (!hasHousingAidHistory) {
+    housingAidRequest()
   }
   await writeCsv('data/normalized/ge_social_spending.csv', rows, geSocialSpendingColumns)
   return rows

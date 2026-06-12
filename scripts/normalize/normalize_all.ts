@@ -13,6 +13,7 @@ import { normalizeGeHousingSubsidized } from './normalize_ge_housing_subsidized.
 import { normalizeGePrices } from './normalize_ge_prices.ts'
 import { normalizeGePublicTransportFinance } from './normalize_ge_public_transport_finance.ts'
 import { normalizeGeSocialSpending } from './normalize_ge_social_spending.ts'
+import { normalizeGeStateBudgetPosts } from './normalize_ge_state_budget_posts.ts'
 import { normalizeGeTransport } from './normalize_ge_transport.ts'
 
 async function main() {
@@ -29,6 +30,7 @@ async function main() {
   await normalizeGeSocialSpending()
   await normalizeGeTransport()
   await normalizeGePublicTransportFinance()
+  await normalizeGeStateBudgetPosts()
   await normalizeAssumptions()
   await writeSources()
   await writeDownloadRequests()

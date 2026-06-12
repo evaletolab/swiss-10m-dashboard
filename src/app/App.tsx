@@ -6,6 +6,7 @@ import { ComparisonGrid } from '../components/ComparisonGrid'
 import { ConclusionBlock } from '../components/ConclusionBlock'
 import { ScenarioSelector } from '../components/ScenarioSelector'
 import { StudySourcesBlock } from '../components/StudySourcesBlock'
+import { DirectPublicAidBudgetChart } from '../charts/DirectPublicAidBudgetChart'
 import { FertilityReplacementChart } from '../charts/FertilityReplacementChart'
 import { GenevaPopulationChart } from '../charts/GenevaPopulationChart'
 import { GrowthComparisonChart } from '../charts/GrowthComparisonChart'
@@ -18,6 +19,7 @@ import growthComparisonData from '../data/growth_comparison_ge.json'
 import scenariosChData from '../data/scenarios_ch.json'
 import scenariosGeData from '../data/scenarios_ge.json'
 import sourcesData from '../data/sources.json'
+import stateBudgetProjectionData from '../data/state_budget_projection_ge.json'
 import summaryData from '../data/summary.json'
 import { toNumber } from '../lib/format'
 import { TARGET_YEAR } from '../lib/series'
@@ -96,6 +98,9 @@ function App() {
           La croissance démographique peut augmenter la tension sur certains systèmes lorsque l’offre ne suit pas:
           logements disponibles, capacités scolaires, coûts de santé, infrastructures de transport.
         </p>
+        <p className="mt-3 text-sm leading-6">
+          <strong>Le volet budgétaire ne couvre pas l’ensemble des politiques publiques</strong> de l’État: seules quelques aides publiques directes connues et sourcées ont été retenues à ce stade. Le détail complet du budget donnera lieu à une autre analyse.
+        </p>
       </section>
 
       <section className="mt-8 grid gap-4 md:grid-cols-2">
@@ -156,6 +161,12 @@ function App() {
         </ChartCard>
         <ChartCard title="Aide santé vs population et PIB" description={costDescription('Croissance cumulée de la part cantonale des subsides d’assurance-maladie comparée à la démographie et au PIB. La rupture 2020 est lissée linéairement sur 10 ans.', growthComparison, scenario, 'health_premium_subsidy_cantonal')} sourceIds={['ofsp_health_premium_subsidies', 'rts_geneva_health_subsidy_reform_2020', 'bfs_ocstat_geneva_gdp']}>
           <GrowthComparisonChart rows={growthComparison} scenario={scenario} domain="Aide santé" metric="health_premium_subsidy_cantonal" />
+        </ChartCard>
+      </section>
+
+      <section className="mt-8">
+        <ChartCard title="Dépenses publiques directes vs budget de l’État" description="Montants nominaux stackés: historique observé jusqu’en 2024, puis projection 2050 ajustée par l’écart de tension du scénario. La section utilise son propre dataset et ne modifie pas les charts précédents." sourceIds={['direct_public_aid_selection_scope', 'geneva_state_budget_functioning_totals', 'geneva_state_budget_policy_posts', 'geneva_budget_2025_housing_subsidies', 'ofsp_health_premium_subsidies', 'tpg_annual_reports_finance', 'absorption_pressure_v1']} contentClassName="min-h-[620px]">
+          <DirectPublicAidBudgetChart rows={stateBudgetProjectionData} scenario={scenario} />
         </ChartCard>
       </section>
 

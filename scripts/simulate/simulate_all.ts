@@ -4,6 +4,7 @@ import { buildInfrastructureNeeds } from './infrastructure_needs.ts'
 import { latestFertilityIndicators } from './indicators.ts'
 import { buildGrowthComparison } from './growth_comparison.ts'
 import { buildScenarios } from './scenarios.ts'
+import { buildStateBudgetProjection } from './state_budget_projection.ts'
 
 function latestObservedYear(rows: Array<Record<string, unknown>>) {
   const years = rows
@@ -20,6 +21,7 @@ async function main() {
   const ge = await buildScenarios('ge')
   const needs = await buildInfrastructureNeeds()
   await buildGrowthComparison()
+  await buildStateBudgetProjection()
   const fertility = await latestFertilityIndicators()
   const chBaseYear = latestObservedYear(ch)
   const geBaseYear = latestObservedYear(ge)
