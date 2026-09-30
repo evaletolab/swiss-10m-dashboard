@@ -1,0 +1,1289 @@
+{
+  "generatedAt": "2026-09-30T11:33:24.606Z",
+  "national": [
+    {
+      "id": "costs",
+      "label": "Coûts du système de santé",
+      "unit": "millions de francs",
+      "y2000": 42956.7996248355,
+      "y2010": 62396.9637,
+      "y2024": 97201.3655,
+      "cagr2010to2024": 0.032168583991299515,
+      "y2050": 221405.7580727855,
+      "status2000": "retropolated",
+      "status2024": "provisional"
+    },
+    {
+      "id": "gdp",
+      "label": "PIB",
+      "unit": "millions de francs",
+      "y2000": 476794.431832234,
+      "y2010": 636172.019983406,
+      "y2024": 853956.984778921,
+      "cagr2010to2024": 0.021252092417804347,
+      "y2050": 1475342.7891620593,
+      "status2000": "retropolated",
+      "status2024": "provisional"
+    },
+    {
+      "id": "gdp_share",
+      "label": "Part des coûts dans le PIB",
+      "unit": "pourcent",
+      "y2000": 9.00950110926429,
+      "y2010": 9.80819051136948,
+      "y2024": 11.3824662404002,
+      "cagr2010to2024": null,
+      "y2050": 15.007072234279635,
+      "status2000": "retropolated",
+      "status2024": "provisional"
+    },
+    {
+      "id": "population",
+      "label": "Population moyenne résidante",
+      "unit": "personnes",
+      "y2000": 7184249.5,
+      "y2010": 7824909,
+      "y2024": 9006643.5,
+      "cagr2010to2024": 0.010097089674074633,
+      "y2050": 11695103.990783937,
+      "status2000": "retropolated",
+      "status2024": "provisional"
+    }
+  ],
+  "index2010": [
+    {
+      "year": 2000,
+      "status": "retropolated",
+      "costs": 68.84437491440869,
+      "gdp": 74.94740681060931,
+      "population": 91.81256293204176
+    },
+    {
+      "year": 2001,
+      "status": "retropolated",
+      "costs": 73.13035785502878,
+      "gdp": 76.97198874955045,
+      "population": 92.35437114987536
+    },
+    {
+      "year": 2002,
+      "status": "retropolated",
+      "costs": 76.12763030938042,
+      "gdp": 76.9120272215315,
+      "population": 93.09696764524674
+    },
+    {
+      "year": 2003,
+      "status": "retropolated",
+      "costs": 79.003491489141,
+      "gdp": 77.59720009533326,
+      "population": 93.79023449346184
+    },
+    {
+      "year": 2004,
+      "status": "retropolated",
+      "costs": 82.09147284686098,
+      "gdp": 79.94811730566752,
+      "population": 94.43720048373726
+    },
+    {
+      "year": 2005,
+      "status": "retropolated",
+      "costs": 83.73397560545996,
+      "gdp": 83.09091574246006,
+      "population": 95.04410850017553
+    },
+    {
+      "year": 2006,
+      "status": "retropolated",
+      "costs": 84.78806116165056,
+      "gdp": 88.36597976528292,
+      "population": 95.6424349471668
+    },
+    {
+      "year": 2007,
+      "status": "retropolated",
+      "costs": 88.66587357891375,
+      "gdp": 94.15569898564469,
+      "population": 96.50101362201146
+    },
+    {
+      "year": 2008,
+      "status": "retropolated",
+      "costs": 93.60405936215113,
+      "gdp": 97.84489475203443,
+      "population": 97.7350024134466
+    },
+    {
+      "year": 2009,
+      "status": "retropolated",
+      "costs": 97.74996808621682,
+      "gdp": 96.40756683290047,
+      "population": 98.96384737509408
+    },
+    {
+      "year": 2010,
+      "status": "observed",
+      "costs": 100,
+      "gdp": 100,
+      "population": 100
+    },
+    {
+      "year": 2011,
+      "status": "observed",
+      "costs": 102.94507936128949,
+      "gdp": 101.51535084043346,
+      "population": 101.11808329016989
+    },
+    {
+      "year": 2012,
+      "status": "observed",
+      "costs": 106.61012692833962,
+      "gdp": 102.86425737060353,
+      "population": 102.19749520409758
+    },
+    {
+      "year": 2013,
+      "status": "observed",
+      "costs": 111.1471983371524,
+      "gdp": 104.72174556728974,
+      "population": 103.3794194922906
+    },
+    {
+      "year": 2014,
+      "status": "observed",
+      "costs": 113.8766248973746,
+      "gdp": 106.73558847016092,
+      "population": 104.6484821740419
+    },
+    {
+      "year": 2015,
+      "status": "observed",
+      "costs": 117.54733588102462,
+      "gdp": 106.83159874016665,
+      "population": 105.84654722502205
+    },
+    {
+      "year": 2016,
+      "status": "observed",
+      "costs": 121.6980328804044,
+      "gdp": 108.21038455965504,
+      "population": 107.00875882390453
+    },
+    {
+      "year": 2017,
+      "status": "observed",
+      "costs": 124.79226340944535,
+      "gdp": 109.37963757767521,
+      "population": 108.01199093816938
+    },
+    {
+      "year": 2018,
+      "status": "observed",
+      "costs": 126.88380652727176,
+      "gdp": 113.86593910716962,
+      "population": 108.81057530509301
+    },
+    {
+      "year": 2019,
+      "status": "observed",
+      "costs": 130.91360197066768,
+      "gdp": 115.03190104493726,
+      "population": 109.58951727106347
+    },
+    {
+      "year": 2020,
+      "status": "observed",
+      "costs": 133.85588776653887,
+      "gdp": 111.58217834201982,
+      "population": 110.39318795911876
+    },
+    {
+      "year": 2021,
+      "status": "observed",
+      "costs": 142.79422077071357,
+      "gdp": 120.7659765504393,
+      "population": 111.24149175408942
+    },
+    {
+      "year": 2022,
+      "status": "observed",
+      "costs": 147.05707306716272,
+      "gdp": 128.84937736508834,
+      "population": 112.16856323824341
+    },
+    {
+      "year": 2023,
+      "status": "observed",
+      "costs": 149.67653978970776,
+      "gdp": 131.1264540227145,
+      "population": 113.59648399744968
+    },
+    {
+      "year": 2024,
+      "status": "provisional",
+      "costs": 155.7789990669049,
+      "gdp": 134.23365975781138,
+      "population": 115.10221396823911
+    },
+    {
+      "year": 2050,
+      "status": "estimated",
+      "costs": 354.83418574225516,
+      "gdp": 231.90941173435172,
+      "population": 149.45993609362023
+    }
+  ],
+  "costPerInhabitantMonth2024": 899.348774231673,
+  "posts2024": [
+    {
+      "id": "hospitals",
+      "label": "Hôpitaux",
+      "millionChf": 35188,
+      "share": 0.3620127364944805
+    },
+    {
+      "id": "ems",
+      "label": "EMS",
+      "millionChf": 15835,
+      "share": 0.1629098466065164
+    },
+    {
+      "id": "ambulatory",
+      "label": "Cabinets, soins à domicile et biens",
+      "millionChf": 39807,
+      "share": 0.40953282373638134
+    },
+    {
+      "id": "administration",
+      "label": "Administration et autres prestataires",
+      "millionChf": 6371,
+      "share": 0.06554459316262179
+    }
+  ],
+  "postsTotalMillion": 97201,
+  "financing2024": [
+    {
+      "id": "households",
+      "label": "Ménages, paiements directs",
+      "millionChf": 20907.21,
+      "share": 0.21275519019962172
+    },
+    {
+      "id": "premiums",
+      "label": "Primes",
+      "millionChf": 40006.075000000004,
+      "share": 0.40710836576307086
+    },
+    {
+      "id": "public",
+      "label": "Collectivités publiques",
+      "millionChf": 30792.729000000003,
+      "share": 0.3133518492022804
+    },
+    {
+      "id": "other",
+      "label": "Entreprises et sources inconnues",
+      "millionChf": 6562.848,
+      "share": 0.06678461518735436
+    }
+  ],
+  "financingLevels": [
+    {
+      "id": "households",
+      "label": "Ménages, paiements directs",
+      "y2010": 15016.68,
+      "y2024": 20907.21,
+      "cagr2010to2024": 0.023919627904101626,
+      "y2050": 38655.2650581432,
+      "share2024": 0.21275519019962172,
+      "share2050": 0.17078175364343656
+    },
+    {
+      "id": "premiums",
+      "label": "Primes",
+      "y2010": 24525.627999999997,
+      "y2024": 40006.075000000004,
+      "cagr2010to2024": 0.03556886895613687,
+      "y2050": 99261.21536260404,
+      "share2024": 0.40710836576307086,
+      "share2050": 0.4385432205135843
+    },
+    {
+      "id": "public",
+      "label": "Collectivités publiques",
+      "y2010": 19654.575,
+      "y2024": 30792.729000000003,
+      "cagr2010to2024": 0.03258893254560746,
+      "y2050": 70886.2975241656,
+      "share2024": 0.3133518492022804,
+      "share2050": 0.3131807835816948
+    },
+    {
+      "id": "other",
+      "label": "Entreprises et sources inconnues",
+      "y2010": 3865.443,
+      "y2024": 6562.848,
+      "cagr2010to2024": 0.03853451293757737,
+      "y2050": 17540.284082947925,
+      "share2024": 0.06678461518735436,
+      "share2050": 0.07749424226128422
+    }
+  ],
+  "financingAnnual": [
+    {
+      "year": 2010,
+      "status": "observed",
+      "households": 15016.68,
+      "premiums": 24525.627999999997,
+      "public": 19654.575,
+      "other": 3865.443
+    },
+    {
+      "year": 2011,
+      "status": "observed",
+      "households": 15131.347,
+      "premiums": 26298.676,
+      "public": 20704.003999999997,
+      "other": 3840.907
+    },
+    {
+      "year": 2012,
+      "status": "observed",
+      "households": 15535.142,
+      "premiums": 28839.082000000002,
+      "public": 22033.2,
+      "other": 4178.013
+    },
+    {
+      "year": 2013,
+      "status": "observed",
+      "households": 15792.261,
+      "premiums": 29585.718,
+      "public": 22266.224,
+      "other": 4476.718
+    },
+    {
+      "year": 2014,
+      "status": "observed",
+      "households": 16068.451,
+      "premiums": 29389.269999999997,
+      "public": 22650.359,
+      "other": 4859.849
+    },
+    {
+      "year": 2015,
+      "status": "observed",
+      "households": 16170.068,
+      "premiums": 30367.005999999998,
+      "public": 23222.487,
+      "other": 4921.399
+    },
+    {
+      "year": 2016,
+      "status": "observed",
+      "households": 16153.134,
+      "premiums": 31900.101000000002,
+      "public": 24066.976,
+      "other": 5262.441
+    },
+    {
+      "year": 2017,
+      "status": "observed",
+      "households": 16787.252,
+      "premiums": 33371.181,
+      "public": 24784.668,
+      "other": 5123.26
+    },
+    {
+      "year": 2018,
+      "status": "observed",
+      "households": 17293.295,
+      "premiums": 34504.286,
+      "public": 24998.005,
+      "other": 5894.724
+    },
+    {
+      "year": 2019,
+      "status": "observed",
+      "households": 17843.922,
+      "premiums": 34673.74,
+      "public": 25729.306,
+      "other": 5652.813999999999
+    },
+    {
+      "year": 2020,
+      "status": "observed",
+      "households": 17309.346,
+      "premiums": 34839.788,
+      "public": 28433.432,
+      "other": 5555.978
+    },
+    {
+      "year": 2021,
+      "status": "observed",
+      "households": 19030.752,
+      "premiums": 35207.799,
+      "public": 29719.659999999996,
+      "other": 6665.944
+    },
+    {
+      "year": 2022,
+      "status": "observed",
+      "households": 19951.498,
+      "premiums": 35644.676,
+      "public": 29976.16,
+      "other": 7576.223
+    },
+    {
+      "year": 2023,
+      "status": "observed",
+      "households": 20069.404,
+      "premiums": 37530.257999999994,
+      "public": 29144.771,
+      "other": 7625.5599999999995
+    },
+    {
+      "year": 2024,
+      "status": "provisional",
+      "households": 20907.21,
+      "premiums": 40006.075000000004,
+      "public": 30792.729000000003,
+      "other": 6562.848
+    },
+    {
+      "year": 2050,
+      "status": "estimated",
+      "households": 38655.2650581432,
+      "premiums": 99261.21536260404,
+      "public": 70886.2975241656,
+      "other": 17540.284082947925
+    }
+  ],
+  "financingTotalMillion": 98268.86,
+  "financingLinesSumMillion": 98268.86200000001,
+  "premiums": [
+    {
+      "canton": "CH",
+      "label": "Suisse",
+      "universityHospital": null,
+      "y2000": 1850.2,
+      "y2010": 2834.5,
+      "y2024": 4278.15,
+      "cagr2010to2024": 0.029840501179666745,
+      "y2050": 9189.146283982696,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 2834.5
+        },
+        {
+          "year": 2011,
+          "value": 3005.4
+        },
+        {
+          "year": 2012,
+          "value": 3075.2
+        },
+        {
+          "year": 2013,
+          "value": 3105.2
+        },
+        {
+          "year": 2014,
+          "value": 3172.4
+        },
+        {
+          "year": 2015,
+          "value": 3288.9
+        },
+        {
+          "year": 2016,
+          "value": 3442
+        },
+        {
+          "year": 2017,
+          "value": 3604.7
+        },
+        {
+          "year": 2018,
+          "value": 3735.4
+        },
+        {
+          "year": 2019,
+          "value": 3772
+        },
+        {
+          "year": 2020,
+          "value": 3777
+        },
+        {
+          "year": 2021,
+          "value": 3787.8
+        },
+        {
+          "year": 2022,
+          "value": 3766.2
+        },
+        {
+          "year": 2023,
+          "value": 3963.1
+        },
+        {
+          "year": 2024,
+          "value": 4278.15
+        }
+      ]
+    },
+    {
+      "canton": "GE",
+      "label": "Genève",
+      "universityHospital": "Hôpitaux universitaires de Genève",
+      "y2000": 2734.7,
+      "y2010": 3621.9,
+      "y2024": 5365.01,
+      "cagr2010to2024": 0.028461760231449196,
+      "y2050": 11129.16034146159,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 3621.9
+        },
+        {
+          "year": 2011,
+          "value": 3727.9
+        },
+        {
+          "year": 2012,
+          "value": 3817.6
+        },
+        {
+          "year": 2013,
+          "value": 3859.3
+        },
+        {
+          "year": 2014,
+          "value": 3959
+        },
+        {
+          "year": 2015,
+          "value": 4095.2
+        },
+        {
+          "year": 2016,
+          "value": 4329.8
+        },
+        {
+          "year": 2017,
+          "value": 4557.8
+        },
+        {
+          "year": 2018,
+          "value": 4761.5
+        },
+        {
+          "year": 2019,
+          "value": 4809.7
+        },
+        {
+          "year": 2020,
+          "value": 4829.1
+        },
+        {
+          "year": 2021,
+          "value": 4860.9
+        },
+        {
+          "year": 2022,
+          "value": 4786
+        },
+        {
+          "year": 2023,
+          "value": 4982.7
+        },
+        {
+          "year": 2024,
+          "value": 5365.01
+        }
+      ]
+    },
+    {
+      "canton": "VD",
+      "label": "Vaud",
+      "universityHospital": "CHUV",
+      "y2000": 2316.3,
+      "y2010": 3141,
+      "y2024": 4761.91,
+      "cagr2010to2024": 0.03016808001365523,
+      "y2050": 10313.153886885726,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 3141
+        },
+        {
+          "year": 2011,
+          "value": 3308.1
+        },
+        {
+          "year": 2012,
+          "value": 3365.5
+        },
+        {
+          "year": 2013,
+          "value": 3393.1
+        },
+        {
+          "year": 2014,
+          "value": 3460.4
+        },
+        {
+          "year": 2015,
+          "value": 3558.7
+        },
+        {
+          "year": 2016,
+          "value": 3743.2
+        },
+        {
+          "year": 2017,
+          "value": 3938.1
+        },
+        {
+          "year": 2018,
+          "value": 4147.2
+        },
+        {
+          "year": 2019,
+          "value": 4202.3
+        },
+        {
+          "year": 2020,
+          "value": 4175.6
+        },
+        {
+          "year": 2021,
+          "value": 4194.8
+        },
+        {
+          "year": 2022,
+          "value": 4182
+        },
+        {
+          "year": 2023,
+          "value": 4367.7
+        },
+        {
+          "year": 2024,
+          "value": 4761.91
+        }
+      ]
+    },
+    {
+      "canton": "ZH",
+      "label": "Zurich",
+      "universityHospital": "Hôpital universitaire de Zurich",
+      "y2000": 1919,
+      "y2010": 2776.3,
+      "y2024": 4168.51,
+      "cagr2010to2024": 0.02945691537358197,
+      "y2050": 8867.340924729499,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 2776.3
+        },
+        {
+          "year": 2011,
+          "value": 2947.4
+        },
+        {
+          "year": 2012,
+          "value": 3061.9
+        },
+        {
+          "year": 2013,
+          "value": 3102.7
+        },
+        {
+          "year": 2014,
+          "value": 3156.9
+        },
+        {
+          "year": 2015,
+          "value": 3282.8
+        },
+        {
+          "year": 2016,
+          "value": 3427.5
+        },
+        {
+          "year": 2017,
+          "value": 3555.3
+        },
+        {
+          "year": 2018,
+          "value": 3680.3
+        },
+        {
+          "year": 2019,
+          "value": 3706
+        },
+        {
+          "year": 2020,
+          "value": 3697.4
+        },
+        {
+          "year": 2021,
+          "value": 3671
+        },
+        {
+          "year": 2022,
+          "value": 3652.3
+        },
+        {
+          "year": 2023,
+          "value": 3876.7
+        },
+        {
+          "year": 2024,
+          "value": 4168.51
+        }
+      ]
+    },
+    {
+      "canton": "BE",
+      "label": "Berne",
+      "universityHospital": "Inselspital",
+      "y2000": 1803.2,
+      "y2010": 3067,
+      "y2024": 4377.56,
+      "cagr2010to2024": 0.025739366957924226,
+      "y2050": 8476.07367030724,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 3067
+        },
+        {
+          "year": 2011,
+          "value": 3295.3
+        },
+        {
+          "year": 2012,
+          "value": 3283.5
+        },
+        {
+          "year": 2013,
+          "value": 3312.6
+        },
+        {
+          "year": 2014,
+          "value": 3386.1
+        },
+        {
+          "year": 2015,
+          "value": 3462.8
+        },
+        {
+          "year": 2016,
+          "value": 3581.3
+        },
+        {
+          "year": 2017,
+          "value": 3736.7
+        },
+        {
+          "year": 2018,
+          "value": 3844.7
+        },
+        {
+          "year": 2019,
+          "value": 3872.8
+        },
+        {
+          "year": 2020,
+          "value": 3862.8
+        },
+        {
+          "year": 2021,
+          "value": 3894.4
+        },
+        {
+          "year": 2022,
+          "value": 3875.8
+        },
+        {
+          "year": 2023,
+          "value": 4058.6
+        },
+        {
+          "year": 2024,
+          "value": 4377.56
+        }
+      ]
+    },
+    {
+      "canton": "FR",
+      "label": "Fribourg",
+      "universityHospital": null,
+      "y2000": 1792.6,
+      "y2010": 2601.5,
+      "y2024": 4013.78,
+      "cagr2010to2024": 0.03145936629784285,
+      "y2050": 8980.670978708808,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 2601.5
+        },
+        {
+          "year": 2011,
+          "value": 2752.9
+        },
+        {
+          "year": 2012,
+          "value": 2877
+        },
+        {
+          "year": 2013,
+          "value": 2904
+        },
+        {
+          "year": 2014,
+          "value": 2961.7
+        },
+        {
+          "year": 2015,
+          "value": 3067.2
+        },
+        {
+          "year": 2016,
+          "value": 3202.4
+        },
+        {
+          "year": 2017,
+          "value": 3357.7
+        },
+        {
+          "year": 2018,
+          "value": 3463.2
+        },
+        {
+          "year": 2019,
+          "value": 3475.4
+        },
+        {
+          "year": 2020,
+          "value": 3517.6
+        },
+        {
+          "year": 2021,
+          "value": 3517.7
+        },
+        {
+          "year": 2022,
+          "value": 3494.6
+        },
+        {
+          "year": 2023,
+          "value": 3710.3
+        },
+        {
+          "year": 2024,
+          "value": 4013.78
+        }
+      ]
+    }
+  ],
+  "subsidies": [
+    {
+      "canton": "GE",
+      "label": "Genève",
+      "y2010": 158.2,
+      "y2020": 348.01,
+      "y2024": 447.77,
+      "total2024": 656.23,
+      "cantonalShare2024": 0.682339,
+      "beneficiaryRate2024": 0.439166,
+      "cagr2010to2024": 0.07714679571440053,
+      "projectionRate": 0.06503975082505731,
+      "projectionWindow": "2020-2024",
+      "y2050": 2304.4444583691957,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 158.2
+        },
+        {
+          "year": 2011,
+          "value": 124.8
+        },
+        {
+          "year": 2012,
+          "value": 137.3
+        },
+        {
+          "year": 2013,
+          "value": 143.8
+        },
+        {
+          "year": 2014,
+          "value": 146.4
+        },
+        {
+          "year": 2015,
+          "value": 161.4
+        },
+        {
+          "year": 2016,
+          "value": 168.09
+        },
+        {
+          "year": 2017,
+          "value": 171
+        },
+        {
+          "year": 2018,
+          "value": 174.85
+        },
+        {
+          "year": 2019,
+          "value": 177.35
+        },
+        {
+          "year": 2020,
+          "value": 348.01
+        },
+        {
+          "year": 2021,
+          "value": 385.34
+        },
+        {
+          "year": 2022,
+          "value": 378.95
+        },
+        {
+          "year": 2023,
+          "value": 424.73
+        },
+        {
+          "year": 2024,
+          "value": 447.77
+        }
+      ]
+    },
+    {
+      "canton": "VD",
+      "label": "Vaud",
+      "y2010": 219.2,
+      "y2020": 498.54,
+      "y2024": 588.58,
+      "total2024": 902.11,
+      "cantonalShare2024": 0.65244,
+      "beneficiaryRate2024": 0.367975,
+      "cagr2010to2024": 0.0731003922872544,
+      "projectionRate": 0.0731003922872544,
+      "projectionWindow": "2010-2024",
+      "y2050": 3685.1459696660513,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 219.2
+        },
+        {
+          "year": 2011,
+          "value": 206.7
+        },
+        {
+          "year": 2012,
+          "value": 226
+        },
+        {
+          "year": 2013,
+          "value": 248.5
+        },
+        {
+          "year": 2014,
+          "value": 262.2
+        },
+        {
+          "year": 2015,
+          "value": 279.6
+        },
+        {
+          "year": 2016,
+          "value": 302.3
+        },
+        {
+          "year": 2017,
+          "value": 343.11
+        },
+        {
+          "year": 2018,
+          "value": 408.3
+        },
+        {
+          "year": 2019,
+          "value": 500.62
+        },
+        {
+          "year": 2020,
+          "value": 498.54
+        },
+        {
+          "year": 2021,
+          "value": 494.51
+        },
+        {
+          "year": 2022,
+          "value": 476
+        },
+        {
+          "year": 2023,
+          "value": 519.11
+        },
+        {
+          "year": 2024,
+          "value": 588.58
+        }
+      ]
+    },
+    {
+      "canton": "ZH",
+      "label": "Zurich",
+      "y2010": 369.3,
+      "y2020": 371.14,
+      "y2024": 576.38,
+      "total2024": 1170.22,
+      "cantonalShare2024": 0.492544,
+      "beneficiaryRate2024": 0.366446,
+      "cagr2010to2024": 0.032307913987724035,
+      "projectionRate": 0.032307913987724035,
+      "projectionWindow": "2010-2024",
+      "y2050": 1317.4968306393828,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 369.3
+        },
+        {
+          "year": 2011,
+          "value": 326.8
+        },
+        {
+          "year": 2012,
+          "value": 283.5
+        },
+        {
+          "year": 2013,
+          "value": 288.9
+        },
+        {
+          "year": 2014,
+          "value": 316.2
+        },
+        {
+          "year": 2015,
+          "value": 347.3
+        },
+        {
+          "year": 2016,
+          "value": 367.77
+        },
+        {
+          "year": 2017,
+          "value": 320.63
+        },
+        {
+          "year": 2018,
+          "value": 326.18
+        },
+        {
+          "year": 2019,
+          "value": 334.55
+        },
+        {
+          "year": 2020,
+          "value": 371.14
+        },
+        {
+          "year": 2021,
+          "value": 213.55
+        },
+        {
+          "year": 2022,
+          "value": 192.97
+        },
+        {
+          "year": 2023,
+          "value": 357.82
+        },
+        {
+          "year": 2024,
+          "value": 576.38
+        }
+      ]
+    },
+    {
+      "canton": "BE",
+      "label": "Berne",
+      "y2010": 287.8,
+      "y2020": 278.17,
+      "y2024": 248.12,
+      "total2024": 642.25,
+      "cantonalShare2024": 0.386328,
+      "beneficiaryRate2024": 0.265973,
+      "cagr2010to2024": -0.01054071703035464,
+      "projectionRate": -0.01054071703035464,
+      "projectionWindow": "2010-2024",
+      "y2050": 188.3683282948975,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 287.8
+        },
+        {
+          "year": 2011,
+          "value": 280.9
+        },
+        {
+          "year": 2012,
+          "value": 318.76
+        },
+        {
+          "year": 2013,
+          "value": 242.72
+        },
+        {
+          "year": 2014,
+          "value": 215.38
+        },
+        {
+          "year": 2015,
+          "value": 232.47
+        },
+        {
+          "year": 2016,
+          "value": 248.72
+        },
+        {
+          "year": 2017,
+          "value": 272.79
+        },
+        {
+          "year": 2018,
+          "value": 252.23
+        },
+        {
+          "year": 2019,
+          "value": 255.97
+        },
+        {
+          "year": 2020,
+          "value": 278.17
+        },
+        {
+          "year": 2021,
+          "value": 291.23
+        },
+        {
+          "year": 2022,
+          "value": 251.53
+        },
+        {
+          "year": 2023,
+          "value": 279.17
+        },
+        {
+          "year": 2024,
+          "value": 248.12
+        }
+      ]
+    },
+    {
+      "canton": "FR",
+      "label": "Fribourg",
+      "y2010": 76.5,
+      "y2020": 77.91,
+      "y2024": 98.18,
+      "total2024": 222.9,
+      "cantonalShare2024": 0.440452,
+      "beneficiaryRate2024": 0.278815,
+      "cagr2010to2024": 0.017982034930863033,
+      "projectionRate": 0.017982034930863033,
+      "projectionWindow": "2010-2024",
+      "y2050": 156.05079498221417,
+      "annual": [
+        {
+          "year": 2010,
+          "value": 76.5
+        },
+        {
+          "year": 2011,
+          "value": 75.4
+        },
+        {
+          "year": 2012,
+          "value": 84.5
+        },
+        {
+          "year": 2013,
+          "value": 83.1
+        },
+        {
+          "year": 2014,
+          "value": 69.1
+        },
+        {
+          "year": 2015,
+          "value": 65.31
+        },
+        {
+          "year": 2016,
+          "value": 65.07
+        },
+        {
+          "year": 2017,
+          "value": 70.14
+        },
+        {
+          "year": 2018,
+          "value": 73.79
+        },
+        {
+          "year": 2019,
+          "value": 75.32
+        },
+        {
+          "year": 2020,
+          "value": 77.91
+        },
+        {
+          "year": 2021,
+          "value": 81.33
+        },
+        {
+          "year": 2022,
+          "value": 83.43
+        },
+        {
+          "year": 2023,
+          "value": 90.34
+        },
+        {
+          "year": 2024,
+          "value": 98.18
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "La prime affichée est la prime annuelle moyenne par assuré, groupe d'âge total, fichier OFSP.",
+    "Le taux 2010-2024 est le taux composé qui relie exactement ces deux années. 2000 est un niveau. 2025, estimé, est hors du taux.",
+    "La projection 2050 prolonge ce taux sur 26 ans. Ce n'est pas un scénario de vieillissement.",
+    "2000 à 2009 sont rétropolés dans le classeur des coûts. 2024 y est provisoire.",
+    "Le financement 2010-2024 vient du cube OFS DF_COU_HEALTH_FINANCING, publication du 24 avril 2026. Les quatre groupes retrouvent le tableau 2024 de la page OFS. 2024 est provisoire. La projection prolonge chaque groupe en francs.",
+    "Les frais d'administration de l'AOS, 1,7 milliard en 2024 selon l'OFSP, ne sont pas ajoutés à la ligne assurances comme prestataires."
+  ]
+}

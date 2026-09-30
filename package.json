@@ -13,6 +13,7 @@
     "normalize": "tsx scripts/normalize/normalize_all.ts",
     "simulate": "tsx scripts/simulate/simulate_all.ts",
     "validate": "tsx scripts/validate/validate_data.ts",
+    "test": "tsx --test scripts/lamal/lamal.test.ts",
     "export:web": "tsx scripts/export_to_web.ts",
     "lint": "eslint ."
   },

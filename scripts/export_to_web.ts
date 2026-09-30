@@ -37,6 +37,7 @@ async function main() {
   ] as const
   for (const [source, target] of csvFiles) await writeJson(target, await readCsv(source))
   await copyJson('data/generated/summary.json', 'src/data/summary.json')
+  await copyJson('data/generated/lamal.json', 'src/data/lamal.json')
   await copyJson('data/generated/sources.json', 'src/data/sources.json')
   await copyJson('data/generated/download_requests.json', 'src/data/download_requests.json')
 }

@@ -1,6 +1,8 @@
 import { ensureDataDirs } from '../lib/paths.ts'
 import { writeDownloadRequests } from '../lib/downloadRequests.ts'
 import { writeSources } from '../lib/sources.ts'
+import { buildLamalModel, assertPostsClosed } from '../lamal/build.ts'
+import { writeJson } from '../lib/csv.ts'
 import { normalizeAssumptions } from './normalize_assumptions.ts'
 import { normalizeChDemography } from './normalize_ch_demography.ts'
 import { normalizeGeDemography } from './normalize_ge_demography.ts'
@@ -32,6 +34,9 @@ async function main() {
   await normalizeGePublicTransportFinance()
   await normalizeGeStateBudgetPosts()
   await normalizeAssumptions()
+  const lamal = await buildLamalModel()
+  assertPostsClosed(lamal)
+  await writeJson('data/generated/lamal.json', lamal)
   await writeSources()
   await writeDownloadRequests()
 }
