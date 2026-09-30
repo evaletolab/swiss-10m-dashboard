@@ -1,0 +1,23 @@
+kind,label,million_chf,share_pct
+provider,Fournisseur de prestations - total,97201,100
+provider,Hôpitaux,35188,36.2
+provider,Institutions médico-sociales,15835,16.3
+provider,Cabinets médicaux,15403,15.8
+provider,Cabinets et cliniques dentaires,3957,4.1
+provider,Autres prestataires de services ambulatoires et de soins à domicile,8853,9.1
+provider,Prestataires de services auxiliaires,2690,2.8
+provider,Commerce de détail,8904,9.2
+provider,"Organisations à but non lucratif, ONG",1062,1.1
+provider,État comme prestataire de services,1349,1.4
+provider,Assurances comme prestataires de services,3560,3.7
+provider,Reste du monde (importations),400,0.4
+financing_source,Source de financement - total,98269,100
+financing_source,État: paiements pour des prestations,19808,20.2
+financing_source,État: subventions aux assurances sociales,10984,11.2
+financing_source,Ménages: primes LAMal,31914,32.5
+financing_source,Ménages: primes LCA,7342,7.5
+financing_source,Ménages: participation aux frais (LAMal et LCA) et out of pocket,20907,21.3
+financing_source,Ménages: autres financements,750,0.8
+financing_source,Entreprises: cotisations aux assurances sociales,3835,3.9
+financing_source,Entreprises: financement privé,1143,1.2
+financing_source,Source de financement inconnue,1585,1.6
