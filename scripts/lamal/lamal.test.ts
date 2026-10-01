@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { assertPostsClosed, buildLamalModel } from './build.ts'
+import { assertPostsClosed, buildLamalModel, readBreakdown } from './build.ts'
 import {
   cantonalSubsidyMillion,
   compoundAnnualGrowth,
@@ -129,6 +129,82 @@ describe('série LAMal lue dans les fichiers', () => {
     assert.equal(model.posts2024.reduce((sum, row) => sum + row.millionChf, 0), 97201)
     assert.equal(model.financingAnnual[0]?.year, 2010)
     assert.equal(model.financingAnnual.at(-1)?.year, 2050)
+  })
+})
+
+describe('prémisses citées dans le texte de la page', () => {
+  it('verrouille les dénominateurs et la composition de la ligne des primes', async () => {
+    const model = await buildLamalModel('2026-09-30T00:00:00.000Z')
+    const breakdown = await readBreakdown()
+    const line = (label: string) => {
+      const row = breakdown.find((item) => item.kind === 'financing_source' && item.label === label)
+      assert.ok(row, `ligne de financement absente: ${label}`)
+      return row.millionChf
+    }
+
+    const lamalPremiums = line('Ménages: primes LAMal')
+    const lcaPremiums = line('Ménages: primes LCA')
+    const otherHouseholds = line('Ménages: autres financements')
+    const costSharing = line('Ménages: participation aux frais (LAMal et LCA) et out of pocket')
+    assert.equal(lamalPremiums, 31914)
+    assert.equal(lcaPremiums, 7342)
+    assert.equal(otherHouseholds, 750)
+    assert.equal(costSharing, 20907)
+
+    const premiums = model.financingLevels.find((row) => row.id === 'premiums')
+    assert.ok(premiums)
+    assert.ok(Math.abs(premiums.y2024 - 40006.08) < 0.05)
+    assert.ok(Math.abs(premiums.y2024 - (lamalPremiums + lcaPremiums + otherHouseholds)) < 1)
+    // La ligne des primes n'est pas la prime obligatoire: 20 % vient de la LCA et des autres financements.
+    assert.ok(Math.abs(lamalPremiums / premiums.y2024 - 0.798) < 0.002)
+    // La franchise et la quote-part sont une ligne distincte, pas une part des 40 006.
+    assert.ok(Math.abs(premiums.y2024 + costSharing - 60913) < 1)
+  })
+
+  it('verrouille les postes, la hausse 2024 et les ratios cités', async () => {
+    const model = await buildLamalModel('2026-09-30T00:00:00.000Z')
+    const post = (id: string) => model.posts2024.find((row) => row.id === id)?.millionChf
+    assert.equal(post('hospitals'), 35188)
+    assert.equal(post('ems'), 15835)
+    assert.equal(post('ambulatory'), 39807)
+    assert.equal(post('administration'), 6371)
+
+    const costs = model.national.find((row) => row.id === 'costs')
+    const gdp = model.national.find((row) => row.id === 'gdp')
+    const share = model.national.find((row) => row.id === 'gdp_share')
+    const population = model.national.find((row) => row.id === 'population')
+    assert.ok(costs?.y2024 && gdp?.y2024 && share?.y2024 && population?.y2024)
+    // Les deux cubes OFS ne couvrent pas le même périmètre: l'écart est connu et surveillé.
+    assert.ok(Math.abs(model.financingTotalMillion - costs.y2024 - 1067.5) < 1)
+    assert.ok(Math.abs(share.y2024 - (costs.y2024 / gdp.y2024) * 100) < 1e-9)
+    assert.ok(share.y2024 > 11.3 && share.y2024 < 11.5)
+    assert.ok(Math.abs((costs.y2024 / 100) - 972) < 2)
+    assert.ok(Math.abs((model.costPerInhabitantMonth2024 ?? 0) - (costs.y2024 * 1e6) / population.y2024 / 12) < 0.01)
+
+    const index = new Map(model.index2010.map((point) => [point.year, point.costs]))
+    const growth2024 = (index.get(2024) ?? 0) / (index.get(2023) ?? 1) - 1
+    assert.ok(growth2024 > 0.04 && growth2024 < 0.042, `hausse 2024 hors plage: ${growth2024}`)
+  })
+
+  it('verrouille les coûts par prestation visés par l\'hypothèse de productivité', async () => {
+    const model = await buildLamalModel('2026-09-30T00:00:00.000Z')
+    const service = (id: string) => {
+      const row = model.services2024.find((item) => item.id === id)
+      assert.ok(row, `prestation absente: ${id}`)
+      return row
+    }
+    // Les deux ventilations OFS, par prestataire et par prestation, partent du même total.
+    assert.ok(Math.abs(model.servicesTotalMillion - model.postsTotalMillion) < 1)
+    assert.equal(Math.round(service('curative_outpatient').millionChf), 17688)
+    assert.equal(Math.round(service('curative_inpatient').millionChf), 14866)
+    assert.equal(Math.round(service('longterm_inpatient').millionChf), 12580)
+    assert.equal(Math.round(service('medication').millionChf), 11707)
+    assert.equal(Math.round(service('diagnostics').millionChf), 7417)
+
+    const firstFour = ['curative_outpatient', 'curative_inpatient', 'longterm_inpatient', 'medication']
+    const concentration = firstFour.reduce((sum, id) => sum + service(id).share, 0)
+    assert.ok(Math.abs(concentration - 0.585) < 0.001, `concentration des quatre postes: ${concentration}`)
+    assert.ok(Math.abs(service('diagnostics').share - 0.076) < 0.001)
   })
 })
 
