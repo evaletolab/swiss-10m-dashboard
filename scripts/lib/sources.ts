@@ -272,7 +272,7 @@ export const baseSources: Source[] = [
     accessedAt: today,
     type: 'official_reference',
     license: 'official public statistics',
-    notes: 'Coûts, PIB, part du PIB et population moyenne, classeur du 24 avril 2026. 1960-2009 rétropolés, 2024 provisoire, 2025 estimé. Financement 1995-2024: cube DF_COU_HEALTH_FINANCING, même date. Ventilation 2024 par prestataire: tableau de la page Coût et financement.',
+    notes: 'Coûts, PIB, part du PIB et population moyenne, classeur du 24 avril 2026. 1960-2009 rétropolés, 2024 provisoire, 2025 estimé. Financement 1995-2024: cube DF_COU_HEALTH_FINANCING, même date. Ventilation 2024 par prestataire: tableau de la page Coût et financement. Ventilation 2024 par prestation et mode de fourniture: cube DF_COU_HEALTH_COSTS, API Swiss Stats Explorer.',
   },
   {
     id: 'ofsp_lamal_annual_premiums_and_subsidies',

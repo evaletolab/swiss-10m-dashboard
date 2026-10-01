@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T09:49:50.954Z",
+  "generatedAt": "2026-09-30T00:00:00.000Z",
   "national": [
     {
       "id": "costs",
@@ -437,6 +437,39 @@
     }
   ],
   "postsTotalMillion": 97201,
+  "services2024": [
+    {
+      "id": "curative_outpatient",
+      "label": "Soins curatifs somatiques ambulatoires",
+      "millionChf": 17688.154,
+      "share": 0.18197432813961367
+    },
+    {
+      "id": "curative_inpatient",
+      "label": "Soins curatifs somatiques stationnaires",
+      "millionChf": 14866.034,
+      "share": 0.15294058098152322
+    },
+    {
+      "id": "longterm_inpatient",
+      "label": "Soins de longue durée en établissement",
+      "millionChf": 12579.525,
+      "share": 0.12941715739191742
+    },
+    {
+      "id": "medication",
+      "label": "Médicaments",
+      "millionChf": 11707.16,
+      "share": 0.12044233532922427
+    },
+    {
+      "id": "diagnostics",
+      "label": "Laboratoire et imagerie",
+      "millionChf": 7417.014,
+      "share": 0.07630565289357548
+    }
+  ],
+  "servicesTotalMillion": 97201.37,
   "financing2024": [
     {
       "id": "households",
@@ -2869,6 +2902,7 @@
     "La projection prolonge ce taux année par année, de 2025 à 2050, et les 26 points sont écrits dans le fichier. Ce n'est pas un scénario de vieillissement.",
     "2000 à 2009 sont rétropolés dans le classeur des coûts. 2024 y est provisoire.",
     "Le financement 2010-2024 vient du cube OFS DF_COU_HEALTH_FINANCING, publication du 24 avril 2026. Les quatre groupes retrouvent le tableau 2024 de la page OFS. 2024 est provisoire. La projection prolonge chaque groupe en francs.",
-    "Les frais d'administration de l'AOS, 1,7 milliard en 2024 selon l'OFSP, ne sont pas ajoutés à la ligne assurances comme prestataires."
+    "Les frais d'administration de l'AOS, 1,7 milliard en 2024 selon l'OFSP, ne sont pas ajoutés à la ligne assurances comme prestataires.",
+    "Les coûts par prestation viennent du cube OFS DF_COU_HEALTH_COSTS, 2024 provisoire. Ils classent la dépense par fonction, pas par prestataire : les deux ventilations somment au même total et ne s'additionnent pas."
   ]
 }

@@ -90,6 +90,8 @@ export type LamalPageModel = {
   costPerInhabitantMonth2024: number | null
   posts2024: ShareGroup[]
   postsTotalMillion: number
+  services2024: ShareGroup[]
+  servicesTotalMillion: number
   financing2024: ShareGroup[]
   financingLevels: FinancingLevel[]
   financingAnnual: FinancingPoint[]

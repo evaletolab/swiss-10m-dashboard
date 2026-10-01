@@ -21,6 +21,7 @@ const PREMIUMS_FILE = 'data/raw/ofsp/manual/dashboardassurancemaladie-donnees/Da
 const SUBSIDIES_FILE = 'data/raw/ofsp/manual/dashboardassurancemaladie-donnees/Daten/04_Primes_reduction-des-primes.xlsx'
 const COSTS_FILE = 'data/raw/bfs/manual/cou_health_costs_since_1960.xlsx'
 const BREAKDOWN_FILE = 'data/raw/bfs/manual/cou_2024_breakdown.csv'
+const SERVICES_FILE = 'data/raw/bfs/manual/cou_2024_services.csv'
 const FINANCING_FILE = 'data/raw/bfs/manual/cou_financing_1995_2024.csv'
 
 const CANTONS = [
@@ -248,7 +249,7 @@ function readSubsidies(): SubsidyRow[] {
   })
 }
 
-async function readBreakdown(): Promise<BreakdownRow[]> {
+export async function readBreakdown(): Promise<BreakdownRow[]> {
   const content = await readFile(fromRoot(BREAKDOWN_FILE), 'utf8')
   const rows = parse(content, { columns: true, skip_empty_lines: true, trim: true }) as Record<string, string>[]
   return rows
@@ -258,6 +259,34 @@ async function readBreakdown(): Promise<BreakdownRow[]> {
       if (millionChf === null) throw new Error(`Montant illisible: ${row.label}`)
       return { kind: row.kind, label: row.label, millionChf }
     })
+}
+
+type ServiceCell = {
+  service: string
+  mode: string
+  million: number
+}
+
+export async function readServices2024(): Promise<ServiceCell[]> {
+  const content = await readFile(fromRoot(SERVICES_FILE), 'utf8')
+  const rows = parse(content, { columns: true, skip_empty_lines: true, trim: true }) as Record<string, string>[]
+  return rows
+    .filter((row) => row.UNIT === 'CHF' && row.MULT === '6')
+    .map((row) => {
+      const million = numberOrNull(row.OBS_VALUE)
+      if (million === null) throw new Error(`Coût par prestation illisible: ${row.S}.${row.M}`)
+      return { service: row.S ?? '', mode: row.M ?? '', million }
+    })
+}
+
+// Une prestation se lit par son code OFS et son mode de fourniture, M_1 stationnaire, M_2 ambulatoire, _T les deux.
+function serviceGroup(cells: ServiceCell[], id: string, label: string, keys: [string, string][], total: number): ShareGroup {
+  const millionChf = keys.reduce((sum, [service, mode]) => {
+    const cell = cells.find((item) => item.service === service && item.mode === mode)
+    if (!cell) throw new Error(`Prestation absente du cube 2024: ${service}.${mode}`)
+    return sum + cell.million
+  }, 0)
+  return { id, label, millionChf, share: millionChf / total }
 }
 
 function group(rows: BreakdownRow[], id: string, label: string, names: string[], total: number): ShareGroup {
@@ -388,6 +417,15 @@ export async function buildLamalModel(generatedAt = new Date().toISOString()): P
       'Reste du monde (importations)',
     ], postsTotalMillion),
   ]
+  const serviceCells = await readServices2024()
+  const servicesTotalMillion = serviceGroup(serviceCells, 'total', 'Total', [['_T', '_T']], 1).millionChf
+  const services2024 = [
+    serviceGroup(serviceCells, 'curative_outpatient', 'Soins curatifs somatiques ambulatoires', [['S_1_1_1', 'M_2']], servicesTotalMillion),
+    serviceGroup(serviceCells, 'curative_inpatient', 'Soins curatifs somatiques stationnaires', [['S_1_1_1', 'M_1']], servicesTotalMillion),
+    serviceGroup(serviceCells, 'longterm_inpatient', 'Soins de longue durée en établissement', [['S_1_3', 'M_1']], servicesTotalMillion),
+    serviceGroup(serviceCells, 'medication', 'Médicaments', [['S_4_1', '_T']], servicesTotalMillion),
+    serviceGroup(serviceCells, 'diagnostics', 'Laboratoire et imagerie', [['S_3_2', '_T'], ['S_3_1', '_T']], servicesTotalMillion),
+  ]
   const financingCells = await readFinancingCells()
   const financing2010 = financingParts(financingCells, GROWTH_START_YEAR)
   const financingNow = financingParts(financingCells, GROWTH_END_YEAR)
@@ -473,6 +511,8 @@ export async function buildLamalModel(generatedAt = new Date().toISOString()): P
     costPerInhabitantMonth2024: y2024.costPerInhabitantMonth,
     posts2024,
     postsTotalMillion,
+    services2024,
+    servicesTotalMillion,
     financing2024,
     financingLevels,
     financingAnnual,
@@ -487,6 +527,7 @@ export async function buildLamalModel(generatedAt = new Date().toISOString()): P
       '2000 à 2009 sont rétropolés dans le classeur des coûts. 2024 y est provisoire.',
       'Le financement 2010-2024 vient du cube OFS DF_COU_HEALTH_FINANCING, publication du 24 avril 2026. Les quatre groupes retrouvent le tableau 2024 de la page OFS. 2024 est provisoire. La projection prolonge chaque groupe en francs.',
       'Les frais d\'administration de l\'AOS, 1,7 milliard en 2024 selon l\'OFSP, ne sont pas ajoutés à la ligne assurances comme prestataires.',
+      'Les coûts par prestation viennent du cube OFS DF_COU_HEALTH_COSTS, 2024 provisoire. Ils classent la dépense par fonction, pas par prestataire : les deux ventilations somment au même total et ne s\'additionnent pas.',
     ],
   }
 }
