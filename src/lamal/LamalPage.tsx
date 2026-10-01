@@ -243,7 +243,7 @@ const solutions: Solution[] = [
     hook: 'Une seule caisse à la place de 61. Le volume de soins ne change pas. Les initiants comptaient la publicité et les changements de caisse, les opposants le coût de la bascule. Refusé à 61,8 % le 28 septembre 2014.',
     costRank: 3,
     metrics: {
-      facture: 'Initiants, fonctionnement des caisses : **350 millions** en une fois, soit **0,87 % des primes**. Initiants, avec la coordination des soins : jusqu\'à **3 milliards** en une fois, soit **7,5 % des primes**. Opposants : 80 millions en une fois, soit 0,20 % des primes, ou une prime plus haute si les franchises à option sautent.',
+      facture: 'Rapporté aux primes LAMal, 31 914 millions. Initiants, fonctionnement des caisses : **350 millions** en une fois, soit **1,10 % de la prime**. Initiants, avec la coordination des soins : jusqu\'à **3 milliards** en une fois, soit **9,40 % de la prime**. Opposants : 80 millions en une fois, soit 0,25 % de la prime, ou une prime plus haute si les franchises à option sautent.',
       couts: 'Initiants : **0,36 %** ou **3,1 %** en une fois. Opposants : 0,08 % en une fois.',
       qualite: 'Initiants : inchangée. Opposants : inchangée sur le soin, la prime peut changer.',
       deuxVitesses: 'Oui, les complémentaires restent',
@@ -254,7 +254,7 @@ const solutions: Solution[] = [
     levers: [
       {
         name: 'Fusionner les caisses de l\'assurance de base.',
-        potential: 'Initiants : Stéphane Rossini annonce **2,5 à 3 milliards** à long terme. 3 000 / 97 201 = **3,1 % du total**. 3 000 / 40 006 = **7,5 % des primes**. C\'est en une fois. Le plancher, **350 millions** sur le fonctionnement des 61 caisses, fait 350 / 97 201 = 0,36 % du total et 350 / 40 006 = 0,87 % des primes. Il évoque aussi un milliard, soit 1,0 % du total et 2,5 % des primes. Jean-François Steiert compte **300 à 400 millions** sur la publicité, les changements de caisse et les intermédiaires, soit 0,31 % à 0,41 % du total. Opposants : Urs Schwaller limite l\'économie à 80 millions, soit 80 / 97 201 = 0,08 % du total et 80 / 40 006 = 0,20 % des primes. L\'étude ZHAW, commandée par Alliance santé, chiffre la bascule entre 1,56 et 2,15 milliards, une fois, et ne chiffre pas le fonctionnement ensuite. Peter Zweifel, cité par Schwaller, ajoute 17 % de prime, 575 francs, si les franchises à option et les rabais enfants disparaissaient. Les initiants disent que le texte ne l\'impose pas.',
+        potential: 'Initiants : Stéphane Rossini annonce **2,5 à 3 milliards** à long terme. 3 000 / 97 201 = **3,1 % du total**. 3 000 / 31 914 = **9,40 % de la prime LAMal**. C\'est en une fois. Le plancher, **350 millions** sur le fonctionnement des 61 caisses, fait 350 / 97 201 = 0,36 % du total et 350 / 31 914 = 1,10 % de la prime. Il évoque aussi un milliard, soit 1,0 % du total et 3,13 % de la prime. Jean-François Steiert compte **300 à 400 millions** sur la publicité, les changements de caisse et les intermédiaires, soit 0,31 % à 0,41 % du total. Opposants : Urs Schwaller limite l\'économie à 80 millions, soit 80 / 97 201 = 0,08 % du total et 80 / 31 914 = 0,25 % de la prime. L\'étude ZHAW, commandée par Alliance santé, chiffre la bascule entre 1,56 et 2,15 milliards, une fois, et ne chiffre pas le fonctionnement ensuite. Peter Zweifel, cité par Schwaller, ajoute 17 % de prime, 575 francs, si les franchises à option et les rabais enfants disparaissaient. Les initiants disent que le texte ne l\'impose pas.',
         feasibility: 'Mesure lourde, refusée trois fois, la dernière à 61,8 % le 28 septembre 2014. Genève avait dit oui à 57,4 %. Le gain annuel des initiants et les 80 millions des opposants ne sont pas le même objet. La bascule, elle, est un coût unique de 1,5 à 2,1 milliards.',
       },
       {
@@ -302,7 +302,7 @@ const solutions: Solution[] = [
       },
       {
         name: 'Viser les postes qui pèsent, sans compter deux fois',
-        potential: 'Les quatre premiers postes de 2024 font **58,5 % du total** : soins curatifs somatiques ambulatoires 17 688 millions, stationnaires 14 866, soins de longue durée en établissement 12 580, médicaments 11 707. Laboratoire et imagerie font 7 417 millions, soit **7,6 %**. Une baisse de 20 % sur ces deux postes, à volume égal, retire **1 483 millions, soit 1,5 % du total**, une fois. Une économie de documentation ne doit pas être comptée dans le poste clinique puis une seconde fois en administration.',
+        potential: 'Dans la ventilation par prestation, les quatre premiers postes de 2024 font **58,5 % du total** : soins curatifs somatiques ambulatoires 17 688 millions, stationnaires 14 866, soins de longue durée en établissement 12 580, médicaments 11 707. Laboratoire et imagerie font 7 417 millions, soit **7,6 %**. Une baisse de 20 % sur ces deux postes, à volume égal, retire **1 483 millions, soit 1,5 % du total**, une fois. Une économie de documentation ne doit pas être comptée dans le poste clinique puis une seconde fois en administration.',
         effective: 'Sur le laboratoire, **la coupe linéaire de 10 % en 2022 est en vigueur**. Sur l\'imagerie, le prix du point a à peine bougé et la dépense a monté par le nombre d\'examens.',
       },
       {
@@ -355,7 +355,9 @@ const methodNotes = [
   'Les graphiques tracent chaque année projetée. Un segment droit entre 2024 et 2050 afficherait une croissance linéaire alors que le taux est composé : à ~3 % par an, la vraie courbe passe sous cette droite de près de 9 % du niveau au milieu de la période.',
   'La part du PIB en 2050 est recalculée à partir des francs projetés des coûts et du PIB. Le pourcentage lui-même n\'est jamais composé.',
   'Dans les hypothèses, une baisse de 1 % est 1 % du niveau d\'aujourd\'hui, environ 970 millions sur les 97 201. Ce n\'est pas 1 point retiré des 3 % de hausse annuelle. Une mesure qui ne fait qu\'aplatir la pente vaut 0 % de baisse de niveau, et le dit.',
-  'La facture est ce que paie le bénéficiaire, prime, franchise et quote-part, ligne de financement de 40 006 millions. Les coûts sont l\'ensemble, 97 201 millions. Chaque pourcentage est divisé par l\'un de ces deux dénominateurs, nommé dans le texte.',
+  'La facture est ce que paie le bénéficiaire, et elle se lit sur deux lignes de financement. La ligne des primes, 40 006 millions, additionne les primes LAMal, 31 914, les primes LCA, 7 342, et 750 millions d\'autres financements des ménages. La franchise, la quote-part et les paiements directs forment une ligne séparée de 20 907 millions, ce qui porte la facture complète des ménages à 60 913 millions. Une mesure qui ne touche que l\'assurance de base est donc divisée par 31 914, pas par 40 006.',
+  'Les coûts sont l\'ensemble, 97 201 millions. L\'OFS les ventile deux fois, par prestataire et par prestation : les deux ventilations partent du même total et ne s\'additionnent pas. Chaque pourcentage de la page nomme son dénominateur.',
+  'Le cube du financement totalise 98 269 millions, soit 1 068 de plus que le cube des coûts. L\'écart est celui des deux périmètres OFS ; il est surveillé par un test et aucun pourcentage ne mélange les deux totaux.',
   'Pour une initiative populaire, chaque case donne le gain annoncé par les initiants et celui annoncé par les opposants, chacun avec sa propre source. Les deux camps ne chiffrent pas toujours le même objet.',
   'Les montants des hypothèses sont des gains en une fois, sauf si la source dit le contraire.',
 ]
