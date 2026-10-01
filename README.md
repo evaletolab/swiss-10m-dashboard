@@ -1,8 +1,17 @@
-# Dashboard Suisse 10 millions 2050
+# Dashboard de statistiques publiques suisses
 
-Dashboard React/TypeScript/Vite qui compare les trajectoires démographiques suisse et genevoise jusqu'en 2050, puis met ces trajectoires en regard de besoins matériels: logements, écoles, santé, transports et dépenses sociales.
+Projet React/TypeScript/Vite qui transforme des statistiques officielles suisses en graphiques documentés. Les données viennent de l'OFS et de Swiss Stats Explorer, de l'OCSTAT genevois et de l'OFSP. Le dépôt contient la chaîne complète: téléchargement, normalisation, projection, export JSON et interface.
 
-La V1 est centrée sur Genève. Elle ne conclut pas pour ou contre l'initiative: elle expose les séries, les hypothèses et les points manquants. Les courbes de croissance cumulée partent de 2010 quand la série existe; les valeurs estimées ou proxy sont explicitement marquées.
+Le projet n'est pas un support de campagne. Il expose les séries, nomme la source de chaque chiffre et le dénominateur de chaque pourcentage, marque les valeurs estimées ou proxy, et ne conclut pas pour ou contre un texte politique. Quand un camp et son opposant avancent deux chiffres différents, les deux sont affichés avec leur source respective.
+
+## Dossiers
+
+| Dossier | Code | État |
+| --- | --- | --- |
+| Coûts du système de santé et LAMal: niveau, financement, primes cantonales, projection 2050 et hypothèses de baisse chiffrées | `scripts/lamal/`, `src/lamal/` | monté par `src/main.tsx` |
+| Suisse à 10 millions: trajectoires démographiques suisse et genevoise jusqu'en 2050, confrontées aux besoins en logements, écoles, santé, transports et dépenses sociales | `src/app/App.tsx`, `src/charts/` | présent dans le dépôt, pas monté |
+
+Les deux dossiers partagent la même chaîne de données et le même registre de sources. Pour afficher le second, importer `App.tsx` dans `src/main.tsx` à la place de `LamalPage.tsx`.
 
 ## Installation
 
@@ -21,6 +30,7 @@ pnpm normalize
 pnpm simulate
 pnpm export:web
 pnpm validate
+pnpm test
 pnpm build
 pnpm build:gh-pages
 ```
@@ -31,26 +41,65 @@ pnpm build:gh-pages
 scripts/download/      Téléchargements optionnels depuis URLs configurées
 scripts/normalize/     Normalisation CSV/XLSX/PDF vers data/normalized
 scripts/simulate/      Scénarios 2050, besoins et croissance cumulée
+scripts/lamal/         Modèle des coûts de la santé: build, math, model et tests
+scripts/lib/sources.ts Registre des sources, exporté vers sources.json
 scripts/export_to_web  Export JSON vers src/data
-src/app/App.tsx        Composition des cartes et graphiques
+src/main.tsx           Point d'entrée, monte la page affichée
+src/lamal/LamalPage.tsx Page des coûts de la santé
+src/app/App.tsx        Page démographie et absorption
 src/charts/            Graphiques Recharts utilisés par l'interface
 src/components/        Cartes, grilles, sélecteurs et notes de source
 ```
+
+`pnpm normalize` construit aussi `data/generated/lamal.json` via `scripts/lamal/build.ts`, puis `pnpm export:web` le copie dans `src/data`. Les fichiers de `src/data` et `data/generated` sont générés: les modifier à la main n'a pas de sens, il faut relancer la chaîne.
+
+## Exploiter Les Données De Swiss Stats Explorer
+
+Les cubes de l'OFS publiés sur [stats.swiss](https://stats.swiss) sont interrogeables en SDMX sans clé. L'hôte de l'API n'est pas celui du portail: `stats.swiss` renvoie l'application web, les données sont sur `disseminate.stats.swiss`.
+
+```bash
+curl "https://disseminate.stats.swiss/rest/data/CH1.COU,DF_COU_HEALTH_COSTS,1.0.0/_T..._T._T._T._T.CHF.A?startPeriod=2024&endPeriod=2024&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+```
+
+Points à connaître:
+
+- la clé porte une valeur par dimension du cube, séparées par des points, dans l'ordre de la structure; une position vide ouvre la dimension, `_T` demande le total. Une clé incomplète renvoie `422` en indiquant le nombre de positions attendu;
+- `format=csvfilewithlabels` ajoute le libellé lisible à côté de chaque code, ce qui rend le fichier déposé dans `data/raw` relisible sans le dictionnaire;
+- retirer la version de l'identifiant, `CH1.COU,DF_COU_HEALTH_COSTS`, suit automatiquement la dernière version publiée. Les fichiers du dépôt épinglent la version pour que les chiffres cités restent reproductibles;
+- le même total peut être ventilé selon plusieurs axes, par exemple par prestataire et par prestation: deux ventilations du même total ne s'additionnent pas.
+
+La documentation de l'API est publiée par l'OFS sous le numéro de commande `do-e-00.02-sse-02`.
 
 ## Modes de données
 
 Le projet ne doit jamais inventer de données réelles.
 
-- `mock`: données synthétiques d'exemple, explicitement marquées comme mock, pour construire la V1 sans blocage.
+- `mock`: données synthétiques d'exemple, explicitement marquées comme mock, pour avancer sans blocage.
 - `manual`: fichiers déposés dans `data/raw/*/manual`.
 - `official`: téléchargements automatisés via API ou fichiers officiels quand les URLs sont configurées.
 - `auto`: tente les fichiers officiels/manuels, puis retombe sur le mock.
 
 Définir le mode avec `DATA_MODE` dans `.env` ou l'environnement shell.
 
+Le dossier santé ne connaît pas le mode `mock`: `scripts/lamal/build.ts` lit les fichiers officiels et échoue si l'un manque ou si un total ne se referme pas. Un chiffre affiché y vient toujours d'une publication OFS ou OFSP.
+
 ## Sources Utilisées Par Les Charts
 
 Les métadonnées affichées par les cartes viennent de `data/generated/sources.json`, généré depuis `scripts/lib/sources.ts`.
+
+### Dossier santé
+
+| Chart | Données principales | Sources |
+| --- | --- | --- |
+| Prime annuelle moyenne | Prime par assuré et par an, groupe d'âge total | OFSP dashboard assurance-maladie |
+| Coûts suisses et part du PIB | Coûts, PIB et part du PIB depuis 1960 | OFS, classeur des coûts de la santé |
+| Indice 2010 = 100 | Coûts, PIB et population indexés, projetés année par année | OFS, classeur des coûts de la santé |
+| Où va la facture en 2024 | Ventilation par prestataire, quatre groupes sur 97 201 millions | OFS, tableau Coût et financement 2024 |
+| Qui finance | Ménages, primes, collectivités publiques et autres, 1995-2024 | OFS, cube `DF_COU_HEALTH_FINANCING` |
+| Cinq cantons, prime et subside | Part cantonale de la réduction des primes | OFSP réduction des primes |
+| Hypothèses de baisse | Coûts 2024 par prestation et mode de fourniture | OFS, cube `DF_COU_HEALTH_COSTS` |
+
+### Dossier démographie et absorption
 
 | Chart | Données principales | Sources |
 | --- | --- | --- |
@@ -77,6 +126,9 @@ Notes importantes:
 
 Ces liens permettent de retrouver ou reconstruire les données utilisées:
 
+- OFS, coût et financement du système de santé: https://www.bfs.admin.ch/bfs/fr/home/statistiques/sante/cout-financement.html
+- OFS, cube des coûts par prestataire, prestation et mode de fourniture: https://stats.swiss/vis?df[ag]=CH1.COU&df[id]=DF_COU_HEALTH_COSTS
+- OFS, cube du financement par régime: https://stats.swiss/vis?df[ag]=CH1.COU&df[id]=DF_COU_HEALTH_FINANCING
 - OFS STATPOP, bilan démographique: https://opendata.swiss/fr/dataset/demografische-bilanz-nach-institutionellen-gliederungen2
 - OCSTAT population Genève: https://statistique.ge.ch/graphiques/affichage.asp?filtreGraph=01_01
 - OCSTAT construction et logement: https://statistique.ge.ch/domaines/09/09_02/
@@ -96,7 +148,7 @@ Ces liens permettent de retrouver ou reconstruire les données utilisées:
 - Rapports annuels TPG: https://www.tpg.ch/fr/nous-connaitre/publications/rapports-annuels
 - RTS, réforme genevoise des subsides maladie 2020: https://www.rts.ch/info/regions/geneve/10883302-le-nombre-de-beneficiaires-des-subsides-maladie-va-doubler-a-geneve.html
 
-## Hypothèse V1: Tension D'absorption Et Coûts
+## Dossier Démographie: Tension D'absorption Et Coûts
 
 La référence détaillée est documentée dans [`METHODOLOGIE.md`](./METHODOLOGIE.md).
 
@@ -134,9 +186,15 @@ pnpm export:web
 pnpm validate
 ```
 
-Les fichiers manuels attendus en V1 peuvent être déposés ici:
+Les fichiers manuels attendus peuvent être déposés ici:
 
 ```txt
+data/raw/bfs/manual/cou_health_costs_since_1960.xlsx
+data/raw/bfs/manual/cou_2024_breakdown.csv
+data/raw/bfs/manual/cou_2024_services.csv
+data/raw/bfs/manual/cou_financing_1995_2024.csv
+data/raw/ofsp/manual/dashboardassurancemaladie-donnees/Daten/04_Primes_prime-moyenne-mensuelle.xlsx
+data/raw/ofsp/manual/dashboardassurancemaladie-donnees/Daten/04_Primes_reduction-des-primes.xlsx
 data/raw/bfs/manual/ch_demography.csv
 data/raw/ocstat/manual/ge_demography.csv
 data/raw/ocstat/manual/ge_housing.csv ou data/raw/ocstat/manual/ge_housing_stock.xlsx
@@ -152,7 +210,15 @@ Les demandes ouvertes sont générées dans `data/generated/download_requests.md
 
 ## Contraintes Éditoriales
 
-Le site ne conclut pas automatiquement pour ou contre l'initiative. Il montre la pente démographique, les capacités d'absorption et les hypothèses utilisées. Quand une donnée manque, l'interface affiche `donnée manquante`; quand une valeur est une hypothèse, elle est visible avec source, confiance et commentaire.
+Le site ne conclut pour ou contre aucun texte soumis au vote. Il montre les séries, les hypothèses utilisées et ce qui manque. Quand une donnée manque, l'interface affiche `donnée manquante`; quand une valeur est une hypothèse, elle est visible avec source, confiance et commentaire.
+
+Règles de chiffrage appliquées aux deux dossiers:
+
+- tout pourcentage nomme son dénominateur. Une baisse de 1 % est 1 % du niveau d'aujourd'hui, pas un point retiré du taux de croissance annuel. Une mesure qui aplatit seulement la pente vaut 0 % de baisse de niveau, et le dit;
+- un transfert entre payeurs n'est pas une baisse de coût. Le coût est ce que paie l'ensemble, la facture est ce que paie le bénéficiaire, et les deux ont leur propre dénominateur;
+- pour une initiative populaire, chaque chiffre est donné selon les initiants et selon les opposants, chacun avec sa source. Les intitulés reprennent le nom employé par les initiants;
+- un montant est ponctuel sauf si la source dit qu'il est annuel;
+- les prémisses citées dans les textes sont verrouillées par des tests, qui échouent si l'OFS révise une série.
 
 ## Licence
 
@@ -170,9 +236,13 @@ Avant de considérer une modification terminée:
 ```bash
 pnpm data
 pnpm validate
+pnpm test
 pnpm lint
+npx tsc -p tsconfig.app.json --noEmit
 pnpm build
 ```
+
+`pnpm test` exécute `scripts/lamal/lamal.test.ts` avec le lanceur de Node: fermeture des totaux, cohérence des taux composés, forme des courbes projetées et montants cités dans les textes.
 
 Pour produire le dossier statique compatible GitHub Pages du repository:
 
