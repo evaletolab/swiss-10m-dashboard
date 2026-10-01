@@ -558,10 +558,10 @@ export default function LamalPage() {
                       <YAxis />
                       <Tooltip contentStyle={tooltipStyle} formatter={(value) => tooltipNumber(value, 1)} />
                       <Legend />
-                      <Line type="monotone" dataKey="premium" name="Prime" stroke={colors.health} strokeWidth={2} dot={false} />
-                      <Line type="monotone" dataKey="premiumForecast" name="Prime, prolongement" stroke={colors.health} strokeWidth={2} strokeDasharray="6 4" dot={false} legendType="none" />
-                      <Line type="monotone" dataKey="subsidy" name="Subside cantonal" stroke={colors.observed} strokeWidth={2} dot={false} />
-                      <Line type="monotone" dataKey="subsidyForecast" name="Subside, prolongement" stroke={colors.observed} strokeWidth={2} strokeDasharray="6 4" dot={false} legendType="none" />
+                      <Line type="monotone" dataKey="premium" name="Prime" stroke={colors.observed} strokeWidth={2} dot={false} />
+                      <Line type="monotone" dataKey="premiumForecast" name="Prime, prolongement" stroke={colors.observed} strokeWidth={2} strokeDasharray="6 4" dot={false} legendType="none" />
+                      <Line type="monotone" dataKey="subsidy" name="Subside cantonal" stroke={colors.health} strokeWidth={2} dot={false} />
+                      <Line type="monotone" dataKey="subsidyForecast" name="Subside, prolongement" stroke={colors.health} strokeWidth={2} strokeDasharray="6 4" dot={false} legendType="none" />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
