@@ -42,7 +42,36 @@ describe('croissance composée', () => {
     assert.ok(Math.abs(projected - (costs2050 / gdp2050) * 100) < 1e-6)
     assert.ok(projected < share * (1 + costRate) ** 26)
   })
+
+  it('creuse sous la corde, donc une droite entre 2024 et 2050 est une erreur de tracé', () => {
+    const value2024 = 97201.3655
+    const rate = 0.0321
+    const value2050 = projectForward(value2024, rate, 26)
+    const middle = projectForward(value2024, rate, 13)
+    assert.ok(middle < chordAt(2024, value2024, 2050, value2050, 2037))
+    const gap = (chordAt(2024, value2024, 2050, value2050, 2037) - middle) / value2024
+    assert.ok(gap > 0.05)
+  })
 })
+
+function chordAt(startYear: number, startValue: number, endYear: number, endValue: number, year: number): number {
+  return startValue + ((endValue - startValue) * (year - startYear)) / (endYear - startYear)
+}
+
+function assertCurvedPath(points: { year: number; value: number }[], label: string) {
+  const path = points.filter((point) => point.year >= 2024).sort((left, right) => left.year - right.year)
+  assert.equal(path.at(0)?.year, 2024, `${label} doit partir de 2024`)
+  assert.equal(path.at(-1)?.year, 2050, `${label} doit finir en 2050`)
+  assert.equal(path.length, 27, `${label} doit porter chaque année de 2024 à 2050`)
+  for (let index = 1; index < path.length; index += 1) {
+    assert.ok(path[index].value > path[index - 1].value, `${label} doit monter chaque année`)
+  }
+  const first = path[0]
+  const last = path[path.length - 1]
+  const middle = path.find((point) => point.year === 2037)
+  assert.ok(middle)
+  assert.ok(middle.value < chordAt(first.year, first.value, last.year, last.value, 2037), `${label} doit rester sous la corde`)
+}
 
 describe('hypothèses de normalisation', () => {
   it('garde la part cantonale publiée et refuse un pourcentage passé pour un ratio', () => {
@@ -76,7 +105,6 @@ describe('série LAMal lue dans les fichiers', () => {
     assert.equal(costs.status2000, 'retropolated')
     assert.equal(costs.status2024, 'provisional')
     assert.ok(Math.abs((costs.y2024 ?? 0) - 97201.37) < 0.1)
-    assert.equal(model.index2010.some((point) => point.year === 2025), false)
     assert.equal(model.index2010.at(-1)?.year, 2050)
     assert.equal(model.index2010.find((point) => point.year === 2010)?.costs, 100)
 
@@ -101,5 +129,29 @@ describe('série LAMal lue dans les fichiers', () => {
     assert.equal(model.posts2024.reduce((sum, row) => sum + row.millionChf, 0), 97201)
     assert.equal(model.financingAnnual[0]?.year, 2010)
     assert.equal(model.financingAnnual.at(-1)?.year, 2050)
+  })
+})
+
+describe('chemin de projection tracé dans les graphiques', () => {
+  it('donne chaque année de 2024 à 2050, et une courbe sous la corde', async () => {
+    const model = await buildLamalModel('2026-09-30T00:00:00.000Z')
+
+    assertCurvedPath(model.index2010.map((point) => ({ year: point.year, value: point.costs })), 'index des coûts')
+    assertCurvedPath(model.financingAnnual.map((point) => ({ year: point.year, value: point.premiums })), 'financement par les primes')
+
+    const estimated = model.index2010.filter((point) => point.year > 2024)
+    assert.equal(estimated.every((point) => point.status === 'estimated'), true)
+    assert.equal(model.financingAnnual.filter((point) => point.year > 2024).every((point) => point.status === 'estimated'), true)
+
+    const geneva = model.premiums.find((row) => row.canton === 'GE')
+    assert.ok(geneva)
+    assertCurvedPath(geneva.projected, 'prime genevoise projetée')
+    assert.ok(Math.abs((geneva.projected.at(-1)?.value ?? 0) - geneva.y2050) < 1e-6)
+    assert.ok(Math.abs((geneva.projected.at(0)?.value ?? 0) - geneva.y2024) < 1e-6)
+
+    const vaud = model.subsidies.find((row) => row.canton === 'VD')
+    assert.ok(vaud)
+    assertCurvedPath(vaud.projected, 'subside vaudois projeté')
+    assert.ok(vaud.y2050 !== null && Math.abs((vaud.projected.at(-1)?.value ?? 0) - vaud.y2050) < 1e-6)
   })
 })

@@ -18,6 +18,17 @@ export function projectForward(value: number, annualRate: number, years: number)
   return value * (1 + annualRate) ** years
 }
 
+// Le chemin composé année par année. Sans lui, un graphique relie deux points et affiche une droite.
+export function projectionPath(value: number, annualRate: number, startYear: number, endYear: number): { year: number; value: number }[] {
+  if (!(endYear > startYear)) {
+    throw new Error('La projection annuelle demande un horizon postérieur à l\'année de départ.')
+  }
+  return Array.from({ length: endYear - startYear + 1 }, (_, offset) => ({
+    year: startYear + offset,
+    value: offset === 0 ? value : projectForward(value, annualRate, offset),
+  }))
+}
+
 export function projectFromWindow(start: number, end: number, observedYears: number, horizonYears: number): number {
   return projectForward(end, compoundAnnualGrowth(start, end, observedYears), horizonYears)
 }

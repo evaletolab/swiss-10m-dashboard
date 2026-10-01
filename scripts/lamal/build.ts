@@ -13,6 +13,7 @@ import {
   compoundAnnualGrowth,
   gdpShareAtHorizon,
   projectForward,
+  projectionPath,
 } from './math.ts'
 import type { FinancingLevel, FinancingPoint, IndexPoint, LamalPageModel, LevelRow, PremiumRow, SeriesStatus, ShareGroup, SubsidyRow, YearValue } from './model.ts'
 
@@ -169,6 +170,7 @@ function readPremiums(): PremiumRow[] {
       cagr2010to2024: rate,
       y2050: projectForward(y2024, rate, HORIZON_YEARS),
       annual: yearValues(byYear),
+      projected: projectionPath(y2024, rate, GROWTH_END_YEAR, HORIZON_YEAR),
     }
   })
 }
@@ -241,6 +243,7 @@ function readSubsidies(): SubsidyRow[] {
         .map(([year, row]) => ({ year, value: cantonalMillion(row) }))
         .filter((point): point is YearValue => point.year >= GROWTH_START_YEAR && point.year <= GROWTH_END_YEAR && point.value !== null)
         .sort((left, right) => left.year - right.year),
+      projected: projectionRate !== null && y2024 !== null ? projectionPath(y2024, projectionRate, GROWTH_END_YEAR, HORIZON_YEAR) : [],
     }
   })
 }
@@ -357,9 +360,12 @@ export async function buildLamalModel(generatedAt = new Date().toISOString()): P
   const population2050 = projectForward(y2024.population, populationRate, HORIZON_YEARS)
   const share2050 = gdpShareAtHorizon(y2024.gdpShare, costRate, gdpRate, HORIZON_YEARS)
   const annual = costs.filter((row) => row.year >= 2000 && row.year <= GROWTH_END_YEAR)
+  const costsPath = projectionPath(y2024.costsMillion, costRate, GROWTH_END_YEAR, HORIZON_YEAR)
+  const gdpPath = projectionPath(y2024.gdpMillion, gdpRate, GROWTH_END_YEAR, HORIZON_YEAR)
+  const populationPath = projectionPath(y2024.population, populationRate, GROWTH_END_YEAR, HORIZON_YEAR)
   const index2010 = [
     ...annual.map((row) => indexPoint(row.year, row.status, row.costsMillion, row.gdpMillion, row.population, y2010)),
-    indexPoint(HORIZON_YEAR, 'estimated', costs2050, gdp2050, population2050, y2010),
+    ...costsPath.slice(1).map((point, offset) => indexPoint(point.year, 'estimated', point.value, gdpPath[offset + 1].value, populationPath[offset + 1].value, y2010)),
   ]
   const breakdown = await readBreakdown()
   const providers = breakdown.filter((row) => row.kind === 'provider')
@@ -426,19 +432,22 @@ export async function buildLamalModel(generatedAt = new Date().toISOString()): P
       const part = financingParts(financingCells, year)
       return { year, status: part.status, households: part.households, premiums: part.premiums, public: part.public, other: part.other }
     }),
-    {
-      year: HORIZON_YEAR,
-      status: 'estimated',
-      households: financingHorizon('households'),
-      premiums: financingHorizon('premiums'),
-      public: financingHorizon('public'),
-      other: financingHorizon('other'),
-    },
+    ...Array.from({ length: HORIZON_YEARS }, (_, offset) => {
+      const year = GROWTH_END_YEAR + offset + 1
+      return {
+        year,
+        status: 'estimated' as const,
+        households: financingAt('households', year),
+        premiums: financingAt('premiums', year),
+        public: financingAt('public', year),
+        other: financingAt('other', year),
+      }
+    }),
   ]
-  function financingHorizon(id: FinancingLevel['id']): number {
+  function financingAt(id: FinancingLevel['id'], year: number): number {
     const level = financingLevels.find((row) => row.id === id)
     if (!level) throw new Error(`Projection de financement absente: ${id}`)
-    return level.y2050
+    return projectForward(level.y2024, level.cagr2010to2024, year - GROWTH_END_YEAR)
   }
   const national: LevelRow[] = [
     level('costs', 'Coûts du système de santé', 'millions de francs', y2000.costsMillion, y2010.costsMillion, y2024.costsMillion, costs2050, y2000.status, y2024.status),
@@ -474,7 +483,7 @@ export async function buildLamalModel(generatedAt = new Date().toISOString()): P
     notes: [
       'La prime affichée est la prime annuelle moyenne par assuré, groupe d\'âge total, fichier OFSP.',
       'Le taux 2010-2024 est le taux composé qui relie exactement ces deux années. 2000 est un niveau. 2025, estimé, est hors du taux.',
-      'La projection 2050 prolonge ce taux sur 26 ans. Ce n\'est pas un scénario de vieillissement.',
+      'La projection prolonge ce taux année par année, de 2025 à 2050, et les 26 points sont écrits dans le fichier. Ce n\'est pas un scénario de vieillissement.',
       '2000 à 2009 sont rétropolés dans le classeur des coûts. 2024 y est provisoire.',
       'Le financement 2010-2024 vient du cube OFS DF_COU_HEALTH_FINANCING, publication du 24 avril 2026. Les quatre groupes retrouvent le tableau 2024 de la page OFS. 2024 est provisoire. La projection prolonge chaque groupe en francs.',
       'Les frais d\'administration de l\'AOS, 1,7 milliard en 2024 selon l\'OFSP, ne sont pas ajoutés à la ligne assurances comme prestataires.',

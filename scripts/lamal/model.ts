@@ -35,6 +35,7 @@ export type PremiumRow = {
   cagr2010to2024: number
   y2050: number
   annual: YearValue[]
+  projected: YearValue[]
 }
 
 export type SubsidyRow = {
@@ -51,6 +52,7 @@ export type SubsidyRow = {
   projectionWindow: string | null
   y2050: number | null
   annual: YearValue[]
+  projected: YearValue[]
 }
 
 export type FinancingLevel = {
